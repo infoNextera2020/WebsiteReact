@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Nextera Website"
+description = "A React implementation of the Nextera website using the supplied original source and the latest Loveable design and interaction changes."
+version = "1.0.0"
+id = "artifacts/nextera-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22304
+
+[services.development]
+run = "pnpm --filter @workspace/nextera-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nextera-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nextera-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22304"
+BASE_PATH = "/"

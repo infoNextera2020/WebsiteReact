@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Coding Academy | NextEra Education</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="transitions.js"></script>
+</head>
+<body>
+
+    <!-- Header will be injected here -->
+    <div id="header-placeholder"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <main>
+        <section class="hero-banner">
+            <div class="container">
+                <h1 class="hero-title">Become a software engineer<br><span>in two years</span></h1>
+                <p class="hero-subtitle">01 Coding Academy is a two year project based program powered by the French academy 01 Talent which operating across 30 countries and delivered exclusively in Egypt through NextEra Education.</p>
+            </div>
+        </section>
+
+        <section class="section-padding container">
+            <div style="background: var(--card-bg); padding: 2.5rem; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--text-dark); line-height: 1.8;">
+                    Students learn by building not by listening and developing practical skills in Full Stack Development, AI, Cybersecurity, Blockchain, Mobile Development, and more. Graduates leave with a professional portfolio, a technology specialization and guaranteed employment for eligible participants who meet the official program requirements.
+                </p>
+            </div>
+
+            <h2 class="section-heading">Your journey Path</h2>
+            <!-- Added a style override to force exactly 2 columns on desktop -->
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));">
+                <div class="card" data-aos="fade-up">
+                    <h3 class="card-title">1- Game assessment ( 90 mintes )</h3>
+                    <p class="card-body">No coding just a logic assessment that tells you and us whether this is your path.</p>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="card-title">2- Piscine the selection phase ( 1 month )</h3>
+                    <p class="card-body">One intensive monthm, assessed on exams and delivered projects. Passing it earns your seat.</p>
+                </div>
+
+                <div class="card" style="grid-column: 1 / -1;" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="card-title">3- The two year program</h3>
+                    <div style="margin-top: 1rem;">
+                        <h4 style="color: var(--accent-green); font-size: 1.2rem; text-transform: uppercase;">18 Months ( Full stack development )</h4>
+                        <p class="card-body" style="margin-top: 0.5rem;">
+                            You start at Problem Solving and Data Structures with working across Go, Rust, Java, and Python. Front end, back end, databases, systems, deployment.<br><br>
+                            The goal isn't to make you a Python developer. It's to make you an engineer who can pick up any language because you understand what sits underneath all of them.
+                        </p>
+                        
+                        <h4 style="color: var(--accent-green); font-size: 1.2rem; margin-top: 2rem; text-transform: uppercase;">6 Months (Specialization)</h4>
+                        <ul style="list-style-position: inside; color: var(--text-muted); margin-top: 0.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+                            <li>Artificial Intelligence</li>
+                            <li>Cybersecurity</li>
+                            <li>Mobile Applications</li>
+                            <li>Blockchain</li>
+                            <li>Cloud DevOps</li>
+                            <li>Video Games Development</li>
+                        </ul>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            SECTION 1: THE PEDAGOGY (NO TEACHERS)
+        =========================================== -->
+        <section class="section-padding bg-white" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-heading">Zero Teachers. Zero Classes. <br><span style="color: var(--accent-green);">100% Code.</span></h2>
+                <p class="section-description">Traditional education relies on listening. We rely on building. Our methodology is designed to simulate a real-world tech environment.</p>
+
+                <div class="cards-grid">
+                    <div class="card" data-aos="fade-up">
+                        <h2 class="card-title">Peer-to-Peer Learning</h2>
+                        <p class="card-body">No professors holding your hand. You learn by collaborating, reviewing your peers' code, and solving complex problems as a team.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="card-title">Gamified Progression</h2>
+                        <p class="card-body">Navigate your education like an RPG. Gain experience points (XP), level up your profile, and unlock advanced technology branches as you prove your skills.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="card-title">Project-Based Mastery</h2>
+                        <p class="card-body">No theoretical exams or multiple-choice tests. Your progress is measured entirely by the working software, scripts, and architecture you build.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            SECTION 2: CAPSTONE PROJECTS (WHAT YOU'LL BUILD)
+        =========================================== -->
+        <section class="section-padding container">
+
+            
+            <h2 class="section-heading">Real-World Architecture</h2>
+            <p class="section-description">Our pioneers are currently writing their first lines of code. By the end of your journey, here is a preview of the capstone architecture you will be building.</p>
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card" data-aos="fade-up">
+                    <!-- Updated background and added a soft border -->
+                    <div style="height: 150px; background: rgba(126, 217, 87, 0.05); border: 1px solid rgba(126, 217, 87, 0.15); border-radius: var(--radius-sm); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--accent-green); font-family: monospace;">
+                        [ AI & Logic ]
+                    </div>
+                    <h2 class="card-title">Machine Learning Systems</h2>
+                    <p class="card-body">Design and implement complex backend software, such as a full Pharmacy Inventory Management System enhanced with Machine Learning to predict stock depletion and automate logistics.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Updated background and added a soft border -->
+                    <div style="height: 150px; background: rgba(126, 217, 87, 0.05); border: 1px solid rgba(126, 217, 87, 0.15); border-radius: var(--radius-sm); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--accent-green); font-family: monospace;">
+                        [ Data & Analytics ]
+                    </div>
+                    <h2 class="card-title">Business Intelligence Pipelines</h2>
+                    <p class="card-body">Engineer robust data warehousing solutions, utilizing advanced SQL to process raw datasets and converting them into high-level business insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            SECTION 3: SPECIALIZATION BRANCHES
+        =========================================== -->
+        <section class="section-padding bg-white" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-heading">Choose Your Tech Branch</h2>
+                <p class="section-description">After mastering your 18-month foundation in Go, Rust, Java, and Python, you unlock advanced specialization branches to define your career.</p>
+
+                <div class="cards-grid">
+                    <div class="card" data-aos="fade-up">
+                        <h2 class="card-title">Data Science & BI</h2>
+                        <p class="card-body">Master Python, machine learning libraries like Scikit-learn and TensorFlow, and enterprise visualization tools including Power BI and Tableau.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="card-title">Full Stack Development</h2>
+                        <p class="card-body">Build highly scalable, responsive web and mobile applications using modern JavaScript frameworks, robust backends, and cloud infrastructure.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="card-title">Cybersecurity & Systems</h2>
+                        <p class="card-body">Dive deep into network defense, ethical hacking, cryptography, and securing operating systems against modern vulnerabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            SECTION 4: THE SELECTION FUNNEL (TIMELINE)
+        =========================================== -->
+        <section class="section-padding container">
+            <h2 class="section-heading">How To Get In</h2>
+            <p class="section-description">Our admissions process is completely merit-based. No tuition fees, no CVs, and no prior coding experience required.</p>
+
+            <div class="timeline-grid">
+                <div class="timeline-step" data-aos="zoom-in">
+                    <div class="step-number">1</div>
+                    <h3 class="card-title">The Game</h3>
+                    <p class="card-body">A 90-minute online cognitive assessment testing your memory and logic. No coding required.</p>
+                </div>
+                <div class="timeline-step" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h3 class="card-title">The Check-In</h3>
+                    <p class="card-body">An intro event to meet the team, explore the campus, and understand the commitment.</p>
+                </div>
+                <div class="timeline-step" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h3 class="card-title">The Piscine</h3>
+                    <p class="card-body">A grueling, intensive 4-week coding bootcamp to test your resilience, logic, and peer collaboration.</p>
+                </div>
+                <div class="timeline-step" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h3 class="card-title">The Core Program</h3>
+                    <p class="card-body">Pass the Piscine, and you earn your seat in the ultimate 2-year software engineering journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+            SECTION 5 & 6: CAMPUS VIBE & FAQ
+        =========================================== -->
+        <section class="section-padding bg-white" data-aos="fade-up">
+            <div class="container campus-split">
+                
+                <!-- Left Side: Campus Vibe -->
+                <div class="campus-info">
+                    <h2 class="section-heading" style="text-align: left;">More Than A Campus</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+                        NextEra isn't just a place to code—it's an innovation hub. With 24/7 access, you decide when you work best. Collaborate in open zones, compete in weekend hackathons, and network with industry leaders at our exclusive milestone events.
+                    </p>
+                    <a href="#register" class="btn-primary">Start The Game</a>
+                </div>
+
+                <!-- Right Side: FAQ -->
+                <div class="faq-container">
+                    <h3 class="card-title" style="margin-bottom: 1.5rem;">Is this for me?</h3>
+                    
+                    <details class="faq-item">
+                        <summary>Do I need a computer science degree?</summary>
+                        <p>Not at all. We care about your logic and grit, not your previous diplomas. Whether you are a high school graduate, a career-switcher, or a university dropout, you are welcome here.</p>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>Do I need to know how to code?</summary>
+                        <p>Absolutely zero prior coding experience is required. The curriculum is designed to take you from writing your very first command to architecting enterprise-grade systems.</p>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary>How much does the academy cost?</summary>
+                        <p>The program is completely free upfront for eligible participants. We are invested in your success, bridging the gap directly to guaranteed employment opportunities.</p>
+                    </details>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- ==========================================
+                SECTION 1: THE PISCINE (DEEP DIVE)
+        =========================================== -->
+        <section class="section-padding container">
+            <div style="background: var(--primary-dark); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 4rem; position: relative; overflow: hidden;" data-aos="fade-up">
+                <!-- Decorative background element -->
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(126,217,87,0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+                
+                <h2 class="section-heading" style="text-align: left; margin-bottom: 1.5rem;">The Piscine: <span style="color: var(--accent-green);">Sink or Swim</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 800px; margin-bottom: 2rem; line-height: 1.8;">
+                    The Piscine (French for "swimming pool") is our legendary 4-week, immersive selection bootcamp. It is designed to strip away traditional learning habits and throw you directly into the deep end of coding. You will code 7 days a week, face seemingly impossible logic puzzles, and rely entirely on your peers to survive. 
+                </p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.2rem;">0% Prior Knowledge</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">We test your logic, resilience, and teamwork—not your previous computer science experience.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--text-dark); margin-bottom: 0.5rem; font-size: 1.2rem;">100% Commitment</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">It is a grueling, transformative month. You will fail, you will retry, and you will learn how to learn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==========================================
+                SECTION 2: THE GALAXY (GAMIFICATION)
+        =========================================== -->
+        <section class="section-padding bg-white" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-heading">Navigate The Galaxy</h2>
+                <p class="section-description">Forget boring course catalogs. Your curriculum is a sprawling, interactive skill tree. You start at the core and carve your own path.</p>
+        
+                <div class="galaxy-grid">
+                    <!-- Core -->
+                    <div class="galaxy-node core" data-aos="zoom-in">
+                        <div class="node-icon">01</div>
+                        <h3 class="card-title">The Core</h3>
+                        <p class="card-body">18 Months. Master Go, Rust, and foundational algorithms.</p>
+                    </div>
+                    <!-- Branch 1 -->
+                    <div class="galaxy-node branch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="node-icon">AI</div>
+                        <h3 class="card-title">Machine Learning</h3>
+                        <p class="card-body">Unlock neural networks, Python, and data automation.</p>
+                    </div>
+                    <!-- Branch 2 -->
+                    <div class="galaxy-node branch" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="node-icon">CY</div>
+                        <h3 class="card-title">Cybersecurity</h3>
+                        <p class="card-body">Unlock network defense, cryptography, and system hacking.</p>
+                    </div>
+                    <!-- Branch 3 -->
+                    <div class="galaxy-node branch" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="node-icon">FS</div>
+                        <h3 class="card-title">Full Stack</h3>
+                        <p class="card-body">Unlock scalable web apps, modern JS, and microservices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==========================================
+                SECTION 3: HOW GRADING WORKS (THE DEFENSE)
+        =========================================== -->
+        <section class="section-padding container">
+            <h2 class="section-heading">No Teachers. <span style="color: var(--accent-green);">No Cheating.</span></h2>
+            <p class="section-description">If there are no teachers, who grades your work? Your peers do. Our strict evaluation system ensures you can't just copy-paste your way to graduation.</p>
+        
+            <div class="cards-grid">
+                <div class="card" data-aos="fade-up">
+                    <h2 class="card-title" style="color: var(--accent-green);">01. Build</h2>
+                    <p class="card-body">You write the code and build the architecture to solve the project brief. No tutorials, no hand-holding.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="card-title" style="color: var(--accent-green);">02. Defend</h2>
+                    <p class="card-body">You are randomly assigned to present your project to three peers. You must explain and justify every single line of code.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="card-title" style="color: var(--accent-green);">03. Pass or Fail</h2>
+                    <p class="card-body">If you can't explain it, you fail. This forces elite communication skills and guarantees deep technical understanding.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==========================================
+                SECTION 4: THE IDEAL CANDIDATE (STEREOTYPES)
+        =========================================== -->
+        <section class="section-padding bg-white" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-heading">Who Belongs Here?</h2>
+                <p class="section-description">Tech isn't just for math geniuses. We are looking for diverse minds, unique backgrounds, and relentless problem solvers.</p>
+        
+                <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                    <div class="card" data-aos="fade-up">
+                        <h3 class="card-title">The Gamer</h3>
+                        <p class="card-body">You love grinding for achievements, optimizing stats, and solving complex logic puzzles.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="card-title">The Artist</h3>
+                        <p class="card-body">You have an eye for design and want to bring beautiful, intuitive user interfaces to life.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="card-title">The Career Switcher</h3>
+                        <p class="card-body">You are ready for a change, bringing maturity, focus, and real-world skills to the tech industry.</p>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="card-title">The High School Grad</h3>
+                        <p class="card-body">You want to bypass the traditional 4-year degree and dive straight into high-end software engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==========================================
+                SECTION 5: WHY WE EXIST (INDUSTRY BACKING)
+        =========================================== -->
+        <section class="section-padding container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;" data-aos="zoom-in">
+                <h2 class="section-heading">Built For The Industry, <br>Backed By The Industry.</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.8;">
+                    The traditional education system is too slow for the digital economy. Global tech companies don't just need people who have read textbooks; they need engineers who can push code, collaborate in agile teams, and solve un-googleable problems. NextEra produces exactly that.
+                </p>
+                <a href="#register" class="btn-primary">Apply Now</a>
+            </div>
+        </section>
+
+        <section class="section-padding bg-white">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-heading">Secure Your Job with Global Opportunities</h2>
+                <p class="section-description">
+                    Upon completion we’ll connect you with top global companies so you can start earning in USD, just bring your passion and willingness to learn. We believe in providing everyone the opportunity to start from scratch and become a pro.
+                </p>
+                <!-- <img src="https://placehold.co/800x400/f4f5f7/6b7280?text=Map+pic" alt="Map pic" style="width: 100%; max-width: 800px; border-radius: var(--radius-md);"> -->
+                <!-- New Curriculum Diagram Image -->
+                        <div style="text-align: center; margin-top: 3rem;">
+                            <img src="images/svgviewer-png-output-1-2048x2048.png" class="curriculum-map">
+                        </div>
+            </div>
+        </section>
+
+        <!-- Apply Form -->
+        <section class="section-padding container">
+            <div class="form-container" data-aos="fade-up">
+                <!-- Full Width Field -->
+                <div class="floating-group">
+                    <input type="text" class="floating-control" placeholder=" " required>
+                    <label class="floating-label">Full Name <span>*</span></label>
+                </div>
+            
+                <!-- Full Width Field -->
+                <div class="floating-group">
+                    <input type="email" class="floating-control" placeholder=" " required>
+                    <label class="floating-label">Email Address <span>*</span></label>
+                </div>
+            
+                <!-- Side-by-Side Row -->
+                <div class="form-row">
+                    <div class="floating-group">
+                        <input type="date" class="floating-control" placeholder=" " required>
+                        <label class="floating-label">Date of Birth <span>*</span></label>
+                    </div>
+                    <div class="floating-group">
+                        <input type="tel" class="floating-control" placeholder=" " required>
+                        <label class="floating-label">Phone Number <span>*</span></label>
+                    </div>
+                </div>
+                <!-- You can add your checkbox tracks below here... -->
+                 <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Mark on tracks that you are interested in</label>
+                        <div class="checkbox-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem;">
+                            <label><input type="checkbox"> Artificial Intelligence & Machine Learning</label>
+                            <label><input type="checkbox"> Java Full Stack</label>
+                            <label><input type="checkbox"> Cybersecurity</label>
+                            <label><input type="checkbox"> Cloud DevOps</label>
+                            <label><input type="checkbox"> Mobile Applications</label>
+                            <label><input type="checkbox"> Video Games</label>
+                            <label><input type="checkbox"> Blockchain and Crypto currencies</label>
+                            <label><input type="checkbox"> User experience (UX/UI)</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Apply Now</button>
+                    <div id="formSuccess" style="display:none; color:green; margin-top:15px; text-align:center; font-weight: bold;">Application submitted successfully!</div>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTop" class="back-to-top" title="Go to top">↑</button>
+    <!-- Footer will be injected here -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
