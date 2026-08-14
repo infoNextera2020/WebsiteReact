@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --ds-display: 'Space Grotesk', sans-serif;
+  --ds-body: 'Manrope', sans-serif;
+  --ds-mono: 'Space Mono', monospace;
+}
+
+body {
+  font-family: var(--ds-body);
+  background:
+    linear-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.025) 1px, transparent 1px),
+    hsl(var(--background));
+  background-size: 32px 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ds-display);
+  letter-spacing: -0.04em;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.ds-mono {
+  font-family: var(--ds-mono);
+  letter-spacing: 0.04em;
+}
+
+.ds-eyebrow {
+  color: hsl(var(--muted-foreground));
+  font-family: var(--ds-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ds-display {
+  font-family: var(--ds-display);
+}
+
+.ds-ink-panel {
+  background: hsl(var(--sidebar-primary));
+  color: hsl(var(--sidebar-primary-foreground));
+}
+
+.ds-lime-rule {
+  border-color: hsl(var(--primary));
+}
+
+.ds-grid-paper {
+  background-image:
+    linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.ds-terminal {
+  border: 1px solid hsl(var(--primary-foreground) / 0.18);
+  background: hsl(var(--sidebar-primary-foreground) / 0.05);
+  color: hsl(var(--sidebar-primary-foreground) / 0.78);
+  font-family: var(--ds-mono);
+}
+
+.ds-terminal strong {
+  color: hsl(var(--primary));
+}
+
+.ds-terminal .dot {
+  display: block;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+}
+
+.ds-terminal .dot:nth-child(2) {
+  opacity: 0.55;
+}
+
+.ds-terminal .dot:nth-child(3) {
+  opacity: 0.28;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ds-hover-lift {
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .ds-hover-lift:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: 8px 8px 0 hsl(var(--primary) / 0.12);
+    transform: translateY(-3px);
+  }
+}

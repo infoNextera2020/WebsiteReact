@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { ArrowRight, Check, ChevronDown, ExternalLink } from 'lucide-react';
+import { ArrowRight, Check, ExternalLink } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Toaster } from '@/components/ui/toaster';
@@ -10,12 +10,190 @@ import NotFound from '@/pages/not-found';
 
 const queryClient = new QueryClient();
 
+const featureStories = [
+  {
+    id: 'projects',
+    number: '100%',
+    label: 'Project Based Learning',
+    kicker: 'Build first',
+    intro: 'You do not learn the work before you do the work.',
+    detail: 'Every concept becomes something you can run, break, explain and ship. The brief is real, the constraints are real, and your portfolio grows as proof that you can solve problems without a step-by-step script.',
+    outcomes: ['Ship working software', 'Learn by solving real constraints', 'Leave with proof, not just notes'],
+  },
+  {
+    id: 'peers',
+    number: '100%',
+    label: 'Peer to Peer Collaboration',
+    kicker: 'Learn together',
+    intro: 'Your fastest feedback loop is the person working beside you.',
+    detail: 'There are no isolated classrooms here. You review code, defend your decisions, ask for help and teach what you just figured out. Collaboration is not an extra module — it is how every day works.',
+    outcomes: ['Give and receive useful feedback', 'Build communication under pressure', 'Grow through shared ownership'],
+  },
+  {
+    id: 'technology',
+    number: 'REAL',
+    label: 'Technology Projects',
+    kicker: 'Stay current',
+    intro: 'The tools change. The ability to understand them is the advantage.',
+    detail: 'From systems and APIs to AI, cybersecurity and connected devices, you work with the kind of technology teams use to create, operate and improve products in the real world.',
+    outcomes: ['Work across modern technology', 'Understand what sits underneath the tools', 'Adapt as the industry moves'],
+  },
+  {
+    id: 'future',
+    number: 'FUTURE',
+    label: 'Ready Skills',
+    kicker: 'Go further',
+    intro: 'Build the judgement to keep learning after the programme ends.',
+    detail: 'NextEra is designed for the moment after graduation too. You leave with the habits to research unfamiliar problems, collaborate with confidence and keep your skills useful in a changing digital economy.',
+    outcomes: ['Think like an engineer', 'Build a career-ready portfolio', 'Keep growing beyond the curriculum'],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Do I need to know how to code before joining?',
+    answer: 'No. The selection game and the programme are designed to reveal and grow your problem-solving ability, not to reward people who already had access to coding classes.',
+  },
+  {
+    question: 'How does peer-to-peer learning actually work?',
+    answer: 'You learn through projects, research and reviews with the people around you. Learners explain their decisions, audit each other’s work against a shared rubric and ask for help when a problem is bigger than one person.',
+  },
+  {
+    question: 'How long is the 01 Coding Academy programme?',
+    answer: 'The full path takes two years: 18 months of full-stack foundations followed by six months in a technology specialisation such as AI, cybersecurity, mobile applications, cloud DevOps or video games.',
+  },
+  {
+    question: 'What are the payment and installment options?',
+    answer: 'We believe finance should never be a barrier to growth. We offer flexible installment plans ranging from 6 months up to 2 years through our trusted payment partners—including Lime, EduCash, and Banque Misr—making the programme accessible and manageable.',
+  },
+  {
+    question: 'What are Quests and how are they evaluated?',
+    answer: 'Quests are individual tasks designed to help you master specific coding concepts and algorithms. Each quest contains instructional videos followed by practical coding tasks. Quests are graded on a 5-star scale; you must successfully pass each task before unlocking the next concept.',
+  },
+  {
+    question: 'What are Checkpoints and how are they evaluated?',
+    answer: 'Checkpoints are timed coding assessments held at the end of each week (Thursday & Friday on campus). They test the knowledge gained from that week’s quests under exam constraints to evaluate individual retention, problem-solving speed, and core mastery without peer assistance.',
+  },
+  {
+    question: 'What are Raids and how are they evaluated?',
+    answer: 'Raids are intensive weekend group projects where you collaborate in teams of 2 to 3 students to build a full project against the clock. Evaluation is based on team collaboration, code functionality, architectural efficiency, and clarity.',
+  },
+  {
+    question: 'Do I need a computer science degree?',
+    answer: 'Not at all. We welcome high school graduates, career switchers, university students and people from non-technical backgrounds. What matters is your logic, commitment and willingness to learn with others.',
+  },
+  {
+    question: 'What happens after I finish?',
+    answer: 'You graduate with a professional portfolio, a technology specialisation and career support connected to global opportunities with top tech companies.',
+  },
+];
+
+function FeatureExplorer() {
+  const [selectedFeature, setSelectedFeature] = useState(0);
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const activeFeature = hoveredFeature ?? selectedFeature;
+  const story = featureStories[activeFeature];
+
+  return (
+    <div className="feature-explorer">
+      <div className="feature-grid" role="list" aria-label="Why NextEra Education">
+        {featureStories.map((feature, index) => (
+          <button
+            className={`feature-card${activeFeature === index ? ' is-active' : ''}`}
+            key={feature.id}
+            type="button"
+            role="listitem"
+            aria-expanded={activeFeature === index}
+            aria-controls="feature-detail-panel"
+            onMouseEnter={() => setHoveredFeature(index)}
+            onMouseLeave={() => setHoveredFeature(null)}
+            onFocus={() => setHoveredFeature(index)}
+            onBlur={() => setHoveredFeature(null)}
+            onClick={() => setSelectedFeature(index)}
+            data-testid={`feature-card-${index}`}
+          >
+            <span className="feature-number">{feature.number}</span>
+            <span className="feature-kicker">0{index + 1} / {feature.kicker}</span>
+            <span className="feature-label">{feature.label}</span>
+            <span className="feature-arrow" aria-hidden="true"><ArrowRight size={17} /></span>
+          </button>
+        ))}
+      </div>
+      <div className="feature-detail-panel" id="feature-detail-panel" aria-live="polite">
+        <div className="feature-detail-content" key={story.id}>
+          <div>
+            <p className="feature-detail-kicker">Inside / {story.label}</p>
+            <h3 className="feature-detail-title">{story.intro}</h3>
+            <p className="feature-detail-copy">{story.detail}</p>
+          </div>
+          <ul className="feature-outcomes">
+            {story.outcomes.map((outcome) => (
+              <li key={outcome}><span aria-hidden="true">+</span>{outcome}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FAQList({ className = '' }: { className?: string }) {
+  return (
+    <div className={`faq-list ${className}`.trim()}>
+      {faqItems.map((item) => (
+        <details className="faq-item" key={item.question}>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 const dayInLife = [
   { time: '09:00', label: 'Challenge drop', detail: "The day's exercises unlock. No brief, no lecture." },
   { time: '11:00', label: 'Swarm & research', detail: 'Docs, man pages, whiteboards, and the person next to you.' },
   { time: '14:00', label: 'Peer reviews', detail: "Defend your code line by line. Review someone else's." },
   { time: '17:00', label: 'Push & audit', detail: 'Submit, get audited, patch what broke.' },
   { time: '20:00', label: 'Community projects', detail: 'Side builds, rush prep, and the stuff you do for fun.' },
+];
+
+const partners = [
+  {
+    name: 'Nok',
+    fullName: 'Nok Human Capital',
+    url: 'https://nokhc.net/',
+    logo: '/partners/nok.png',
+    className: 'logo-nok',
+  },
+  {
+    name: 'Gramian',
+    fullName: 'Gramian Consultancy Group',
+    url: 'https://gramianconsulting.com/',
+    logo: '/partners/gramian.png',
+    className: 'logo-gramian',
+  },
+  {
+    name: 'HiRemoters',
+    fullName: 'HiRemoters',
+    url: 'https://hiremoters.ai/',
+    logo: '/partners/hiremoters.png',
+    className: 'logo-hiremoters',
+  },
+  {
+    name: 'Quantum',
+    fullName: 'Quantum HR',
+    url: 'https://quantumhr.co/',
+    logo: '/partners/quantum.png',
+    className: 'logo-quantum',
+  },
+  {
+    name: 'Magnet',
+    fullName: 'Magnet Empowering Organizations',
+    url: 'https://b-magnet.com/',
+    logo: '/partners/magnet.png',
+    className: 'logo-magnet',
+  },
 ];
 
 function HomePage() {
@@ -48,19 +226,8 @@ function HomePage() {
           <div className="container">
             <p className="eyebrow">The NextEra method</p>
             <h2 id="why-title" className="display section-heading" style={{ color: 'hsl(var(--ink-foreground))' }}>Why NextEra Education?</h2>
-            <div className="feature-grid">
-              {[
-                ['100%', 'Project Based Learning'],
-                ['100%', 'Peer to Peer Collaboration'],
-                ['REAL', 'Technology Projects'],
-                ['FUTURE', 'Ready Skills'],
-              ].map(([number, label], index) => (
-                <div className="feature-card" key={label} data-testid={`feature-card-${index}`}>
-                  <span className="feature-number">{number}</span>
-                  <span className="feature-label">{label}</span>
-                </div>
-              ))}
-            </div>
+            <p className="section-intro feature-intro">Move through the method. Hover or tap a principle to see what it looks like when it becomes part of your daily work.</p>
+            <FeatureExplorer />
           </div>
         </section>
 
@@ -69,12 +236,24 @@ function HomePage() {
           <div className="marquee-window">
             {[0, 1].map((copy) => (
               <div className="marquee-track" key={copy} aria-hidden={copy === 1}>
-                <span className="partner-wordmark techremote">TechRemote</span>
-                <span className="partner-wordmark magnet">Magnet</span>
-                <span className="partner-wordmark remotly">Remotly</span>
-                <span className="partner-wordmark techremote">TechRemote</span>
-                <span className="partner-wordmark magnet">Magnet</span>
-                <span className="partner-wordmark remotly">Remotly</span>
+                {[...partners, ...partners].map((partner, index) => (
+                  <a
+                    key={`${partner.name}-${copy}-${index}`}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="partner-logo-link"
+                    data-testid={`link-partner-${partner.name.toLowerCase()}`}
+                    aria-label={partner.fullName}
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.fullName}
+                      className={`partner-logo-img ${partner.className}`}
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
               </div>
             ))}
           </div>
@@ -99,7 +278,7 @@ function HomePage() {
                   <p className="card-subtitle">Hands on learning with real tools, sensors and connected devices</p>
                   <p className="card-body">Designed for children and teens aged 10 to 18. Learners explore IoT (Internet of Things) through hands on builds and compete in technology challenges made for their age group.</p>
                 </div>
-                <a href="#communities" className="button" data-testid="link-explore-techverse">Explore TechVerse <ArrowRight size={15} /></a>
+                <a href="https://techverse-five.vercel.app/" target="_blank" rel="noopener noreferrer" className="button" data-testid="link-explore-techverse">Explore TechVerse <ArrowRight size={15} /></a>
               </article>
             </div>
           </div>
@@ -142,6 +321,18 @@ function HomePage() {
               <article className="surface-card community-card"><h3 className="card-title">Customized Programs</h3><p className="card-body">Tailored technology programs designed around your learners, objectives, schedule and delivery needs.</p></article>
             </div>
             <div className="center-action"><a href="/about" className="button" data-testid="link-discuss-partnership">Discuss a partnership <ExternalLink size={15} /></a></div>
+          </div>
+        </section>
+
+        <section className="primitive-section dark home-faq" aria-labelledby="home-faq-title">
+          <div className="primitive-inner">
+            <p className="eyebrow">Still deciding?</p>
+            <h2 id="home-faq-title" className="display section-heading">Questions before you start?</h2>
+            <p className="section-intro">A few honest answers for anyone standing at the edge of the pool.</p>
+            <div className="faq-container home-faq-container">
+              <FAQList />
+              <a className="button secondary faq-page-link" href="/faq" data-testid="link-full-faq">Open the full FAQ <ArrowRight size={15} /></a>
+            </div>
           </div>
         </section>
       </main>
@@ -289,7 +480,7 @@ function AcademyPage() {
           <div className="primitive-inner">
             <p className="eyebrow">The selection funnel</p>
             <h2 id="admissions-title" className="display section-heading">How to get in</h2>
-            <p className="section-intro">Our admissions process is completely merit-based. No tuition fees, no CVs, and no prior coding experience required.</p>
+            <p className="section-intro">Our admissions process is completely merit-based. Flexible installment plans from 6 months to 2 years available, with no CVs or prior coding experience required.</p>
             <div className="card-grid" style={{ marginTop: 64 }}>
               {[
                 ['1', 'The Game', 'A 90-minute online cognitive assessment testing your memory and logic. No coding required.'],
@@ -307,8 +498,9 @@ function AcademyPage() {
             <div className="faq-container"><h3 className="card-title">Is this for me?</h3>{[
               ['Do I need a computer science degree?', 'Not at all. We care about your logic and grit, not your previous diplomas. Whether you are a high school graduate, a career-switcher, or a university dropout, you are welcome here.'],
               ['Do I need to know how to code?', 'Absolutely zero prior coding experience is required. The curriculum is designed to take you from writing your very first command to architecting enterprise-grade systems.'],
-              ['How much does the academy cost?', 'The program is completely free upfront for eligible participants. We are invested in your success, bridging the gap directly to guaranteed employment opportunities.'],
-            ].map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}<ChevronDown size={17} /></summary><p>{answer}</p></details>)}</div>
+              ['What are the payment and installment options?', 'We believe finance should never be a barrier to growth. We offer flexible payment plans ranging from 6 months to 2 years through our trusted installment partners—including Lime, EduCash, and Banque Misr—making the program accessible and manageable.'],
+              ['What are Quests, Checkpoints, and Raids?', 'Quests are individual concept challenges graded on a 5-star scale, Checkpoints are mandatory weekly on-campus timed assessments, and Raids are collaborative 3-person weekend team builds evaluated on code quality and teamwork.'],
+            ].map(([question, answer]) => <details className="faq-item" key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>
           </div>
         </section>
 
@@ -320,6 +512,76 @@ function AcademyPage() {
           <div className="check-grid"><CheckList tone="do" title="What to expect" items={['A new challenge every single day, with no lecture attached', 'Peer evaluations you both receive and deliver, out loud', 'Intense collaboration — the room solves faster than you do', 'Very little sleep and a schedule that bleeds into the evening', 'A learning curve steeper than anything you have done before', 'Weekend rushes: group projects delivered against the clock']} /><CheckList tone="dont" title="What NOT to do" items={["Don't isolate yourself — silence is the fastest way to fall behind", "Don't chase the score instead of the understanding", "Don't copy code you cannot defend in a review", "Don't quit after a failed exam; the recovery is part of the signal", "Don't neglect sleep, food and movement — burnout is not grit", "Don't refuse help, and don't refuse to give it"]} /></div>
           <h3 className="card-title" style={{ marginTop: 55, fontSize: '1rem' }}>A day in the Piscine</h3>
           <ol className="day-grid">{dayInLife.map((day) => <li className="day-card" key={day.time}><p className="day-time">{day.time}</p><h4>{day.label}</h4><p>{day.detail}</p></li>)}</ol>
+
+          <div className="piscine-schedule-block" data-testid="piscine-weekly-schedule">
+            <p className="eyebrow" style={{ marginTop: 60 }}>4-Week Filtration (26 Days)</p>
+            <h3 className="display section-heading" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.5rem)', marginTop: 8 }}>Weekly Schedule: Quests, Checkpoints &amp; Raids</h3>
+            <p className="section-intro" style={{ marginTop: 12, marginBottom: 32 }}>
+              The Piscine follows a structured weekly rhythm balancing individual concept mastery, timed skill assessments, and collaborative weekend sprints.
+            </p>
+
+            <div className="piscine-rhythm-grid">
+              <div className="piscine-rhythm-card">
+                <div className="rhythm-tag quest">01 / Sunday – Wednesday</div>
+                <h4 className="rhythm-title">Individual Quests</h4>
+                <p className="rhythm-time">10:00 AM – 10:00 PM · Optional Online / Campus</p>
+                <p className="rhythm-desc">Individual coding tasks designed to master core concepts through videos and hands-on exercises. Graded on a 5-star scale; each task must be completed and passed to unlock subsequent concepts.</p>
+              </div>
+
+              <div className="piscine-rhythm-card">
+                <div className="rhythm-tag checkpoint">02 / Thursday &amp; Friday</div>
+                <h4 className="rhythm-title">Weekly Checkpoints</h4>
+                <p className="rhythm-time">Thu: 5:00 PM – 8:00 PM | Fri: 3:00 PM – 6:00 PM · Mandatory On-Campus</p>
+                <p className="rhythm-desc">Timed coding challenges testing knowledge gained during the week’s quests. Conducted under exam conditions without peer assistance to evaluate individual problem solving and retention.</p>
+              </div>
+
+              <div className="piscine-rhythm-card">
+                <div className="rhythm-tag raid">03 / Saturdays</div>
+                <h4 className="rhythm-title">Weekend Raids</h4>
+                <p className="rhythm-time">Weeks 1, 2 &amp; 3 · Intensive Group Builds</p>
+                <p className="rhythm-desc">Collaborative team sprints (teams of 2 to 3 students) building a complete challenge against the clock. Evaluated by mentors on functionality, code efficiency, clarity, and team synergy.</p>
+              </div>
+            </div>
+
+            <div className="piscine-table-wrap">
+              <table className="piscine-table" aria-label="Piscine weekly schedule matrix">
+                <thead>
+                  <tr>
+                    <th>Phase</th>
+                    <th>Sunday – Wednesday</th>
+                    <th>Thursday &amp; Friday</th>
+                    <th>Saturday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Week 01</strong></td>
+                    <td><span className="badge-quest">Quests</span> Individual Concepts &amp; Logic</td>
+                    <td><span className="badge-checkpoint">Checkpoint 01</span> Timed Offline Exam</td>
+                    <td><span className="badge-raid">Raid 01</span> 3-Person Team Challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Week 02</strong></td>
+                    <td><span className="badge-quest">Quests</span> Data Structures &amp; Shell</td>
+                    <td><span className="badge-checkpoint">Checkpoint 02</span> Timed Offline Exam</td>
+                    <td><span className="badge-raid">Raid 02</span> 3-Person Team Challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Week 03</strong></td>
+                    <td><span className="badge-quest">Quests</span> Algorithms &amp; Systems</td>
+                    <td><span className="badge-checkpoint">Checkpoint 03</span> Timed Offline Exam</td>
+                    <td><span className="badge-raid">Raid 03</span> 3-Person Team Challenge</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Week 04</strong></td>
+                    <td><span className="badge-quest">Quests</span> Advanced Architecture</td>
+                    <td><span className="badge-checkpoint">Final Checkpoint</span> Filtration Exam</td>
+                    <td><span className="badge-core">Cohort Selection</span> Seat Allocation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </Section>
 
         <Section id="game" eyebrow="Pre-Piscine game" title="Your problem-solving DNA" intro="Before the Piscine there is a short online game — roughly 90 minutes, no coding required. It is not an IQ test and there is nothing to revise." dark>
@@ -344,12 +606,45 @@ function AcademyPage() {
   );
 }
 
+function FAQPage() {
+  return (
+    <SiteFrame>
+      <main>
+        <section className="legacy-hero" aria-labelledby="faq-hero-title">
+          <div className="container hero-content">
+            <p className="eyebrow">NextEra Education / FAQ</p>
+            <h1 id="faq-hero-title" className="display hero-title">Questions<span>, answered.</span></h1>
+            <p className="hero-copy hero-subtitle">Thinking about the next step? Start here for the straight answers about our learning model, admissions process and what comes after the programme.</p>
+          </div>
+        </section>
+        <section className="primitive-section dark" aria-labelledby="faq-list-title">
+          <div className="primitive-inner">
+            <p className="eyebrow">No fine print</p>
+            <h2 id="faq-list-title" className="display section-heading">Before you dive in</h2>
+            <div className="faq-container faq-page-container">
+              <FAQList />
+            </div>
+          </div>
+        </section>
+        <section className="legacy-section faq-cta">
+          <div className="container faq-cta-inner">
+            <p className="eyebrow">Ready when you are</p>
+            <h2 className="display section-heading">The best way to understand NextEra is to enter the work.</h2>
+            <a href="/academy#register" className="button" data-testid="link-faq-apply">Start your application <ArrowRight size={15} /></a>
+          </div>
+        </section>
+      </main>
+    </SiteFrame>
+  );
+}
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/academy" component={AcademyPage} />
+      <Route path="/faq" component={FAQPage} />
       <Route component={NotFound} />
     </Switch>
   );
