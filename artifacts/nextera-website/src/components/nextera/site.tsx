@@ -47,7 +47,8 @@ export function Header() {
               <li><Link href="/faq" className={`nav-link${location === '/faq' ? ' active' : ''}`} data-testid="link-faq">FAQ</Link></li>
             </ul>
           </nav>
-          <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'} data-testid="button-theme-toggle">
+          <a href="/admissions#register" className="button" style={{ padding: "6px 14px", fontSize: "0.8rem", borderRadius: 4 }}>Apply Now</a>
+<button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'} data-testid="button-theme-toggle">
             {dark ? <Sun size={17} /> : <Moon size={17} />}
           </button>
           <button className="menu-toggle" type="button" onClick={() => setMenuOpen((open) => !open)} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} data-testid="button-menu-toggle">

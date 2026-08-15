@@ -366,71 +366,45 @@ function HomePage() {
         >
           <div className="container">
             <div className="academy-intro">
-              Students learn by building not by listening and developing
-              practical skills in Full Stack Development, AI, Cybersecurity,
-              Blockchain, Mobile Development, and more. Graduates leave with a
-              professional portfolio, a technology specialization and guaranteed
-              employment for eligible participants who meet the official program
-              requirements.
+              <strong>NextEra Education</strong> is a new breed of coding
+              academy. We strip away the traditional classroom and focus
+              entirely on real-world engineering. Students learn by building not
+              by listening and developing practical skills in Full Stack
+              Development, AI, Cybersecurity, Blockchain, Mobile Development,
+              and more. Graduates leave with a professional portfolio, a
+              technology specialization and guaranteed employment for eligible
+              participants who meet the official program requirements.
             </div>
           </div>
         </section>
 
-        <section className="feature-band" aria-labelledby="why-title">
-          <div className="container">
-            <p className="eyebrow">01 Coding Academy Methodology</p>
+        <section
+          className="primitive-section"
+          style={{
+            background: "hsl(var(--primary))",
+            color: "hsl(var(--primary-foreground))",
+            textAlign: "center",
+            padding: "80px 20px",
+          }}
+        >
+          <div className="container" style={{ maxWidth: 860 }}>
             <h2
-              id="why-title"
-              className="display section-heading"
-              style={{ color: "hsl(var(--ink-foreground))" }}
+              className="display"
+              style={{
+                fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                marginBottom: 24,
+                lineHeight: 1.1,
+              }}
             >
-              The 01 Method
+              No coding experience? No degree? No problem.
             </h2>
-            <p className="section-intro feature-intro">
-              Move through the method of our flagship academy. Hover or tap a
-              principle to see what it looks like when it becomes part of your
-              daily work.
+            <p style={{ fontSize: "1.3rem", opacity: 0.9 }}>
+              If you have the logic and the grit, you belong here. Our cognitive
+              logic game identifies potential, not your past credentials.
             </p>
-            <FeatureExplorer />
           </div>
         </section>
 
-        <section className="marquee-section" aria-label="Technology partners">
-          <p className="marquee-title">Trusted by partners around the globe</p>
-          <div className="marquee-window">
-            {[0, 1].map((copy) => (
-              <div
-                className="marquee-track"
-                key={copy}
-                aria-hidden={copy === 1}
-              >
-                {[...partners, ...partners].map((partner, index) => (
-                  <a
-                    key={`${partner.name}-${copy}-${index}`}
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="partner-logo-link"
-                    data-testid={`link-partner-${partner.name.toLowerCase()}`}
-                    aria-label={partner.fullName}
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={partner.fullName}
-                      className={`partner-logo-img ${partner.className}`}
-                      loading="lazy"
-                    />
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 40 }}>
-            <a href="/partnership" className="button">
-              Become a partner <ArrowRight size={15} />
-            </a>
-          </div>
-        </section>
         <section
           id="programs"
           className="section"
@@ -604,6 +578,25 @@ function HomePage() {
           </div>
         </section>
 
+        <section className="feature-band" aria-labelledby="why-title">
+          <div className="container">
+            <p className="eyebrow">01 Coding Academy Methodology</p>
+            <h2
+              id="why-title"
+              className="display section-heading"
+              style={{ color: "hsl(var(--ink-foreground))" }}
+            >
+              The 01 Method
+            </h2>
+            <p className="section-intro feature-intro">
+              Move through the method of our flagship academy. Hover or tap a
+              principle to see what it looks like when it becomes part of your
+              daily work.
+            </p>
+            <FeatureExplorer />
+          </div>
+        </section>
+
         <section
           id="how-it-works"
           className="primitive-section dark"
@@ -681,6 +674,102 @@ function HomePage() {
           </div>
         </section>
 
+        <section
+          className="legacy-section band"
+          aria-labelledby="campus-vibe-title"
+        >
+          <div className="container">
+            <p className="eyebrow" style={{ textAlign: "center" }}>
+              Life at NextEra
+            </p>
+            <h2
+              id="campus-vibe-title"
+              className="display section-heading"
+              style={{ textAlign: "center", margin: "0 auto" }}
+            >
+              More than a campus. A community.
+            </h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                gap: 24,
+                marginTop: 48,
+              }}
+            >
+              <img
+                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Students+Coding"
+                alt="Students coding"
+                style={{
+                  width: "100%",
+                  borderRadius: 12,
+                  objectFit: "cover",
+                  height: 280,
+                }}
+                loading="lazy"
+              />
+              <img
+                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Hackathon+Energy"
+                alt="Hackathon"
+                style={{
+                  width: "100%",
+                  borderRadius: 12,
+                  objectFit: "cover",
+                  height: 280,
+                }}
+                loading="lazy"
+              />
+              <img
+                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=24/7+Access"
+                alt="24/7 Access"
+                style={{
+                  width: "100%",
+                  borderRadius: 12,
+                  objectFit: "cover",
+                  height: 280,
+                }}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="marquee-section" aria-label="Technology partners">
+          <p className="marquee-title">Trusted by partners around the globe</p>
+          <div className="marquee-window">
+            {[0, 1].map((copy) => (
+              <div
+                className="marquee-track"
+                key={copy}
+                aria-hidden={copy === 1}
+              >
+                {[...partners, ...partners].map((partner, index) => (
+                  <a
+                    key={`${partner.name}-${copy}-${index}`}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="partner-logo-link"
+                    data-testid={`link-partner-${partner.name.toLowerCase()}`}
+                    aria-label={partner.fullName}
+                  >
+                    <img
+                      src={partner.logo}
+                      alt={partner.fullName}
+                      className={`partner-logo-img ${partner.className}`}
+                      loading="lazy"
+                    />
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <a href="/partnership" className="button">
+              Become a partner <ArrowRight size={15} />
+            </a>
+          </div>
+        </section>
         <section className="legacy-section band">
           <div className="container" style={{ textAlign: "center" }}>
             <p className="eyebrow">Industry backing</p>
@@ -878,6 +967,31 @@ function AdmissionsPage() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        <section
+          className="primitive-section dark"
+          aria-labelledby="tuition-title"
+        >
+          <div
+            className="container"
+            style={{ textAlign: "center", maxWidth: 860 }}
+          >
+            <p className="eyebrow">Tuition & Financing</p>
+            <h2
+              id="tuition-title"
+              className="display section-heading"
+              style={{ margin: "0 auto" }}
+            >
+              Learn now. Pay later.
+            </h2>
+            <p className="section-intro" style={{ margin: "24px auto 0" }}>
+              We believe finance should never be a barrier to growth. We offer
+              flexible payment plans ranging from 6 months to 2 years through
+              our trusted installment partners—including Lime, EduCash, and
+              Banque Misr—making the program completely accessible.
+            </p>
           </div>
         </section>
 
@@ -1736,7 +1850,7 @@ function AcademyPage() {
                 >
                   <Gamepad2 size={24} color="hsl(var(--primary))" />
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
-                    Gamified Progression
+                    The Skill Tree & Gamified Progression
                   </h3>
                 </div>
                 <p
@@ -1745,9 +1859,10 @@ function AcademyPage() {
                     lineHeight: 1.6,
                   }}
                 >
-                  Navigate your education like an RPG. Gain experience points
-                  (XP), level up your profile, and unlock advanced technology
-                  branches as you prove your skills.
+                  Navigate your education like an RPG through the legendary{" "}
+                  <strong>Skill Tree</strong>. Gain experience points (XP),
+                  level up your profile, and unlock advanced technology branches
+                  as you prove your skills.
                 </p>
               </div>
               <div
