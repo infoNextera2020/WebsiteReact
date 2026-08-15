@@ -41,7 +41,8 @@ export function Header() {
           <nav aria-label="Primary navigation">
             <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
               <li><Link href="/" className={`nav-link${location === '/' ? ' active' : ''}`} data-testid="link-home">Home</Link></li>
-              <li><Link href="/academy" className={`nav-link${location === '/academy' ? ' active' : ''}`} data-testid="link-academy">01 Coding Academy</Link></li>
+              <li><Link href="/academy" className={`nav-link${location === '/academy' ? ' active' : ''}`} data-testid="link-academy">Curriculum</Link></li>
+              <li><Link href="/admissions" className={`nav-link${location === '/admissions' ? ' active' : ''}`} data-testid="link-admissions">Admissions</Link></li>
               <li><Link href="/about" className={`nav-link${location === '/about' ? ' active' : ''}`} data-testid="link-about">About Us</Link></li>
               <li><Link href="/faq" className={`nav-link${location === '/faq' ? ' active' : ''}`} data-testid="link-faq">FAQ</Link></li>
             </ul>
