@@ -242,7 +242,7 @@ export function HeroActions() {
   return (
     <div className="hero-actions">
       <a href="#game" className="button" data-testid="link-start-game">Start the game <ArrowRight size={15} /></a>
-      <a href="#piscine" className="button secondary" data-testid="link-apply-piscine">Apply to the next Piscine <ArrowDown size={15} /></a>
+      <a href="/admissions#register" className="button secondary" data-testid="link-apply-piscine">Apply to the next Piscine <ArrowDown size={15} /></a>
     </div>
   );
 }

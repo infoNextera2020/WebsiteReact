@@ -330,14 +330,7 @@ function HomePage() {
                 className="button"
                 data-testid="link-explore-programs"
               >
-                Enter the Piscine <ArrowRight size={15} />
-              </a>
-              <a
-                href="#how-it-works"
-                className="button secondary"
-                data-testid="link-how-it-works"
-              >
-                How it works
+                Explore our programs <ArrowRight size={15} />
               </a>
             </div>
             <div
@@ -379,82 +372,6 @@ function HomePage() {
               professional portfolio, a technology specialization and guaranteed
               employment for eligible participants who meet the official program
               requirements.
-            </div>
-            <p className="eyebrow" style={{ marginTop: 60 }}>
-              The pedagogy
-            </p>
-            <h2 id="pedagogy-title" className="display section-heading">
-              Zero teachers. Zero classes.{" "}
-              <span style={{ color: "hsl(var(--primary))" }}>100% code.</span>
-            </h2>
-            <p className="section-intro">
-              Traditional education relies on listening. We rely on building.
-              Our methodology is designed to simulate a real-world tech
-              environment.
-            </p>
-            <div className="card-grid" style={{ marginTop: 45 }}>
-              <article className="legacy-list-card">
-                <h3 className="card-title">Peer-to-Peer Learning</h3>
-                <p className="card-body">
-                  No professors holding your hand. You learn by collaborating,
-                  reviewing your peers' code, and solving complex problems as a
-                  team.
-                </p>
-              </article>
-              <article className="legacy-list-card">
-                <h3 className="card-title">Gamified Progression</h3>
-                <p className="card-body">
-                  Navigate your education like an RPG. Gain experience points
-                  (XP), level up your profile, and unlock advanced technology
-                  branches as you prove your skills.
-                </p>
-              </article>
-              <article className="legacy-list-card">
-                <h3 className="card-title">Project-Based Mastery</h3>
-                <p className="card-body">
-                  No theoretical exams or multiple-choice tests. Your progress
-                  is measured entirely by the working software, scripts, and
-                  architecture you build.
-                </p>
-              </article>
-            </div>
-
-            <h3
-              className="display section-heading"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", marginTop: 80 }}
-            >
-              Peer evaluation: No cheating.
-            </h3>
-            <p className="section-intro">
-              If there are no teachers, who grades your work? Your peers do. Our
-              strict evaluation system ensures you can't just copy-paste your
-              way to graduation.
-            </p>
-            <div className="card-grid" style={{ marginTop: 45 }}>
-              {[
-                [
-                  "01. Build",
-                  "You write the code and build the architecture to solve the project brief. No tutorials, no hand-holding.",
-                ],
-                [
-                  "02. Defend",
-                  "You are randomly assigned to present your project to three peers. You must explain and justify every single line of code.",
-                ],
-                [
-                  "03. Pass or Fail",
-                  "If you can't explain it, you fail. This forces elite communication skills and guarantees deep technical understanding.",
-                ],
-              ].map(([title, body]) => (
-                <article className="legacy-list-card" key={title}>
-                  <h3
-                    className="card-title"
-                    style={{ color: "hsl(var(--primary))" }}
-                  >
-                    {title}
-                  </h3>
-                  <p className="card-body">{body}</p>
-                </article>
-              ))}
             </div>
           </div>
         </section>
@@ -507,6 +424,11 @@ function HomePage() {
                 ))}
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
+            <a href="/partnership" className="button">
+              Become a partner <ArrowRight size={15} />
+            </a>
           </div>
         </section>
         <section
@@ -670,12 +592,12 @@ function HomePage() {
                   </p>
                 </div>
                 <a
-                  href="#"
-                  className="button secondary"
+                  href="/partnership"
+                  className="button"
                   data-testid="link-explore-custom"
                   style={{ marginTop: "auto", alignSelf: "flex-start" }}
                 >
-                  Contact us <ExternalLink size={15} />
+                  Contact us <ArrowRight size={15} />
                 </a>
               </article>
             </div>
@@ -717,7 +639,7 @@ function HomePage() {
                   },
                 ]}
               />
-              <div className="card-grid" style={{ marginTop: 22 }}>
+              <div className="card-grid" style={{ marginTop: 64 }}>
                 <Card title="Faster feedback loops">
                   Feedback arrives in hours from the people beside you, not in
                   weeks from a marker you never meet.
@@ -1298,83 +1220,85 @@ function AdmissionsPage() {
           style={{ background: "hsl(var(--background))" }}
         >
           <div className="primitive-inner">
-            <div style={{ marginBottom: 40 }}>
+            <div style={{ maxWidth: 800, margin: "0 auto" }}>
+              <div style={{ marginBottom: 40 }}>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "8px 16px",
+                    borderRadius: 4,
+                    background: "hsl(var(--primary) / .1)",
+                    color: "hsl(var(--primary))",
+                    border: "1px solid hsl(var(--primary) / .2)",
+                    fontWeight: 700,
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    fontSize: ".85rem",
+                    marginBottom: 24,
+                  }}
+                >
+                  <CheckCircle size={16} /> Eligibility
+                </div>
+                <h2 className="display section-heading">
+                  Who is eligible to apply?
+                </h2>
+                <p className="section-intro">
+                  Tech isn't just for math geniuses. NextEra is built for
+                  everyone — gamers, artists, career switchers, and fresh
+                  graduates alike. We don't care about degrees or CVs. We only
+                  care about your logic and dedication.
+                </p>
+              </div>
+
               <div
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "8px 16px",
-                  borderRadius: 4,
-                  background: "hsl(var(--primary) / .1)",
-                  color: "hsl(var(--primary))",
-                  border: "1px solid hsl(var(--primary) / .2)",
-                  fontWeight: 700,
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  fontSize: ".85rem",
-                  marginBottom: 24,
+                  maxWidth: 800,
+                  padding: 40,
+                  background: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: 8,
                 }}
               >
-                <CheckCircle size={16} /> Eligibility
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 24,
+                  }}
+                >
+                  {[
+                    "No prior coding experience is required or expected.",
+                    "No high school diploma, university degree, or certificates needed.",
+                    "No CVs, resumes, or letters of recommendation accepted.",
+                    "Must be able to commit full-time during the 4-week Piscine.",
+                    "Open to all backgrounds — the only thing that matters is how you think.",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 16,
+                        color: "hsl(var(--foreground))",
+                        fontWeight: 500,
+                        fontSize: "1.1rem",
+                      }}
+                    >
+                      <CheckCircle
+                        size={24}
+                        color="hsl(var(--primary))"
+                        style={{ flexShrink: 0 }}
+                      />{" "}
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="display section-heading">
-                Who is eligible to apply?
-              </h2>
-              <p className="section-intro">
-                Tech isn't just for math geniuses. NextEra is built for everyone
-                — gamers, artists, career switchers, and fresh graduates alike.
-                We don't care about degrees or CVs. We only care about your
-                logic and dedication.
-              </p>
-            </div>
-
-            <div
-              style={{
-                maxWidth: 800,
-                padding: 40,
-                background: "hsl(var(--card))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: 8,
-              }}
-            >
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 24,
-                }}
-              >
-                {[
-                  "No prior coding experience is required or expected.",
-                  "No high school diploma, university degree, or certificates needed.",
-                  "No CVs, resumes, or letters of recommendation accepted.",
-                  "Must be able to commit full-time during the 4-week Piscine.",
-                  "Open to all backgrounds — the only thing that matters is how you think.",
-                ].map((item, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 16,
-                      color: "hsl(var(--foreground))",
-                      fontWeight: 500,
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    <CheckCircle
-                      size={24}
-                      color="hsl(var(--primary))"
-                      style={{ flexShrink: 0 }}
-                    />{" "}
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
@@ -1605,31 +1529,26 @@ function AboutPage() {
                 Start the game <ArrowRight size={15} />
               </a>
             </div>
-            <div className="faq-container">
-              <h3 className="card-title">Is this for me?</h3>
-              {[
-                [
-                  "Do I need a computer science degree?",
-                  "Not at all. We care about your logic and grit, not your previous diplomas. Whether you are a high school graduate, a career-switcher, or a university dropout, you are welcome here.",
-                ],
-                [
-                  "Do I need to know how to code?",
-                  "Absolutely zero prior coding experience is required. The curriculum is designed to take you from writing your very first command to architecting enterprise-grade systems.",
-                ],
-                [
-                  "What are the payment and installment options?",
-                  "We believe finance should never be a barrier to growth. We offer flexible payment plans ranging from 6 months to 2 years through our trusted installment partners—including Lime, EduCash, and Banque Misr—making the program accessible and manageable.",
-                ],
-                [
-                  "What are Quests, Checkpoints, and Raids?",
-                  "Quests are individual concept challenges graded on a 5-star scale, Checkpoints are mandatory weekly on-campus timed assessments, and Raids are collaborative 3-person weekend team builds evaluated on code quality and teamwork.",
-                ],
-              ].map(([question, answer]) => (
-                <details className="faq-item" key={question}>
-                  <summary>{question}</summary>
-                  <p>{answer}</p>
-                </details>
-              ))}
+            <div
+              className="campus-image-placeholder"
+              style={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Campus+Vibe"
+                alt="Campus Vibe"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: 16,
+                  border: "1px solid hsl(var(--border))",
+                  objectFit: "cover",
+                }}
+              />
             </div>
           </div>
         </section>
@@ -1739,6 +1658,289 @@ function AcademyPage() {
         </section>
 
         {/* 2. Pedagogy & Peer Evaluation */}
+        <section
+          className="primitive-section"
+          style={{ background: "hsl(var(--background))" }}
+        >
+          <div className="primitive-inner">
+            <div style={{ marginBottom: 64 }}>
+              <p className="eyebrow">The pedagogy</p>
+              <h2
+                className="display section-heading"
+                style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
+              >
+                Zero teachers. Zero classes. 100% code.
+              </h2>
+              <p className="section-intro">
+                Traditional education relies on listening. We rely on building.
+                Our methodology is designed to simulate a real-world tech
+                environment.
+              </p>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                gap: 32,
+                marginBottom: 80,
+              }}
+            >
+              <div
+                style={{
+                  padding: 32,
+                  background: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: 8,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    marginBottom: 16,
+                  }}
+                >
+                  <Users size={24} color="hsl(var(--primary))" />
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                    Peer-to-Peer Learning
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    color: "hsl(var(--muted-foreground))",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  No professors holding your hand. You learn by collaborating,
+                  reviewing your peers' code, and solving complex problems as a
+                  team.
+                </p>
+              </div>
+              <div
+                style={{
+                  padding: 32,
+                  background: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: 8,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    marginBottom: 16,
+                  }}
+                >
+                  <Gamepad2 size={24} color="hsl(var(--primary))" />
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                    Gamified Progression
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    color: "hsl(var(--muted-foreground))",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Navigate your education like an RPG. Gain experience points
+                  (XP), level up your profile, and unlock advanced technology
+                  branches as you prove your skills.
+                </p>
+              </div>
+              <div
+                style={{
+                  padding: 32,
+                  background: "hsl(var(--card))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: 8,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    marginBottom: 16,
+                  }}
+                >
+                  <Terminal size={24} color="hsl(var(--primary))" />
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                    Project-Based Mastery
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    color: "hsl(var(--muted-foreground))",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  No theoretical exams or multiple-choice tests. Your progress
+                  is measured entirely by the working software, scripts, and
+                  architecture you build.
+                </p>
+              </div>
+            </div>
+
+            <div
+              style={{
+                background: "hsl(var(--ink-soft))",
+                padding: "64px 48px",
+                borderRadius: 16,
+                border: "1px solid hsl(var(--border))",
+              }}
+            >
+              <div style={{ marginBottom: 48, textAlign: "center" }}>
+                <h3
+                  className="display section-heading"
+                  style={{
+                    fontSize: "clamp(2rem, 4vw, 2.8rem)",
+                    marginBottom: 16,
+                    margin: "0 auto",
+                  }}
+                >
+                  Peer evaluation: No cheating
+                </h3>
+                <p
+                  style={{
+                    color: "hsl(var(--muted-foreground))",
+                    fontSize: "1.1rem",
+                    maxWidth: 700,
+                    margin: "0 auto",
+                  }}
+                >
+                  If there are no teachers, who grades your work? Your peers do.
+                  Our strict evaluation system ensures you can't just copy-paste
+                  your way to graduation.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  gap: 24,
+                }}
+              >
+                <div
+                  style={{
+                    padding: 32,
+                    background: "hsl(var(--card))",
+                    border: "1px solid hsl(var(--primary) / .2)",
+                    borderRadius: 8,
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -16,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "hsl(var(--primary))",
+                      color: "hsl(var(--primary-foreground))",
+                      fontWeight: 800,
+                      padding: "4px 12px",
+                      borderRadius: 100,
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    01. Build
+                  </div>
+                  <p
+                    style={{
+                      marginTop: 12,
+                      color: "hsl(var(--foreground))",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                    }}
+                  >
+                    You write the code and build the architecture to solve the
+                    project brief. No tutorials, no hand-holding.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    padding: 32,
+                    background: "hsl(var(--card))",
+                    border: "1px solid hsl(var(--primary) / .2)",
+                    borderRadius: 8,
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -16,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "hsl(var(--primary))",
+                      color: "hsl(var(--primary-foreground))",
+                      fontWeight: 800,
+                      padding: "4px 12px",
+                      borderRadius: 100,
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    02. Defend
+                  </div>
+                  <p
+                    style={{
+                      marginTop: 12,
+                      color: "hsl(var(--foreground))",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                    }}
+                  >
+                    You are randomly assigned to present your project to three
+                    peers. You must explain and justify every single line of
+                    code.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    padding: 32,
+                    background: "hsl(var(--card))",
+                    border: "1px solid hsl(var(--primary) / .2)",
+                    borderRadius: 8,
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -16,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "hsl(var(--primary))",
+                      color: "hsl(var(--primary-foreground))",
+                      fontWeight: 800,
+                      padding: "4px 12px",
+                      borderRadius: 100,
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    03. Pass or Fail
+                  </div>
+                  <p
+                    style={{
+                      marginTop: 12,
+                      color: "hsl(var(--foreground))",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                    }}
+                  >
+                    If you can't explain it, you fail. This forces elite
+                    communication skills and guarantees deep technical
+                    understanding.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* 3. The 2-Year Program Timeline */}
         <section id="programme" className="legacy-section">
@@ -1834,7 +2036,7 @@ function AcademyPage() {
                 {
                   name: "Full-Stack Web Dev",
                   icon: Layers,
-                  desc: "Build responsive web apps with React, Node.js, REST APIs, and modern deployment pipelines.",
+                  desc: "Build enterprise-grade web apps with Java, Spring Boot, REST APIs, and modern deployment pipelines.",
                 },
                 {
                   name: "AI & Machine Learning",
@@ -2207,6 +2409,106 @@ function FAQPage() {
   );
 }
 
+function PartnershipPage() {
+  return (
+    <SiteFrame>
+      <main>
+        <section className="legacy-hero" aria-labelledby="partnership-title">
+          <div
+            className="container hero-content"
+            style={{ textAlign: "center" }}
+          >
+            <p className="eyebrow">Partnership</p>
+            <h1 id="partnership-title" className="display hero-title">
+              Become a Partner
+            </h1>
+            <p className="hero-copy hero-subtitle">
+              Please provide your details and our partnership coordinator will
+              reach out to you.
+            </p>
+          </div>
+        </section>
+        <section className="primitive-section" style={{ paddingBottom: 100 }}>
+          <div
+            className="container"
+            style={{ maxWidth: 640, margin: "0 auto" }}
+          >
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Thanks for your interest!");
+              }}
+              style={{
+                background: "hsl(var(--card))",
+                padding: 48,
+                borderRadius: 16,
+                border: "1px solid hsl(var(--border))",
+                boxShadow: "0 12px 35px hsl(var(--shadow-color) / 0.1)",
+              }}
+            >
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: 24 }}
+              >
+                <input
+                  className="floating-control"
+                  type="text"
+                  placeholder="Name"
+                  required
+                />
+                <input
+                  className="floating-control"
+                  type="text"
+                  placeholder="Company Name"
+                  required
+                />
+                <input
+                  className="floating-control"
+                  type="email"
+                  placeholder="Email"
+                  required
+                />
+                <input
+                  className="floating-control"
+                  type="tel"
+                  placeholder="Phone"
+                  required
+                />
+                <select
+                  className="floating-control"
+                  required
+                  style={{
+                    appearance: "none",
+                    color: "hsl(var(--muted-foreground))",
+                  }}
+                >
+                  <option value="">--Please choose an option--</option>
+                  <option value="Hiring">Hiring Partner</option>
+                  <option value="Curriculum">Curriculum Partner</option>
+                  <option value="Sponsorship">Sponsorship</option>
+                  <option value="Other">Other</option>
+                </select>
+                <textarea
+                  className="floating-control"
+                  placeholder="Comment"
+                  rows={4}
+                  required
+                ></textarea>
+                <button
+                  className="button"
+                  style={{ marginTop: 8 }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </SiteFrame>
+  );
+}
+
 function Router() {
   return (
     <Switch>
@@ -2215,6 +2517,7 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/academy" component={AcademyPage} />
       <Route path="/faq" component={FAQPage} />
+      <Route path="/partnership" component={PartnershipPage} />
       <Route component={NotFound} />
     </Switch>
   );

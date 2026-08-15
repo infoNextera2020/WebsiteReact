@@ -902,13 +902,13 @@ button {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: stretch;
-  gap: 12px;
+  gap: 32px;
 }
 .step-flow > li {
   display: contents;
 }
 .step-card {
-  padding: 22px;
+  padding: 32px;
   border: 2px solid hsl(var(--ink));
   border-radius: 6px;
   background: hsl(var(--card));
@@ -1068,7 +1068,7 @@ button {
 .day-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 32px;
   margin-top: 20px;
 }
 .day-card {
@@ -1118,11 +1118,11 @@ button {
 .quadrant-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 32px;
   margin-top: 18px;
 }
 .quadrant {
-  padding: 22px;
+  padding: 32px;
   border: 1px solid hsl(var(--ink-foreground) / 0.15);
   border-radius: 6px;
   background: hsl(var(--ink) / 0.4);
@@ -1713,7 +1713,7 @@ button {
   position: absolute;
   width: max-content;
   max-width: 270px;
-  padding: 22px;
+  padding: 32px;
   background: hsl(var(--card) / 0.85);
   backdrop-filter: blur(14px);
   border: 1px solid hsl(var(--border));
@@ -1875,49 +1875,13 @@ button {
   background: hsl(var(--card));
   box-shadow: 0 12px 35px hsl(var(--shadow-color) / 0.1);
 }
-.floating-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-.floating-control {
-  width: 100%;
-  padding: 21px 16px 9px;
-  border: 1px solid hsl(var(--border));
-  border-radius: 6px;
-  outline: 0;
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-.floating-control:focus {
-  border-color: hsl(var(--primary));
-  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.14);
-}
-.floating-label {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  color: hsl(var(--muted-foreground));
-  font-size: 0.9rem;
-  font-weight: 600;
-  pointer-events: none;
-  transform: translateY(-50%);
-  transition:
-    top 0.2s ease,
-    color 0.2s ease,
-    font-size 0.2s ease;
-}
-.floating-label span {
-  color: hsl(var(--primary));
-}
+
+
+
+
+
 .floating-control:focus ~ .floating-label,
-.floating-control:not(:placeholder-shown) ~ .floating-label {
-  top: 9px;
-  color: hsl(var(--primary));
-  font-size: 0.66rem;
-}
+.floating-control:not(:placeholder-shown) ~ 
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1926,7 +1890,7 @@ button {
 .checkbox-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 32px;
   margin-top: 11px;
   color: hsl(var(--muted-foreground));
   font-size: 0.84rem;
@@ -1941,13 +1905,7 @@ button {
   accent-color: hsl(var(--primary));
   margin-top: 4px;
 }
-.form-label {
-  display: block;
-  margin: 24px 0 8px;
-  color: hsl(var(--foreground));
-  font-size: 0.78rem;
-  font-weight: 700;
-}
+
 .form-success {
   margin: 15px 0 0;
   color: hsl(93 61% 37%);
@@ -2729,4 +2687,61 @@ button {
   max-height: 120px;
   opacity: 1;
   margin-top: 4px;
+}
+
+
+
+
+
+
+
+.floating-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.floating-control {
+  width: 100%;
+  padding: 21px 16px 9px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  outline: 0;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.floating-control:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.14);
+}
+.floating-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9rem;
+  font-weight: 600;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition:
+    top 0.2s ease,
+    color 0.2s ease,
+    font-size 0.2s ease;
+}
+.floating-label span {
+  color: hsl(var(--primary));
+}
+.floating-control:focus ~ .floating-label,
+.floating-control:not(:placeholder-shown) ~ .floating-label {
+  top: 9px;
+  color: hsl(var(--primary));
+  font-size: 0.66rem;
+}
+.form-label {
+  display: block;
+  margin: 24px 0 8px;
+  color: hsl(var(--foreground));
+  font-size: 0.78rem;
+  font-weight: 700;
 }
