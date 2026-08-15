@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, type FormEvent } from "react";
 import {
   ChevronDown,
@@ -213,14 +214,13 @@ export default function HomePage() {
                     built to prepare learners for the real job market.
                   </p>
                 </div>
-                <a
-                  href="/academy"
+                <Link href="/academy"
                   className="button"
                   data-testid="link-explore-coding"
                   style={{ marginTop: "auto", alignSelf: "flex-start" }}
                 >
                   Explore 01 Coding <ArrowRight size={15} />
-                </a>
+                </Link>
               </article>
               <article
                 className="program-card"
@@ -316,14 +316,13 @@ export default function HomePage() {
                     needs.
                   </p>
                 </div>
-                <a
-                  href="/partnership"
+                <Link href="/partnership"
                   className="button"
                   data-testid="link-explore-custom"
                   style={{ marginTop: "auto", alignSelf: "flex-start" }}
                 >
                   Contact us <ArrowRight size={15} />
-                </a>
+                </Link>
               </article>
             </div>
           </div>
@@ -545,9 +544,9 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
-            <a href="/partnership" className="button">
+            <Link href="/partnership" className="button">
               Become a partner <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
         </section>
         <section className="legacy-section band">
@@ -568,14 +567,13 @@ export default function HomePage() {
               in agile teams, and solve un-googleable problems. NextEra produces
               exactly that.
             </p>
-            <a
-              href="/admissions#register"
+            <Link href="/admissions#register"
               className="button"
               style={{ marginTop: 30 }}
               data-testid="link-industry-apply"
             >
               Apply now <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
         </section>
         <section

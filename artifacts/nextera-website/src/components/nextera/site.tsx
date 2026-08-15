@@ -101,21 +101,33 @@ export function Header() {
                 </Link>
               </li>
             </ul>
-            <a
+            <Link
               href="/admissions#register"
               className="mobile-apply-btn"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                if (window.location.pathname === '/admissions') {
+                  const el = document.getElementById('register');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
               Apply Now
-            </a>
+            </Link>
           </nav>
-          <a
+          <Link
             href="/admissions#register"
             className="button header-apply-btn"
             style={{ padding: "6px 14px", fontSize: "0.8rem", borderRadius: 4 }}
+            onClick={() => {
+              if (window.location.pathname === '/admissions') {
+                const el = document.getElementById('register');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
           >
             Apply Now
-          </a>
+          </Link>
           <button
             className="theme-toggle"
             type="button"
@@ -438,16 +450,22 @@ function TerminalLoader() {
 export function HeroActions() {
   return (
     <div className="hero-actions">
-      <a href="#game" className="button" data-testid="link-start-game">
+      <Link href="#game" className="button" data-testid="link-start-game">
         Start the game <ArrowRight size={15} />
-      </a>
-      <a
+      </Link>
+      <Link
         href="/admissions#register"
         className="button secondary"
         data-testid="link-apply-piscine"
+        onClick={() => {
+          if (window.location.pathname === '/admissions') {
+            const el = document.getElementById('register');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
       >
         Apply to the next Piscine <ArrowDown size={15} />
-      </a>
+      </Link>
     </div>
   );
 }

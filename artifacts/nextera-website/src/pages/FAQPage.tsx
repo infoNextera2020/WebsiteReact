@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, type FormEvent } from "react";
 import {
   ChevronDown,
@@ -92,13 +93,12 @@ export default function FAQPage() {
             <h2 className="display section-heading">
               The best way to understand NextEra is to enter the work.
             </h2>
-            <a
-              href="/admissions#register"
+            <Link href="/admissions#register"
               className="button"
               data-testid="link-faq-apply"
             >
               Start your application <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

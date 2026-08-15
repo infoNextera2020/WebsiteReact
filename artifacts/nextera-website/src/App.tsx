@@ -53,6 +53,26 @@ import AcademyPage from "./pages/AcademyPage";
 import FAQPage from "./pages/FAQPage";
 import PartnershipPage from "./pages/PartnershipPage";
 
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+
+function ScrollToTop() {
+  const [pathname] = useLocation();
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.location.hash) {
+        const el = document.querySelector(window.location.hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
+      window.scrollTo(0, 0);
+    }, 100);
+  }, [pathname]);
+  return null;
+}
+
 const queryClient = new QueryClient();
 
 function Router() {
@@ -74,6 +94,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <ScrollToTop />
           <Router />
         </WouterRouter>
         <Toaster />

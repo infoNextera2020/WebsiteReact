@@ -163,8 +163,25 @@ export const faqItems = [
   },
   {
     question: "Where is the Next Era campus located?",
-    answer:
-      "Our campus is located in the heart of Heliopolis (Masr El Gedida), Cairo, on Ibn Sandar Street. The facility features state-of-the-art infrastructure, high-speed fiber internet, ergonomic collaborative work zones, and dedicated project rooms.",
+    answer: (
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <span>
+          Our campus is located in the heart of Heliopolis (Masr El Gedida),
+          Cairo, on Ibn Sandar Street. The facility features state-of-the-art
+          infrastructure, high-speed fiber internet, ergonomic collaborative
+          work zones, and dedicated project rooms.
+        </span>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4852922114757!2d31.2981031!3d30.0803512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fc009d1bd39%3A0x2a912bb8d87ea286!2sIbn%20Sandar%2C%20El-Qobba%2C%20El%20Zeitoun%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+          width="100%"
+          height="250"
+          style={{ border: 0, borderRadius: 8, marginTop: 12 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    ),
   },
   {
     question: "Is daily attendance on campus mandatory?",

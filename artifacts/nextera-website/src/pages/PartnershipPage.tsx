@@ -68,7 +68,10 @@ export default function PartnershipPage() {
             <h1 id="partnership-title" className="display hero-title">
               Become a Partner
             </h1>
-            <p className="hero-copy hero-subtitle">
+            <p
+              className="hero-copy hero-subtitle"
+              style={{ margin: "0 auto", textAlign: "center" }}
+            >
               Please provide your details and our partnership coordinator will
               reach out to you.
             </p>
@@ -80,71 +83,124 @@ export default function PartnershipPage() {
             style={{ maxWidth: 640, margin: "0 auto" }}
           >
             <form
+              className="form-container"
               onSubmit={(e) => {
                 e.preventDefault();
                 alert("Thanks for your interest!");
               }}
-              style={{
-                background: "hsl(var(--card))",
-                padding: 48,
-                borderRadius: 16,
-                border: "1px solid hsl(var(--border))",
-                boxShadow: "0 12px 35px hsl(var(--shadow-color) / 0.1)",
-              }}
             >
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: 24 }}
-              >
-                <input
-                  className="floating-control"
-                  type="text"
-                  placeholder="Name"
-                  required
-                />
-                <input
-                  className="floating-control"
-                  type="text"
-                  placeholder="Company Name"
-                  required
-                />
-                <input
-                  className="floating-control"
-                  type="email"
-                  placeholder="Email"
-                  required
-                />
-                <input
-                  className="floating-control"
-                  type="tel"
-                  placeholder="Phone"
-                  required
-                />
-                <select
-                  className="floating-control"
-                  required
-                  style={{
-                    appearance: "none",
-                    color: "hsl(var(--muted-foreground))",
-                  }}
-                >
-                  <option value="">--Please choose an option--</option>
-                  <option value="Hiring">Hiring Partner</option>
-                  <option value="Curriculum">Curriculum Partner</option>
-                  <option value="Sponsorship">Sponsorship</option>
-                  <option value="Other">Other</option>
-                </select>
-                <textarea
-                  className="floating-control"
-                  placeholder="Comment"
-                  rows={4}
-                  required
-                ></textarea>
+              <div style={{ marginTop: 10 }}>
+                <div className="floating-group">
+                  <input
+                    className="floating-control"
+                    id="partner-name"
+                    type="text"
+                    placeholder=" "
+                    required
+                  />
+                  <label className="floating-label" htmlFor="partner-name">
+                    Name <span>*</span>
+                  </label>
+                </div>
+
+                <div className="floating-group">
+                  <input
+                    className="floating-control"
+                    id="company-name"
+                    type="text"
+                    placeholder=" "
+                    required
+                  />
+                  <label className="floating-label" htmlFor="company-name">
+                    Company Name <span>*</span>
+                  </label>
+                </div>
+
+                <div className="floating-group">
+                  <input
+                    className="floating-control"
+                    id="email"
+                    type="email"
+                    placeholder=" "
+                    required
+                  />
+                  <label className="floating-label" htmlFor="email">
+                    Email Address <span>*</span>
+                  </label>
+                </div>
+
+                <div className="floating-group">
+                  <input
+                    className="floating-control"
+                    id="phone"
+                    type="tel"
+                    placeholder=" "
+                    required
+                  />
+                  <label className="floating-label" htmlFor="phone">
+                    Phone Number <span>*</span>
+                  </label>
+                </div>
+
+                <div className="floating-group">
+                  <select
+                    className="floating-control"
+                    id="partnership-type"
+                    required
+                    style={{
+                      appearance: "none",
+                      color: "hsl(var(--foreground))",
+                      paddingTop: 18, // Extra padding to clear the label
+                    }}
+                  >
+                    <option value="" disabled selected hidden></option>
+                    <option value="Hiring" style={{ color: "initial" }}>
+                      Hiring Partner
+                    </option>
+                    <option value="Curriculum" style={{ color: "initial" }}>
+                      Curriculum Partner
+                    </option>
+                    <option value="Sponsorship" style={{ color: "initial" }}>
+                      Sponsorship
+                    </option>
+                    <option value="Other" style={{ color: "initial" }}>
+                      Other
+                    </option>
+                  </select>
+                  <label className="floating-label" htmlFor="partnership-type">
+                    Partnership Type <span>*</span>
+                  </label>
+                </div>
+
+                <div className="floating-group">
+                  <textarea
+                    className="floating-control"
+                    id="comment"
+                    placeholder=" "
+                    rows={4}
+                    required
+                    style={{
+                      paddingTop: 20,
+                      resize: "vertical",
+                      minHeight: 120,
+                    }}
+                  ></textarea>
+                  <label className="floating-label" htmlFor="comment">
+                    Message / Comment <span>*</span>
+                  </label>
+                </div>
+
                 <button
                   className="button"
-                  style={{ marginTop: 8 }}
+                  style={{
+                    width: "100%",
+                    marginTop: 12,
+                    padding: "16px 0",
+                    fontSize: "1.1rem",
+                  }}
                   type="submit"
                 >
-                  Submit
+                  Submit Partnership Request
                 </button>
               </div>
             </form>

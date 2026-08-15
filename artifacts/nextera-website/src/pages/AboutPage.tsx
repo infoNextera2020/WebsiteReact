@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, type FormEvent } from "react";
 import {
   ChevronDown,
@@ -143,13 +144,12 @@ export default function AboutPage() {
                 zones, compete in weekend hackathons, and network with industry
                 leaders at our exclusive milestone events.
               </p>
-              <a
-                href="/admissions#register"
+              <Link href="/admissions#register"
                 className="button"
                 data-testid="link-campus-apply"
               >
                 Start the game <ArrowRight size={15} />
-              </a>
+              </Link>
             </div>
             <div
               className="campus-image-placeholder"

@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, type FormEvent } from "react";
 import {
   ChevronDown,
@@ -764,13 +765,12 @@ export default function AcademyPage() {
             <p className="section-intro" style={{ marginInline: "auto" }}>
               You cannot simply buy your way in—you have to survive the Piscine.
             </p>
-            <a
-              href="/admissions#register"
+            <Link href="/admissions#register"
               className="button"
               style={{ marginTop: 30 }}
             >
               Learn how to apply <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

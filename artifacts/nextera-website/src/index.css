@@ -740,7 +740,7 @@ button {
   box-shadow: none;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.75;
+  opacity: 1;
   transition:
     transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.25s ease,
@@ -791,19 +791,19 @@ button {
 }
 
 :root:not(.dark) .logo-nok {
-  filter: invert(0.88) contrast(1.2);
+  filter: invert(1) brightness(1.5); /* Make pure white */
 }
 :root:not(.dark) .logo-hiremoters {
-  filter: invert(0.85) contrast(1.1);
+  filter: invert(1) brightness(1.5); /* Make pure white */
 }
 .dark .logo-magnet {
-  filter: brightness(1.6) contrast(1.1);
+  filter: brightness(2.5) contrast(1.2); /* Boost brightness */
 }
 .dark .logo-quantum {
-  filter: brightness(1.4) contrast(1.1);
+  filter: brightness(2) contrast(1.2); /* Boost brightness */
 }
 .dark .logo-gramian {
-  filter: brightness(1.25);
+  filter: brightness(2) contrast(1.2);
 }
 .program-grid {
   display: grid;
