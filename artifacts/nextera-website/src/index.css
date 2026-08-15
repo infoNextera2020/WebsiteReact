@@ -2745,3 +2745,26 @@ button {
   font-size: 0.78rem;
   font-weight: 700;
 }
+
+/* Mobile Navigation Polish */
+.header-apply-btn {
+  display: flex;
+}
+.mobile-apply-btn {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header-apply-btn {
+    display: none !important;
+  }
+  .mobile-apply-btn {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+}
