@@ -160,9 +160,14 @@ button {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .site-header.scrolled {
-  background: transparent;
-  border-color: transparent;
-  backdrop-filter: none;
+  background: transparent !important;
+  border-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  pointer-events: none; /* Let clicks pass through the transparent part */
+}
+.site-header.scrolled .nav-container {
+  pointer-events: auto; /* Re-enable clicks on the pill itself */
 }
 .nav-container {
   min-height: 92px;
@@ -177,7 +182,7 @@ button {
 }
 .site-header.scrolled .nav-container {
   min-height: 64px;
-  margin-top: 20px;
+  margin-top: 32px;
   padding: 0 28px;
   background: hsl(var(--card) / 0.75);
   backdrop-filter: blur(16px);
@@ -1069,7 +1074,7 @@ button {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 32px;
-  margin-top: 20px;
+  margin-top: 32px;
 }
 .day-card {
   padding: 19px;
@@ -2753,7 +2758,7 @@ button {
 .mobile-apply-btn {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .header-apply-btn {
     display: none !important;
   }

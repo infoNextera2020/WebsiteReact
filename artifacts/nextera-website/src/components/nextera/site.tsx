@@ -100,20 +100,24 @@ export function Header() {
                   FAQ
                 </Link>
               </li>
+            <li>
+                <Link
+                  href="/admissions#register"
+                  className="mobile-apply-btn"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    if (window.location.pathname === '/admissions') {
+                      const el = document.getElementById('register');
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                >
+                  Apply Now
+                </Link>
+              </li>
             </ul>
-            <Link
-              href="/admissions#register"
-              className="mobile-apply-btn"
-              onClick={() => {
-                setMenuOpen(false);
-                if (window.location.pathname === '/admissions') {
-                  const el = document.getElementById('register');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-            >
-              Apply Now
-            </Link>
+
+            
           </nav>
           <Link
             href="/admissions#register"

@@ -113,9 +113,9 @@ export const faqItems = [
       "No prior coding experience is required! Our curriculum is designed to take complete beginners from ground zero to job-ready software engineers. We welcome applicants from all academic and professional backgrounds—including law, engineering, arts, commerce, and human sciences. What truly matters is your logical mindset, curiosity, drive, and commitment to learning.",
   },
   {
-    question: "What are the admission steps to get accepted into Next Era?",
+    question: "What are the admission steps to get accepted into NextEra?",
     answer:
-      "The admission journey consists of three straightforward, exciting stages: 1. Online Logic Assessment: An interactive online logic test evaluating your analytical reasoning (no prior programming needed). 2. The Piscine (4-Week Bootcamp): An immersive, hands-on coding bootcamp where you build real projects. 3. Main Cohort Enrollment: Candidates who pass the Piscine are officially admitted into the core curriculum.",
+      "The admission journey consists of two straightforward, exciting stages: 1. Online Logic Assessment: An interactive online logic test evaluating your analytical reasoning (no prior programming needed). 2. The Piscine (4-Week Bootcamp): An immersive, hands-on coding bootcamp where you build real projects. Once you pass the Piscine, you are officially admitted into the NextEra main cohort.",
   },
   {
     question:
@@ -137,18 +137,18 @@ export const faqItems = [
     question:
       "Do I have to wait until graduation to start working in the tech industry?",
     answer:
-      "Absolutely not! At Next Era, your career path is completely self-paced and performance-driven. If you come in with a prior background, or if you demonstrate exceptional commitment and advance rapidly, you can become job-ready and land full-time tech roles or high-value freelance projects in as little as 6 to 7 months!",
+      "Absolutely not! At NextEra, your career path is completely self-paced and performance-driven. If you come in with a prior background, or if you demonstrate exceptional commitment and advance rapidly, you can become job-ready and land full-time tech roles or high-value freelance projects in as little as 6 to 7 months!",
   },
   {
     question:
-      "How does Next Era help me land a software engineering job so early?",
+      "How does NextEra help me land a software engineering job so early?",
     answer:
       "Because our curriculum is 100% practical and project-based, by month 6 or 7 you will have already engineered real-world software applications, tackled complex backend systems, and mastered algorithmic problem-solving. This hands-on portfolio gives you a massive advantage.",
   },
   {
-    question: "Does Next Era guarantee job placement upon graduation?",
+    question: "Does NextEra guarantee job placement upon graduation?",
     answer:
-      "Yes! Next Era provides a robust job guarantee framework for students who complete the required curriculum milestones, pass code audits, and maintain strong performance standards. We actively connect our graduates directly with top-tier hiring partners.",
+      "Yes! NextEra provides a robust job guarantee framework for students who complete the required curriculum milestones, pass code audits, and maintain strong performance standards. We actively connect our graduates directly with top-tier hiring partners.",
   },
   {
     question:
@@ -162,7 +162,7 @@ export const faqItems = [
       "Depending on your specialization tracks, you will be qualified for high-demand tech roles including Full-Stack Developer, Backend Software Engineer, Frontend Engineer, DevOps Engineer, Mobile Developer, and Data Engineer.",
   },
   {
-    question: "Where is the Next Era campus located?",
+    question: "Where is the NextEra campus located?",
     answer: (
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         <span>
@@ -186,7 +186,7 @@ export const faqItems = [
   {
     question: "Is daily attendance on campus mandatory?",
     answer:
-      "Next Era offers a flexible, hybrid-friendly environment. While learning is self-paced and accessible, spending time on campus is where the true excitement happens. Specific mandatory on-site days apply during intensive bootcamps like the 4-week Piscine.",
+      "NextEra offers a flexible, hybrid-friendly environment. While learning is self-paced and accessible, spending time on campus is where the true excitement happens. Specific mandatory on-site days apply during intensive bootcamps like the 4-week Piscine.",
   },
   {
     question:
@@ -202,7 +202,7 @@ export const faqItems = [
   },
   {
     question:
-      "What makes the Next Era community and student journey so special?",
+      "What makes the NextEra community and student journey so special?",
     answer:
       "You become part of a vibrant community of ambitious, like-minded peers who share knowledge, collaborate on innovative ideas, and celebrate each other's breakthroughs. From late-night debugging sessions to hackathons, your journey builds lifelong friendships.",
   },
