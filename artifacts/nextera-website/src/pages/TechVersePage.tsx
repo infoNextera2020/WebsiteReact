@@ -6,111 +6,238 @@ import { Card, Section, CheckList } from "@/components/nextera/primitives";
 export default function TechVersePage() {
   return (
     <SiteFrame>
+      
       <main>
         <section className="hero">
-          <div className="container hero-content" style={{ textAlign: "center" }}>
-            <p className="eyebrow" style={{ justifyContent: "center", marginBottom: "1rem", display: "inline-flex", gap: "8px" }}>
-              <Cpu size={16} /> Technology Education & Innovation
-            </p>
-            <h1 className="display hero-title" style={{ maxWidth: 800, margin: "0 auto 24px" }}>
-              TechVerse
-            </h1>
-            <p className="hero-copy hero-subtitle" style={{ maxWidth: 700, margin: "0 auto 24px" }}>
-              TechVerse is a technology education initiative by NextEra Education, focused on providing students with practical learning opportunities in Artificial Intelligence, Programming, and emerging technologies.
-            </p>
-            <p className="hero-copy hero-subtitle" style={{ maxWidth: 700, margin: "0 auto 40px" }}>
-              The initiative combines educational programs with technology competitions, giving students the opportunity to develop technical knowledge and apply it through practical projects and real-world challenges.
-            </p>
-            <Link href="/admissions" className="button">
-              Apply Now <ArrowRight size={15} />
-            </Link>
+          <div className="container hero-content" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
+            
+            <div className="hero-left">
+              <p className="eyebrow" style={{ marginBottom: "1rem", display: "inline-flex", gap: "8px" }}>
+                <Cpu size={16} /> Technology Education & Innovation
+              </p>
+              <h1 className="display hero-title" style={{ margin: "0 0 24px" }}>
+                TechVerse
+              </h1>
+              <p className="hero-copy hero-subtitle" style={{ margin: "0 0 24px" }}>
+                TechVerse is a technology education initiative by NextEra Education, focused on providing students with practical learning opportunities in Artificial Intelligence, Programming, and emerging technologies.
+              </p>
+              <p className="hero-copy hero-subtitle" style={{ margin: "0 0 40px" }}>
+                The initiative combines educational programs with technology competitions, giving students the opportunity to develop technical knowledge and apply it through practical projects and real-world challenges.
+              </p>
+              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <a href="#register" className="button">
+                  Apply Now <ArrowRight size={15} />
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-right" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "16px", padding: "32px", backdropFilter: "blur(10px)" }}>
+              <div style={{ fontFamily: "var(--font-mono)", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "hsl(var(--primary))", marginBottom: "24px" }}>
+                TechVerse at a Glance
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {[
+                  "AI & Programming Programs for schools",
+                  "Programming Programs starting from age 6",
+                  "01 Programs for students aged 12+",
+                  "AI Competition",
+                  "IoT Innovation Challenge",
+                  "Practical and project-based learning experiences",
+                  "Opportunities to apply technical skills through competitions and challenges"
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                    <div style={{ width: "20px", height: "20px", borderRadius: "50%", background: "rgba(85,255,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "2px" }}>
+                      <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    </div>
+                    <span style={{ fontSize: "14px", color: "hsl(var(--ink-foreground))", lineHeight: 1.5 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </section>
 
         <Section 
+          id="programs"
           title="Schools Programs" 
-          subtitle="Empowering the next generation"
-          className="dark"
+          intro="TechVerse provides technology programs for schools covering Artificial Intelligence and Programming, with content adapted to students' age and learning level. The programs focus on developing programming fundamentals, computational thinking, problem-solving skills, and an understanding of AI concepts through practical activities and project-based learning."
         >
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginTop: "40px" }}>
-            <Card 
-              title="AI & Programming" 
-              icon={<Bot size={24} color="hsl(var(--primary))" />}
+            
+            <div
+              style={{
+                padding: 32,
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: 8,
+              }}
             >
-              <p style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
-                TechVerse provides technology programs for schools covering Artificial Intelligence and Programming, with content adapted to students' age and learning level.
-                <br/><br/>
-                The programs focus on developing programming fundamentals, computational thinking, problem-solving skills, and an understanding of AI concepts through practical activities and project-based learning.
-              </p>
-            </Card>
-            <Card 
-              title="Programming Programs | Ages 6+" 
-              icon={<Code size={24} color="hsl(var(--primary))" />}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 12,
+                  marginBottom: 16,
+                }}
+              >
+                <div style={{ marginTop: "2px" }}>
+                  <Code size={24} color="hsl(var(--primary))" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "8px", marginTop: 0 }}>
+                    Programming Programs
+                  </h3>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Ages 6+</span>
+                  </div>
+                </div>
+              </div>
+              <p
+                style={{
+                  color: "hsl(var(--muted-foreground))",
+                  lineHeight: 1.6,
+                }}
+                dangerouslySetInnerHTML={{ __html: `Programming programs are available for children starting from 6 years old, introducing students to coding and computational thinking through structured, age-appropriate learning experiences.` }}
+              />
+            </div>
+            <div
+              style={{
+                padding: 32,
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: 8,
+              }}
             >
-              <p style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
-                Programming programs are available for children starting from 6 years old, introducing students to coding and computational thinking through structured, age-appropriate learning experiences.
-              </p>
-            </Card>
-            <Card 
-              title="01 Programs | Ages 12+" 
-              icon={<GraduationCap size={24} color="hsl(var(--primary))" />}
-            >
-              <p style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
-                For students aged 12 and above, TechVerse offers 01 Programs, providing a more advanced learning pathway in programming and technology. 
-                <br/><br/>
-                The programs focus on strengthening technical skills, problem-solving, programming, and practical project development.
-              </p>
-            </Card>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 12,
+                  marginBottom: 16,
+                }}
+              >
+                <div style={{ marginTop: "2px" }}>
+                  <GraduationCap size={24} color="hsl(var(--primary))" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "8px", marginTop: 0 }}>
+                    01 Programs
+                  </h3>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Ages 12+</span>
+                  </div>
+                </div>
+              </div>
+              <p
+                style={{
+                  color: "hsl(var(--muted-foreground))",
+                  lineHeight: 1.6,
+                }}
+                dangerouslySetInnerHTML={{ __html: `TechVerse offers 01 Programs, providing a more advanced learning pathway in programming and technology.<br/>The programs focus on strengthening technical skills, problem-solving, programming, and practical project development.` }}
+              />
+            </div>
           </div>
         </Section>
 
         <Section 
-          title="Technology Competitions" 
-          subtitle="Apply your knowledge and develop solutions to practical challenges."
+          id="technology-competitions"
+          title="Technology Competitions"
+          intro="Apply your knowledge and develop solutions to practical challenges."
         >
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "24px", marginTop: "40px" }}>
-            <Card 
-              title="AI Competition" 
-              icon={<Trophy size={24} color="hsl(var(--primary))" />}
+            <div
+              style={{
+                padding: 32,
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: 8,
+              }}
             >
-              <p style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
-                The AI Competition provides students with the opportunity to explore Artificial Intelligence and develop technology-based solutions to real-world problems.
-                <br/><br/>
-                Participants work on projects that demonstrate their understanding of AI concepts, problem-solving abilities, creativity, and technical implementation.
-              </p>
-            </Card>
-            <Card 
-              title="IoT Innovation Challenge" 
-              icon={<Lightbulb size={24} color="hsl(var(--primary))" />}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  marginBottom: 16,
+                }}
+              >
+                <Trophy size={24} color="hsl(var(--primary))" />
+                <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                  AI Competition
+                </h3>
+              </div>
+              <div style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>AI Concepts</span>
+                  </div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Problem-Solving</span>
+                  </div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Creativity</span>
+                  </div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Technical Implementation</span>
+                  </div>
+                </div>
+                <p style={{ marginBottom: "16px" }}>The AI Competition provides students with the opportunity to explore Artificial Intelligence and develop technology-based solutions to real-world problems.</p>
+                <p style={{ marginBottom: "12px" }}>Participants work on projects that demonstrate their understanding in key areas:</p>
+                
+              </div>
+            </div>
+            <div
+              style={{
+                padding: 32,
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: 8,
+              }}
             >
-              <p style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
-                The IoT Innovation Challenge focuses on developing innovative solutions using Internet of Things technologies.
-                <br/><br/>
-                Students design and build IoT-based projects using sensors, connected devices, and software to address challenges in areas such as Smart Agriculture & Water Management, Smart Energy & Environment, and Smart Systems.
-                <br/><br/>
-                The challenge provides students with practical experience in developing, testing, and presenting technology solutions.
-              </p>
-            </Card>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  marginBottom: 16,
+                }}
+              >
+                <Lightbulb size={24} color="hsl(var(--primary))" />
+                <h3 style={{ fontSize: "1.25rem", fontWeight: 700 }}>
+                  IoT Innovation Challenge
+                </h3>
+              </div>
+              <div style={{ color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Smart Agriculture</span>
+                  </div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Smart Energy</span>
+                  </div>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid hsl(var(--primary)/0.3)", borderRadius: "999px", padding: "4px 12px", background: "hsl(var(--primary)/0.05)" }}>
+                    <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "hsl(var(--primary))" }}></div>
+                    <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Smart Systems</span>
+                  </div>
+                </div>
+                <p style={{ marginBottom: "16px" }}>The IoT Innovation Challenge focuses on developing innovative solutions using Internet of Things technologies.</p>
+                <p style={{ marginBottom: "12px" }}>Students design and build IoT-based projects using sensors, connected devices, and software to address challenges in key domains:</p>
+                <p>The challenge provides students with practical experience in developing, testing, and presenting technology solutions.</p>
+              </div>
+            </div>
           </div>
         </Section>
 
-<Section 
-          title="TechVerse at a Glance" 
-          subtitle="What to expect from the program"
-          className="dark"
-        >
-          <div style={{ maxWidth: "800px", margin: "40px auto 0" }}>
-            <CheckList items={[
-              "AI & Programming Programs for schools",
-              "Programming Programs starting from age 6",
-              "01 Programs for students aged 12+",
-              "AI Competition",
-              "IoT Innovation Challenge",
-              "Practical and project-based learning experiences",
-              "Opportunities to apply technical skills through competitions and challenges"
-            ]} />
-          </div>
-        </Section>
+
 
         
         <section className="primitive-section" id="register">
