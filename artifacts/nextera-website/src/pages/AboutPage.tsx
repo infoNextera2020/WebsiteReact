@@ -58,13 +58,13 @@ import {
 
 export default function AboutPage() {
   const trustees = [
-    ["MF", "Mr. Mohamed Farouk"],
-    ["AT", "Eng. Ahmed Tarek"],
-    ["MA", "Mr. Mokhtar Ahmed"],
-    ["OS", "Omar Sayed"],
-    ["EG", "Essam Gamal"],
-    ["PW", "Pavly Wagih"],
-    ["AM", "Anas Moner"],
+    { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg" },
+    { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg" },
+    { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg" },
+    { initials: "OS", name: "Omar Sayed" },
+    { initials: "EG", name: "Essam Gamal" },
+    { initials: "PW", name: "Pavly Wagih" },
+    { initials: "AM", name: "Anas Moner" },
   ];
   return (
     <SiteFrame>
@@ -158,18 +158,21 @@ export default function AboutPage() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                height: 450,
               }}
             >
               <img
-                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Campus+Vibe"
+                src="/about-campus.jpg"
                 alt="Campus Vibe"
                 style={{
                   width: "100%",
-                  height: "auto",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 30%",
                   borderRadius: 16,
                   border: "1px solid hsl(var(--border))",
-                  objectFit: "cover",
                 }}
+                loading="lazy"
               />
             </div>
           </div>
@@ -207,19 +210,28 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(0, 3).map(([initials, name]) => (
+                {trustees.slice(0, 3).map(({ initials, name, image }) => (
                   <div
                     className="board-member"
                     key={name}
                     data-testid={`board-member-${initials}`}
                   >
-                    <div
-                      className="profile-circle"
-                      role="img"
-                      aria-label={`${name} initials`}
-                    >
-                      {initials}
-                    </div>
+                    {image ? (
+                      <div
+                        className="profile-circle"
+                        style={{ padding: 0, overflow: 'hidden' }}
+                      >
+                        <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                    ) : (
+                      <div
+                        className="profile-circle"
+                        role="img"
+                        aria-label={`${name} initials`}
+                      >
+                        {initials}
+                      </div>
+                    )}
                     <div className="member-name">{name}</div>
                   </div>
                 ))}
@@ -233,19 +245,28 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(3).map(([initials, name]) => (
+                {trustees.slice(3).map(({ initials, name, image }) => (
                   <div
                     className="board-member"
                     key={name}
                     data-testid={`board-member-${initials}`}
                   >
-                    <div
-                      className="profile-circle"
-                      role="img"
-                      aria-label={`${name} initials`}
-                    >
-                      {initials}
-                    </div>
+                    {image ? (
+                      <div
+                        className="profile-circle"
+                        style={{ padding: 0, overflow: 'hidden' }}
+                      >
+                        <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                    ) : (
+                      <div
+                        className="profile-circle"
+                        role="img"
+                        aria-label={`${name} initials`}
+                      >
+                        {initials}
+                      </div>
+                    )}
                     <div className="member-name">{name}</div>
                   </div>
                 ))}

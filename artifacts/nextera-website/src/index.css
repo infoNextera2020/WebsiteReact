@@ -307,7 +307,6 @@ button {
 .feature-band,
 .primitive-section.dark,
 .legacy-hero,
-.faq-container,
 .section.dark-band {
   --background: var(--ink);
   --foreground: var(--ink-foreground);
@@ -812,7 +811,7 @@ button {
 }
 .program-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 .program-card,
@@ -2052,8 +2051,8 @@ button {
   place-items: center;
   border: 2px solid hsl(var(--primary));
   border-radius: 50%;
-  background: hsl(var(--ink));
-  color: hsl(var(--primary));
+  background: hsl(var(--primary));
+  color: hsl(var(--background));
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
@@ -2250,7 +2249,7 @@ button {
     grid-column: 1 / -1;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   .container,
   .primitive-inner {
     width: min(100% - 32px, 1200px);
@@ -2415,12 +2414,13 @@ button {
     grid-template-columns: 1fr 1fr;
   }
   .academy-map {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 14px;
   }
   .academy-map .map-line {
-    top: 25%;
-    bottom: 25%;
+    top: 10%;
+    bottom: 10%;
     left: 50%;
     width: 2px;
     height: auto;
@@ -2758,7 +2758,7 @@ button {
 .mobile-apply-btn {
   display: none;
 }
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   .header-apply-btn {
     display: none !important;
   }
@@ -2773,3 +2773,6 @@ button {
     font-weight: bold;
   }
 }
+
+html.dark .logo-light { display: none !important; }
+html:not(.dark) .logo-dark { display: none !important; }

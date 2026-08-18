@@ -207,7 +207,7 @@ export default function AcademyPage() {
 
             <div
               style={{
-                background: "hsl(var(--ink-soft))",
+                background: "hsl(var(--card))",
                 padding: "64px 48px",
                 borderRadius: 16,
                 border: "1px solid hsl(var(--border))",
@@ -566,7 +566,7 @@ export default function AcademyPage() {
         {/* Student Feedback Carousel */}
         <section
           className="legacy-section"
-          style={{ background: "hsl(var(--ink-soft))" }}
+          style={{ background: "hsl(var(--card))" }}
         >
           <div className="container">
             <p className="eyebrow">Student feedback</p>
@@ -585,31 +585,31 @@ export default function AcademyPage() {
                 <CarouselContent className="-ml-4">
                   {[
                     {
-                      name: "Omar K.",
-                      role: "Current Learner, Phase 1",
-                      text: "The Piscine was the hardest 4 weeks of my life. You come in knowing nothing, and by week 2 you're building a fully functional web server in Go. The peer-to-peer system forces you to truly understand the code.",
+                      name: "Ahmed Gamal Farfour",
+                      role: "01 Coding Academy",
+                      text: "This past month has been an incredible experience for me. The instructors were supportive, and I learned so much from my peers. The program was intense but sparked a strong passion for coding. Special thanks to Omar, Bavly, Martin, and Ziad I've learned a lot from each of you, and I'm truly grateful. Thank you for this opportunity 🤍",
                     },
                     {
-                      name: "Salma R.",
-                      role: "Current Learner, Phase 2",
-                      text: "I was a business student before this. The lack of teachers felt terrifying at first, but it makes you fiercely independent. When you solve a problem here, you know you earned it.",
+                      name: "Mohamed Mekawy",
+                      role: "01 Coding Academy",
+                      text: "This past month at Nextera Era 01 Academy has been a truly enriching experience. I truly had met and knew really good people. the content was insightful. I especially appreciated the collaborative environment — it felt like a community where everyone pushed each other to do better.",
                     },
                     {
-                      name: "Ahmed T.",
-                      role: "Current Learner, Phase 1",
-                      text: "The weekend raids are my favorite part. Coding for 48 hours straight with two random peers, pushing limits you didn't know you had. It feels like an intense multiplayer game.",
+                      name: "Youssef Eltuwaisy",
+                      role: "01 Coding Academy",
+                      text: "The whole experience in Nextera has been perfect the staff and mentors are highly competent and carefully selected, they are always available and ready to help, the curriculum perfectly suits both inexperienced and experts in the field, it gives everyone a fair chance to compete in an engaging friendly and cooperative environment, I met great people and made new friends while learning, the platform feels like a game more than an exam, It has been a phenomenal experience and I recommend anyone from any field to join",
                     },
                     {
-                      name: "Nour H.",
-                      role: "Current Learner, Phase 2",
-                      text: "You don't just learn syntax, you learn how to engineer. The defense system where you have to justify your architecture choices to your peers is where the real learning happens.",
+                      name: "Amr Yassin",
+                      role: "01 Coding Academy",
+                      text: "I've had a very enriching experience over the past month. The learning environment here is positive, supportive, and highly motivating.",
                     },
                     {
-                      name: "Youssef M.",
-                      role: "Current Learner, Phase 1",
-                      text: "I dropped out of my CS degree for this. The speed at which you learn when you're 100% focused on projects rather than exams is insane.",
-                    },
-                  ].map((student, index) => (
+                      name: "Amr Mohamed Aly",
+                      role: "01 Coding Academy",
+                      text: "Program 01 has been a rewarding experience with stimulating challenges and valuable growth. Collaborating with such a diverse team was both eye-opening and challenging, especially in the weekly quad tasks. I'm thankful for Omar's inspiring leadership, Martin and Bavly's insightful guidance, and Shehab and Mohamed's constant support. Overall, it was a fulfilling journey, and I'm grateful to the entire team for making it memorable.",
+                    }
+                  ].map((testimonial, index) => (
                     <CarouselItem
                       key={index}
                       className="pl-4 md:basis-1/2 lg:basis-1/3"
@@ -645,14 +645,13 @@ export default function AcademyPage() {
                             border: "4px solid hsl(var(--primary))",
                           }}
                         >
-                          <span
-                            style={{
-                              fontSize: "0.8rem",
-                              color: "hsl(var(--muted-foreground))",
-                            }}
-                          >
-                            Photo
-                          </span>
+                          {testimonial.image ? (
+                            <img src={testimonial.image} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(3)" }} />
+                          ) : (
+                            <span style={{ fontSize: "2rem", color: "hsl(var(--muted-foreground))" }}>
+                              {testimonial.name.split(" ").map((n: string) => n[0]).join("")}
+                            </span>
+                          )}
                         </div>
                         <h4
                           style={{
@@ -662,7 +661,7 @@ export default function AcademyPage() {
                             marginBottom: 16,
                           }}
                         >
-                          {student.name}
+                          {testimonial.name}
                         </h4>
                         <p
                           className="card-body"
@@ -674,7 +673,7 @@ export default function AcademyPage() {
                             fontSize: "1.05rem",
                           }}
                         >
-                          {student.text}
+                          {testimonial.text}
                         </p>
                         <div
                           style={{ display: "flex", gap: 4, color: "#facc15" }}

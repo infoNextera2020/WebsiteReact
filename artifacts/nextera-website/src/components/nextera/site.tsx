@@ -13,6 +13,7 @@ import { Link, useLocation } from "wouter";
 export function Header() {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [curriculumOpen, setCurriculumOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,6 +30,7 @@ export function Header() {
 
   useEffect(() => {
     setMenuOpen(false);
+    setCurriculumOpen(false);
   }, [location]);
 
   const toggleTheme = () => {
@@ -45,12 +47,11 @@ export function Header() {
     >
       <div className="container nav-container">
         <Link href="/" className="brand" data-testid="link-brand">
-          <span className="brand-mark" aria-hidden="true">
-            N
-          </span>
-          <span className="brand-wordmark">
-            NEXT<span>ERA</span>
-          </span>
+          <img 
+            src={dark ? "/logo-dark.png" : "/logo-light.png"} 
+            alt="NextEra Education" 
+            style={{ height: "42px", width: "75px", minWidth: "75px", flexShrink: 0 }} 
+          />
         </Link>
         <div className="main-nav">
           <nav aria-label="Primary navigation">
@@ -64,14 +65,52 @@ export function Header() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/academy"
-                  className={`nav-link${location === "/academy" ? " active" : ""}`}
-                  data-testid="link-academy"
+              <li
+                style={{ position: "relative" }}
+                onMouseEnter={() => setCurriculumOpen(true)}
+                onMouseLeave={() => setCurriculumOpen(false)}
+              >
+                <button
+                  className={`nav-link${location.startsWith("/curriculum") || location === "/academy" || location === "/techverse" ? " active" : ""}`}
+                  style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 16px 8px 0", position: "relative" }}
+                  onClick={() => setCurriculumOpen(!curriculumOpen)}
                 >
                   Curriculum
-                </Link>
+                  <ArrowDown size={14} style={{ position: "absolute", right: -4, top: "50%", transform: "translateY(-50%)" }} />
+                </button>
+                {curriculumOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      background: "hsl(var(--background))",
+                      border: "1px solid hsl(var(--border))",
+                      borderRadius: 8,
+                      padding: "8px 0",
+                      minWidth: 180,
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                      zIndex: 50,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Link
+                      href="/academy"
+                      className={`nav-link${location === "/academy" ? " active" : ""}`}
+                      style={{ padding: "10px 16px", border: "none" }}
+                    >
+                      01 Coding Academy
+                    </Link>
+                    <Link
+                      href="/techverse"
+                      className={`nav-link${location === "/techverse" ? " active" : ""}`}
+                      style={{ padding: "10px 16px", border: "none" }}
+                    >
+                      TechVerse
+                    </Link>
+                  </div>
+                )}
               </li>
               <li>
                 <Link
@@ -307,12 +346,7 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <Link href="/" className="brand" data-testid="link-footer-brand">
-            <span className="brand-mark" aria-hidden="true">
-              N
-            </span>
-            <span className="brand-wordmark">
-              NEXT<span>ERA</span>
-            </span>
+            <img src="/logo-dark.png" alt="NextEra Education" style={{ height: "42px", width: "75px", minWidth: "75px", flexShrink: 0 }} />
           </Link>
           <p>
             Interactive technology education that enables learners to solve
@@ -354,6 +388,15 @@ export function Footer() {
                 data-testid="link-footer-academy"
               >
                 01 Coding Academy
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/techverse"
+                className="footer-link"
+                data-testid="link-footer-traverse"
+              >
+                Traverse Program
               </Link>
             </li>
             <li>

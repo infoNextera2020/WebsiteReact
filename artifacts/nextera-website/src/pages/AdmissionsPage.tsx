@@ -226,7 +226,7 @@ export default function AdmissionsPage() {
         {/* 7. The Piscine */}
         <section id="piscine" className="legacy-section">
           <div className="container">
-            <div className="piscine-callout">
+            <div className="piscine-callout" style={{ background: "linear-gradient(135deg, #0d1a12 0%, #173620 100%)", borderColor: "hsl(var(--primary) / 0.3)" }}>
               <p className="eyebrow">Step 3: Selection phase</p>
               <h2
                 className="display section-heading"

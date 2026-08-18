@@ -24,6 +24,8 @@ import {
   Search,
   Zap,
   Users,
+  Play,
+  X,
 } from "lucide-react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -57,6 +59,7 @@ import {
 } from "./shared";
 
 export default function HomePage() {
+  const [heroVideoOpen, setHeroVideoOpen] = useState(false);
   return (
     <SiteFrame loader>
       <main>
@@ -75,7 +78,7 @@ export default function HomePage() {
             </p>
             <div
               className="hero-actions reveal delay-3"
-              style={{ marginTop: 32 }}
+              style={{ marginTop: 32, display: "flex", gap: "16px", flexWrap: "wrap" }}
             >
               <a
                 href="#programs"
@@ -84,6 +87,13 @@ export default function HomePage() {
               >
                 Explore our programs <ArrowRight size={15} />
               </a>
+              <button 
+                className="button" 
+                style={{ background: "transparent", border: "1px solid hsl(var(--border))", color: "hsl(var(--foreground))" }}
+                onClick={() => setHeroVideoOpen(true)}
+              >
+                <Play size={15} style={{ marginRight: 8 }} /> Watch intro
+              </button>
             </div>
             <div
               className="terminal-lockup reveal delay-3"
@@ -117,15 +127,35 @@ export default function HomePage() {
           aria-labelledby="pedagogy-title"
         >
           <div className="container">
-            <div className="academy-intro">
-              <strong>NextEra Education</strong> is a new breed of coding
-              academy. We strip away the traditional classroom and focus
-              entirely on real-world engineering. Students learn by building not
-              by listening and developing practical skills in Full Stack
-              Development, AI, Cybersecurity, Blockchain, Mobile Development,
-              and more. Graduates leave with a professional portfolio, a
-              technology specialization and guaranteed employment for eligible
-              participants who meet the official program requirements.
+            <div className="academy-intro" style={{ display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}>
+              <div style={{ flex: "1 1 400px" }}>
+                <strong>NextEra Education</strong> is a new breed of coding
+                academy. We strip away the traditional classroom and focus
+                entirely on real-world engineering. Students learn by building not
+                by listening and developing practical skills in Full Stack
+                Development, AI, Cybersecurity, Blockchain, Mobile Development,
+                and more. Graduates leave with a professional portfolio, a
+                technology specialization and guaranteed employment for eligible
+                participants who meet the official program requirements.
+              </div>
+              <div style={{ flex: "1 1 300px" }}>
+                <img src="/academy-intro.jpg" alt="Student coding at NextEra" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", maxHeight: "350px" }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+<section className="legacy-section band" style={{ padding: "80px 0 160px" }}>
+          <div className="container">
+            <h2 className="display section-heading" style={{ textAlign: "center", marginBottom: 48 }}>
+              See what makes us different
+            </h2>
+            <div style={{ maxWidth: 1000, margin: "0 auto", borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)", border: "1px solid hsl(var(--border))" }}>
+              <video 
+                src="/story.MP4" 
+                controls 
+                style={{ width: "100%", display: "block", aspectRatio: "16/9", objectFit: "cover", background: "#000" }} 
+              />
             </div>
           </div>
         </section>
@@ -169,30 +199,14 @@ export default function HomePage() {
             </h2>
             <div
               className="program-grid"
-              style={{ marginTop: 45, gridTemplateColumns: "1fr 1fr 1fr" }}
+              style={{ marginTop: 45 }}
             >
               <article
                 className="program-card"
                 data-testid="card-program-coding-academy"
                 style={{ display: "flex", flexDirection: "column" }}
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: 220,
-                    background: "hsl(var(--background))",
-                    borderRadius: 8,
-                    marginBottom: 24,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px dashed hsl(var(--border))",
-                  }}
-                >
-                  <span style={{ color: "hsl(var(--muted-foreground))" }}>
-                    Image Placeholder (800x400)
-                  </span>
-                </div>
+                
                 <div>
                   <h3
                     className="card-title"
@@ -227,23 +241,7 @@ export default function HomePage() {
                 data-testid="card-program-techverse"
                 style={{ display: "flex", flexDirection: "column" }}
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: 220,
-                    background: "hsl(var(--background))",
-                    borderRadius: 8,
-                    marginBottom: 24,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px dashed hsl(var(--border))",
-                  }}
-                >
-                  <span style={{ color: "hsl(var(--muted-foreground))" }}>
-                    Image Placeholder (800x400)
-                  </span>
-                </div>
+                
                 <div>
                   <h3
                     className="card-title"
@@ -262,39 +260,16 @@ export default function HomePage() {
                     compete in technology challenges made for their age group.
                   </p>
                 </div>
-                <a
-                  href="https://techverse-five.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button"
-                  data-testid="link-explore-techverse"
-                  style={{ marginTop: "auto", alignSelf: "flex-start" }}
-                >
+                <Link href="/techverse" className="button" data-testid="link-explore-techverse" style={{ marginTop: "auto", alignSelf: "flex-start" }}>
                   Explore TechVerse <ArrowRight size={15} />
-                </a>
+                </Link>
               </article>
               <article
                 className="program-card"
                 data-testid="card-program-customized"
                 style={{ display: "flex", flexDirection: "column" }}
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: 220,
-                    background: "hsl(var(--background))",
-                    borderRadius: 8,
-                    marginBottom: 24,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px dashed hsl(var(--border))",
-                  }}
-                >
-                  <span style={{ color: "hsl(var(--muted-foreground))" }}>
-                    Image Placeholder (800x400)
-                  </span>
-                </div>
+                
                 <div>
                   <h3
                     className="card-title"
@@ -382,44 +357,7 @@ export default function HomePage() {
                   },
                 ]}
               />
-              <div className="card-grid" style={{ marginTop: 64 }}>
-                <Card title="Faster feedback loops">
-                  Feedback arrives in hours from the people beside you, not in
-                  weeks from a marker you never meet.
-                </Card>
-                <Card title="Retention through teaching">
-                  Explaining a concept forces you to actually own it. Every
-                  learner is also, daily, an instructor.
-                </Card>
-                <Card title="Real collaboration skills">
-                  Code review, disagreement, version control and shared
-                  ownership are the default working mode from week one.
-                </Card>
-              </div>
-              <CompareTable
-                rows={[
-                  {
-                    dimension: "Feedback speed",
-                    traditional: "Days to weeks, from one grader",
-                    peer: "Hours, from multiple reviewers",
-                  },
-                  {
-                    dimension: "Ownership",
-                    traditional: "The syllabus decides your pace",
-                    peer: "You decide what to learn next and defend the choice",
-                  },
-                  {
-                    dimension: "Adaptability",
-                    traditional: "Curriculum updates once a year",
-                    peer: "Projects change as the industry changes",
-                  },
-                  {
-                    dimension: "Proof of ability",
-                    traditional: "A transcript",
-                    peer: "A portfolio of shipped work and an audit history",
-                  },
-                ]}
-              />
+              
             </div>
           </div>
         </section>
@@ -448,41 +386,44 @@ export default function HomePage() {
               }}
             >
               <img
-                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Students+Coding"
+                src="/life-1.jpg"
                 alt="Students coding"
                 style={{
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 280,
+                  height: 420,
                 }}
                 loading="lazy"
               />
               <img
-                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=Hackathon+Energy"
+                src="/life-2.jpg"
                 alt="Hackathon"
                 style={{
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 280,
+                  height: 420,
                 }}
                 loading="lazy"
               />
               <img
-                src="https://placehold.co/600x400/1a1a1a/4d4d4d?text=24/7+Access"
+                src="/life-3.jpg"
                 alt="24/7 Access"
                 style={{
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 280,
+                  height: 420,
                 }}
                 loading="lazy"
               />
             </div>
           </div>
         </section>
+
+        
+
 
         <section className="marquee-section" aria-label="Technology partners">
           <div
@@ -577,7 +518,7 @@ export default function HomePage() {
           </div>
         </section>
         <section
-          className="primitive-section dark home-faq"
+          className="primitive-section home-faq"
           aria-labelledby="home-faq-title"
         >
           <div className="primitive-inner">
@@ -590,17 +531,37 @@ export default function HomePage() {
             </p>
             <div className="faq-container home-faq-container">
               <FAQList limit={4} />
-              <a
+              <Link
                 className="button secondary faq-page-link"
                 href="/faq"
                 data-testid="link-full-faq"
               >
                 Open the full FAQ <ArrowRight size={15} />
-              </a>
+              </Link>
             </div>
           </div>
         </section>
       </main>
+
+      {heroVideoOpen && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button 
+            onClick={() => setHeroVideoOpen(false)} 
+            style={{ position: 'absolute', top: 32, right: 32, color: 'white', background: 'none', border: 'none', cursor: 'pointer', padding: 8 }}
+          >
+            <X size={32} />
+          </button>
+          <div style={{ width: '90%', maxWidth: 1200, aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <video 
+              src="/event@01edu__ program.mp4" 
+              controls 
+              autoPlay 
+              style={{ width: '100%', height: '100%', display: 'block' }} 
+            />
+          </div>
+        </div>
+      )}
+
     </SiteFrame>
   );
 }

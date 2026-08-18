@@ -74,7 +74,7 @@ export default function FAQPage() {
           </div>
         </section>
         <section
-          className="primitive-section dark"
+          className="primitive-section"
           aria-labelledby="faq-list-title"
         >
           <div className="primitive-inner">

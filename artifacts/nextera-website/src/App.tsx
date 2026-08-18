@@ -50,6 +50,7 @@ import HomePage from "./pages/HomePage";
 import AdmissionsPage from "./pages/AdmissionsPage";
 import AboutPage from "./pages/AboutPage";
 import AcademyPage from "./pages/AcademyPage";
+import TechVersePage from "./pages/TechVersePage";
 import FAQPage from "./pages/FAQPage";
 import PartnershipPage from "./pages/PartnershipPage";
 
@@ -82,6 +83,7 @@ function Router() {
       <Route path="/admissions" component={AdmissionsPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/academy" component={AcademyPage} />
+      <Route path="/techverse" component={TechVersePage} />
       <Route path="/faq" component={FAQPage} />
       <Route path="/partnership" component={PartnershipPage} />
       <Route component={NotFound} />
