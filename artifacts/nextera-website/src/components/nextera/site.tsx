@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, useRef, type ReactNode } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -199,48 +199,102 @@ export function Header() {
 }
 
 export function Cursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [hovering, setHovering] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    document.body.classList.add("cursor-ready");
-    const move = (event: MouseEvent) =>
-      setPosition({ x: event.clientX, y: event.clientY });
-    const enter = () => setHovering(true);
-    const leave = () => setHovering(false);
-    window.addEventListener("mousemove", move);
-    const interactive = Array.from(
-      document.querySelectorAll(
-        "a, button, input, summary, .surface-card, .legacy-list-card",
-      ),
-    );
-    interactive.forEach((element) => {
-      element.addEventListener("mouseenter", enter);
-      element.addEventListener("mouseleave", leave);
-    });
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const handleResize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    };
+    window.addEventListener('resize', handleResize);
+
+    let drawing = false;
+    let targetX = -100;
+    let targetY = -100;
+    let currentX = -100;
+    let currentY = -100;
+
+    const move = (e: MouseEvent) => {
+      if (!drawing) {
+        currentX = e.clientX;
+        currentY = e.clientY;
+        drawing = true;
+      }
+      targetX = e.clientX;
+      targetY = e.clientY;
+    };
+
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseout', () => { drawing = false; });
+
+    let animationFrameId: number;
+    const animate = () => {
+      // Fade out the existing canvas drawings FAST (0.2 instead of 0.08)
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.shadowBlur = 0; 
+      ctx.fillRect(0, 0, width, height);
+
+      // Smooth interpolation for the line
+      ctx.globalCompositeOperation = 'source-over';
+      
+      if (drawing) {
+        const dx = targetX - currentX;
+        const dy = targetY - currentY;
+        
+        // Only draw if there's enough distance to prevent micro-jitters
+        if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+          ctx.beginPath();
+          ctx.moveTo(currentX, currentY);
+          
+          currentX += dx * 0.4;
+          currentY += dy * 0.4;
+          
+          ctx.lineTo(currentX, currentY);
+          
+          ctx.strokeStyle = '#55ff00';
+          ctx.lineWidth = 3;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.shadowBlur = 12;
+          ctx.shadowColor = '#55ff00';
+          ctx.stroke();
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+    animate();
+
     return () => {
-      document.body.classList.remove("cursor-ready");
-      window.removeEventListener("mousemove", move);
-      interactive.forEach((element) => {
-        element.removeEventListener("mouseenter", enter);
-        element.removeEventListener("mouseleave", leave);
-      });
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', move);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <>
-      <span
-        className="cursor-dot"
-        style={{ left: position.x, top: position.y }}
-        aria-hidden="true"
-      />
-      <span
-        className={`cursor-outline${hovering ? " hovering" : ""}`}
-        style={{ left: position.x, top: position.y }}
-        aria-hidden="true"
-      />
-    </>
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        pointerEvents: 'none',
+        zIndex: 9999,
+      }}
+    />
   );
 }
 

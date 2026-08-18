@@ -151,11 +151,7 @@ export default function HomePage() {
               See what makes us different
             </h2>
             <div style={{ maxWidth: 1000, margin: "0 auto", borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)", border: "1px solid hsl(var(--border))" }}>
-              <video 
-                src="/story.MP4" 
-                controls 
-                style={{ width: "100%", display: "block", aspectRatio: "16/9", objectFit: "cover", background: "#000" }} 
-              />
+              <iframe src="https://drive.google.com/file/d/1myKl30vg9A5-Eb6FZCnSidBn640xjoLG/preview" width="100%" height="100%" style={{ display: "block", aspectRatio: "16/9", border: "none" }} allow="autoplay" allowFullScreen></iframe>
             </div>
           </div>
         </section>
@@ -552,12 +548,7 @@ export default function HomePage() {
             <X size={32} />
           </button>
           <div style={{ width: '90%', maxWidth: 1200, aspectRatio: '16/9', background: '#000', borderRadius: 12, overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-            <video 
-              src="/event@01edu__ program.mp4" 
-              controls 
-              autoPlay 
-              style={{ width: '100%', height: '100%', display: 'block' }} 
-            />
+            <iframe src="https://drive.google.com/file/d/17YPS7wxkOf5WMQ5u4aKeE_KHUi7Aq0cs/preview" width="100%" height="100%" style={{ display: "block", border: "none" }} allow="autoplay" allowFullScreen></iframe>
           </div>
         </div>
       )}
