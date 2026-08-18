@@ -27,6 +27,7 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
+import { Toaster as SonnerToaster } from "sonner";
 import {
   Carousel,
   CarouselContent,
@@ -100,6 +101,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <SonnerToaster position="bottom-right" theme="dark" />
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -9,7 +9,7 @@ export default function TechVersePage() {
       
       <main>
         <section className="hero">
-          <div className="container hero-content" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
+          <div className="container hero-content" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))", gap: "60px", alignItems: "center" }}>
             
             <div className="hero-left">
               <p className="eyebrow" style={{ marginBottom: "1rem", display: "inline-flex", gap: "8px" }}>
@@ -63,7 +63,7 @@ export default function TechVersePage() {
           title="Schools Programs" 
           intro="TechVerse provides technology programs for schools covering Artificial Intelligence and Programming, with content adapted to students' age and learning level. The programs focus on developing programming fundamentals, computational thinking, problem-solving skills, and an understanding of AI concepts through practical activities and project-based learning."
         >
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginTop: "40px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "24px", marginTop: "40px" }}>
             
             <div
               style={{
@@ -147,7 +147,7 @@ export default function TechVersePage() {
           title="Technology Competitions"
           intro="Apply your knowledge and develop solutions to practical challenges."
         >
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "24px", marginTop: "40px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))", gap: "24px", marginTop: "40px" }}>
             <div
               style={{
                 padding: 32,
@@ -251,7 +251,7 @@ export default function TechVersePage() {
             </div>
 
             <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-              <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={(e) => e.preventDefault()}>
+              <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={(e) => { e.preventDefault(); toast.success("Registration submitted successfully! Our team will contact you shortly."); e.currentTarget.reset(); }}>
                 
                 <div className="floating-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
                   <input className="floating-control" id="coordinator" type="text" placeholder=" " required />

@@ -1,3 +1,4 @@
+import { toast } from "sonner";
 import { useState, type FormEvent } from "react";
 import {
   ChevronDown,
@@ -69,6 +70,7 @@ export default function AdmissionsPage() {
     }
     setFormError("");
     setSubmitted(true);
+    toast.success("Application submitted successfully! Our team will contact you shortly.");
     form.reset();
   };
   return (
