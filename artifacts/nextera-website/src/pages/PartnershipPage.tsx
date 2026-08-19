@@ -73,7 +73,7 @@ export default function PartnershipPage() {
           </div>
         </section>
         
-        <section id="partnership-form" className="legacy-section band">
+        <section id="partnership-form" className="legacy-section">
           <div className="container" style={{ maxWidth: 800, margin: "0 auto" }}>
             <form
               className="form-container"
