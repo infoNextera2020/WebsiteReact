@@ -2,6 +2,7 @@ import { SiteFrame } from "@/components/nextera/site";
 import { ArrowRight, Bot, Code, Cpu, GraduationCap, Lightbulb, Trophy } from "lucide-react";
 import { Link } from "wouter";
 import { Card, Section, CheckList } from "@/components/nextera/primitives";
+import { toast } from "sonner";
 
 export default function TechVersePage() {
   return (
@@ -253,41 +254,41 @@ export default function TechVersePage() {
             <div style={{ maxWidth: "800px", margin: "0 auto" }}>
               <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={(e) => { e.preventDefault(); toast.success("Registration submitted successfully! Our team will contact you shortly."); e.currentTarget.reset(); }}>
                 
-                <div className="floating-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
-                  <input className="floating-control" id="coordinator" type="text" placeholder=" " required />
-                  <label className="floating-label" htmlFor="coordinator">Coordinator Name <span>*</span></label>
+                <div className="std-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
+                  <label className="std-label" htmlFor="coordinator">Coordinator Name <span>*</span></label>
+<input className="std-input" id="coordinator" type="text" placeholder=" " required />
                 </div>
 
-                <div className="floating-group" style={{ margin: 0 }}>
-                  <input className="floating-control" id="school" type="text" placeholder=" " required />
-                  <label className="floating-label" htmlFor="school">School / Org Name <span>*</span></label>
+                <div className="std-group" style={{ margin: 0 }}>
+                  <label className="std-label" htmlFor="school">School / Org Name <span>*</span></label>
+<input className="std-input" id="school" type="text" placeholder=" " required />
                 </div>
 
-                <div style={{ position: "relative", margin: 0 }}>
-                  <select className="floating-control" required style={{ padding: "24px 16px 8px", appearance: "none" }}>
-                    <option value="" disabled selected></option>
-                    <option value="International School" style={{ color: "black" }}>International School</option>
-                    <option value="National School" style={{ color: "black" }}>National School</option>
-                    <option value="STEM School" style={{ color: "black" }}>STEM School</option>
-                    <option value="Academy" style={{ color: "black" }}>Academy / Training Center</option>
-                    <option value="Other" style={{ color: "black" }}>Other</option>
+                <div className="std-group" style={{ margin: 0 }}>
+                  <label className="std-label" htmlFor="institution-type">Institution Type <span>*</span></label>
+                  <select className="std-input" id="institution-type" required style={{ cursor: "pointer" }}>
+                    <option value="" disabled selected hidden></option>
+                    <option value="International School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>International School</option>
+                    <option value="National School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>National School</option>
+                    <option value="STEM School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>STEM School</option>
+                    <option value="Academy" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>Academy / Training Center</option>
+                    <option value="Other" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>Other</option>
                   </select>
-                  <label style={{ position: "absolute", left: "16px", top: "12px", fontSize: "0.75rem", color: "hsl(var(--muted-foreground))", pointerEvents: "none" }}>Institution Type <span style={{ color: "hsl(var(--primary))" }}>*</span></label>
                 </div>
 
-                <div className="floating-group" style={{ margin: 0 }}>
-                  <input className="floating-control" id="city" type="text" placeholder=" " required />
-                  <label className="floating-label" htmlFor="city">City / Location <span>*</span></label>
+                <div className="std-group" style={{ margin: 0 }}>
+                  <label className="std-label" htmlFor="city">City / Location <span>*</span></label>
+<input className="std-input" id="city" type="text" placeholder=" " required />
                 </div>
 
-                <div className="floating-group" style={{ margin: 0 }}>
-                  <input className="floating-control" id="phone" type="tel" placeholder=" " required />
-                  <label className="floating-label" htmlFor="phone">Phone Number <span>*</span></label>
+                <div className="std-group" style={{ margin: 0 }}>
+                  <label className="std-label" htmlFor="phone">Phone Number <span>*</span></label>
+<input className="std-input" id="phone" type="tel" placeholder=" " required />
                 </div>
 
-                <div className="floating-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
-                  <input className="floating-control" id="email" type="email" placeholder=" " required />
-                  <label className="floating-label" htmlFor="email">Email Address <span>*</span></label>
+                <div className="std-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
+                  <label className="std-label" htmlFor="email">Email Address <span>*</span></label>
+<input className="std-input" id="email" type="email" placeholder=" " required />
                 </div>
 
                 <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "10px" }}>
@@ -304,8 +305,8 @@ export default function TechVersePage() {
                 </div>
 
                 <div style={{ gridColumn: "1 / -1", marginTop: "16px" }}>
-                  <button type="submit" className="button" style={{ width: "100%", padding: "16px", fontSize: "16px" }}>
-                    Register Now <ArrowRight size={16} style={{ marginLeft: "8px" }} />
+                  <button type="submit" className="button" style={{ width: "100%", marginTop: 28 }} >
+                    Register Now <ArrowRight size={16}  />
                   </button>
                 </div>
               </form>

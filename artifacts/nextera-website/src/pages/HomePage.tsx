@@ -147,7 +147,7 @@ export default function HomePage() {
 
 <section className="legacy-section band" style={{ padding: "80px 0 160px" }}>
           <div className="container">
-            <h2 className="display section-heading" style={{ textAlign: "center", marginBottom: 48 }}>
+            <h2 className="display section-heading" style={{ textAlign: "center", margin: "0 auto 48px", maxWidth: 1000 }}>
               See what makes us different
             </h2>
             <div style={{ maxWidth: 1000, margin: "0 auto", borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)", border: "1px solid hsl(var(--border))" }}>
@@ -320,7 +320,7 @@ export default function HomePage() {
 
         <section
           id="how-it-works"
-          className="primitive-section dark"
+          className="primitive-section"
           aria-labelledby="works-title"
         >
           <div className="primitive-inner">
@@ -388,7 +388,7 @@ export default function HomePage() {
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 420,
+                  height: "auto", aspectRatio: "3/4",
                 }}
                 loading="lazy"
               />
@@ -399,7 +399,7 @@ export default function HomePage() {
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 420,
+                  height: "auto", aspectRatio: "3/4",
                 }}
                 loading="lazy"
               />
@@ -410,7 +410,7 @@ export default function HomePage() {
                   width: "100%",
                   borderRadius: 12,
                   objectFit: "cover",
-                  height: 420,
+                  height: "auto", aspectRatio: "3/4",
                 }}
                 loading="lazy"
               />
@@ -425,17 +425,10 @@ export default function HomePage() {
           <div
             style={{ textAlign: "center", marginBottom: 40, padding: "0 20px" }}
           >
-            <p className="marquee-title" style={{ marginBottom: 16 }}>
+            <p className="eyebrow" style={{ justifyContent: "center" }}>
               Exclusive Recruiting Partners
             </p>
-            <h2
-              className="display section-heading"
-              style={{
-                fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
-                margin: "0 auto 16px",
-                maxWidth: 800,
-              }}
-            >
+            <h2 className="display section-heading" style={{ marginInline: "auto", margin: "12px auto 16px", maxWidth: 800 }}>
               Hired within 6 months. Guaranteed.
             </h2>
             <p

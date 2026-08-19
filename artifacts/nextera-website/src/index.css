@@ -2776,3 +2776,36 @@ button {
 
 html.dark .logo-light { display: none !important; }
 html:not(.dark) .logo-dark { display: none !important; }
+
+.std-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.std-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+.std-label span {
+  color: hsl(var(--primary));
+}
+.std-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  color: hsl(var(--foreground));
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.std-input:focus {
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 1px hsl(var(--primary));
+}
+.std-input::placeholder {
+  color: hsl(var(--muted-foreground) / 0.5);
+}

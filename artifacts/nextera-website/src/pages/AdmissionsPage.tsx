@@ -80,7 +80,7 @@ export default function AdmissionsPage() {
           <div className="container hero-content">
             <p className="eyebrow">01 Coding Academy</p>
             <h1 className="display hero-title">
-              Admissions & <span>Piscine</span>
+              Admissions <span>&</span> <span>Piscine</span>
             </h1>
             <p className="hero-copy hero-subtitle">
               The application process is an elite challenge. It filters out the
@@ -656,66 +656,68 @@ export default function AdmissionsPage() {
               onSubmit={submitApplication}
               data-testid="application-form"
             >
-              <p className="eyebrow">Start your application</p>
-              <h2
-                className="display section-heading"
-                style={{ fontSize: "clamp(2.1rem, 5vw, 3.6rem)" }}
-              >
-                Ready to enter the pool?
-              </h2>
+              <div style={{ textAlign: "center", marginBottom: 10 }}>
+                <p className="eyebrow" style={{ justifyContent: "center" }}>Start your application</p>
+                <h2
+                  className="display section-heading"
+                  style={{ fontSize: "clamp(2.1rem, 5vw, 3.6rem)", margin: "12px auto 0" }}
+                >
+                  Ready to enter the pool?
+                </h2>
+              </div>
               <div style={{ marginTop: 30 }}>
-                <div className="floating-group">
-                  <input
-                    className="floating-control"
+                <div className="std-group">
+                  <label className="std-label" htmlFor="full-name">
+                    Full Name <span>*</span>
+                  </label>
+<input
+                    className="std-input"
                     id="full-name"
                     name="full-name"
                     type="text"
                     placeholder=" "
                     required
                   />
-                  <label className="floating-label" htmlFor="full-name">
-                    Full Name <span>*</span>
-                  </label>
                 </div>
-                <div className="floating-group">
-                  <input
-                    className="floating-control"
+                <div className="std-group">
+                  <label className="std-label" htmlFor="email">
+                    Email Address <span>*</span>
+                  </label>
+<input
+                    className="std-input"
                     id="email"
                     name="email"
                     type="email"
                     placeholder=" "
                     required
                   />
-                  <label className="floating-label" htmlFor="email">
-                    Email Address <span>*</span>
-                  </label>
                 </div>
                 <div className="form-row">
-                  <div className="floating-group">
-                    <input
-                      className="floating-control"
+                  <div className="std-group">
+                    <label className="std-label" htmlFor="date-of-birth">
+                      Date of Birth <span>*</span>
+                    </label>
+<input
+                      className="std-input"
                       id="date-of-birth"
                       name="date-of-birth"
                       type="date"
                       placeholder=" "
                       required
                     />
-                    <label className="floating-label" htmlFor="date-of-birth">
-                      Date of Birth <span>*</span>
-                    </label>
                   </div>
-                  <div className="floating-group">
-                    <input
-                      className="floating-control"
+                  <div className="std-group">
+                    <label className="std-label" htmlFor="phone">
+                      Phone Number <span>*</span>
+                    </label>
+<input
+                      className="std-input"
                       id="phone"
                       name="phone"
                       type="tel"
                       placeholder=" "
                       required
                     />
-                    <label className="floating-label" htmlFor="phone">
-                      Phone Number <span>*</span>
-                    </label>
                   </div>
                 </div>
                 <label className="form-label">

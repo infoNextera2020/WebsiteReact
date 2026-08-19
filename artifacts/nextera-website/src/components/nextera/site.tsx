@@ -72,11 +72,13 @@ export function Header() {
               >
                 <button
                   className={`nav-link${location.startsWith("/curriculum") || location === "/academy" || location === "/techverse" ? " active" : ""}`}
-                  style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 16px 8px 0", position: "relative" }}
+                  style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: "6px", outline: "none" }}
                   onClick={() => setCurriculumOpen(!curriculumOpen)}
                 >
                   Curriculum
-                  <ArrowDown size={14} style={{ position: "absolute", right: -4, top: "50%", transform: "translateY(-50%)" }} />
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10H7Z" />
+                  </svg>
                 </button>
                 {curriculumOpen && (
                   <div
