@@ -58,13 +58,14 @@ import {
 
 export default function AboutPage() {
   const trustees = [
-    { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg" },
-    { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg" },
-    { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg" },
-    { initials: "OS", name: "Omar Sayed" },
-    { initials: "EG", name: "Essam Gamal" },
-    { initials: "PW", name: "Pavly Wagih" },
-    { initials: "AM", name: "Anas Moner" },
+    { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg", position: "Chairman and Board Member" },
+    { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg", position: "Board Member" },
+    { initials: "ML", name: "Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
+    { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member" },
+    { initials: "OS", name: "Omar Sayed", position: "Managing Director" },
+    { initials: "EG", name: "Essam Gamal", position: "Marketing Director" },
+    { initials: "PW", name: "Pavly Wagih", position: "Project Lead" },
+    { initials: "AM", name: "Anas Moner", position: "Tech Lead" },
   ];
   return (
     <SiteFrame>
@@ -210,7 +211,7 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(0, 3).map(({ initials, name, image }) => (
+                {trustees.slice(0, 4).map(({ initials, name, image, position }) => (
                   <div
                     className="board-member"
                     key={name}
@@ -233,6 +234,7 @@ export default function AboutPage() {
                       </div>
                     )}
                     <div className="member-name">{name}</div>
+                    {position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{position}</div>}
                   </div>
                 ))}
               </div>
@@ -245,7 +247,7 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(3).map(({ initials, name, image }) => (
+                {trustees.slice(4).map(({ initials, name, image, position }) => (
                   <div
                     className="board-member"
                     key={name}
@@ -268,6 +270,7 @@ export default function AboutPage() {
                       </div>
                     )}
                     <div className="member-name">{name}</div>
+                    {position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{position}</div>}
                   </div>
                 ))}
               </div>
