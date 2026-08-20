@@ -61,7 +61,7 @@ import {
 export default function HomePage() {
   const [heroVideoOpen, setHeroVideoOpen] = useState(false);
   return (
-    <SiteFrame loader>
+    <SiteFrame>
       <main>
         <section className="hero">
           <div className="container hero-content">
