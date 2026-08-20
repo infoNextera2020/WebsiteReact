@@ -1,13 +1,7 @@
 import { Link } from "wouter";
-import { useState, type FormEvent } from "react";
 import {
-  ChevronDown,
   ArrowRight,
-  Check,
-  ExternalLink,
   Terminal,
-  Globe,
-  Building2,
   Star,
   Brain,
   Shield,
@@ -17,17 +11,8 @@ import {
   Gamepad2,
   Smartphone,
   Layers,
-  CheckCircle,
-  XCircle,
-  AlertTriangle,
-  MousePointerClick,
-  Search,
-  Zap,
   Users,
 } from "lucide-react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
 import {
   Carousel,
   CarouselContent,
@@ -35,26 +20,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Route, Router as WouterRouter, Switch } from "wouter";
-import {
-  Card,
-  CheckList,
-  CompareTable,
-  Section,
-  StepFlow,
-  Timeline,
-} from "@/components/nextera/primitives";
-import { HeroActions, SiteFrame } from "@/components/nextera/site";
-import NotFound from "@/pages/not-found";
-
-import {
-  featureStories,
-  faqItems,
-  dayInLife,
-  partners,
-  FeatureExplorer,
-  FAQList,
-} from "./shared";
+import { Timeline } from "@/components/nextera/primitives";
+import { SiteFrame } from "@/components/nextera/site";
+import { partners } from "./shared";
 
 export default function AcademyPage() {
   return (
@@ -645,8 +613,8 @@ export default function AcademyPage() {
                             border: "4px solid hsl(var(--primary))",
                           }}
                         >
-                          {testimonial.image ? (
-                            <img src={testimonial.image} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(3)" }} />
+                          {(testimonial as any).image ? (
+                            <img src={(testimonial as any).image} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(3)" }} />
                           ) : (
                             <span style={{ fontSize: "2rem", color: "hsl(var(--muted-foreground))" }}>
                               {testimonial.name.split(" ").map((n: string) => n[0]).join("")}

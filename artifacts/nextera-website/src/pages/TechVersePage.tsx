@@ -1,7 +1,7 @@
 import { SiteFrame } from "@/components/nextera/site";
-import { ArrowRight, Bot, Code, Cpu, GraduationCap, Lightbulb, Trophy } from "lucide-react";
+import { ArrowRight, Code, Cpu, GraduationCap, Lightbulb, Trophy } from "lucide-react";
 import { Link } from "wouter";
-import { Card, Section, CheckList } from "@/components/nextera/primitives";
+import { Section } from "@/components/nextera/primitives";
 import { toast } from "sonner";
 
 export default function TechVersePage() {

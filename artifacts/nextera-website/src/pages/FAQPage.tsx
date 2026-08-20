@@ -1,60 +1,7 @@
 import { Link } from "wouter";
-import { useState, type FormEvent } from "react";
-import {
-  ChevronDown,
-  ArrowRight,
-  Check,
-  ExternalLink,
-  Terminal,
-  Globe,
-  Building2,
-  Star,
-  Brain,
-  Shield,
-  Cloud,
-  Code,
-  Database,
-  Gamepad2,
-  Smartphone,
-  Layers,
-  CheckCircle,
-  XCircle,
-  AlertTriangle,
-  MousePointerClick,
-  Search,
-  Zap,
-  Users,
-} from "lucide-react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Route, Router as WouterRouter, Switch } from "wouter";
-import {
-  Card,
-  CheckList,
-  CompareTable,
-  Section,
-  StepFlow,
-  Timeline,
-} from "@/components/nextera/primitives";
-import { HeroActions, SiteFrame } from "@/components/nextera/site";
-import NotFound from "@/pages/not-found";
-
-import {
-  featureStories,
-  faqItems,
-  dayInLife,
-  partners,
-  FeatureExplorer,
-  FAQList,
-} from "./shared";
+import { ArrowRight } from "lucide-react";
+import { SiteFrame } from "@/components/nextera/site";
+import { FAQList } from "./shared";
 
 export default function FAQPage() {
   return (

@@ -1,62 +1,9 @@
 import { Link } from "wouter";
-import { useState, type FormEvent } from "react";
-import {
-  ChevronDown,
-  ArrowRight,
-  Check,
-  ExternalLink,
-  Terminal,
-  Globe,
-  Building2,
-  Star,
-  Brain,
-  Shield,
-  Cloud,
-  Code,
-  Database,
-  Gamepad2,
-  Smartphone,
-  Layers,
-  CheckCircle,
-  XCircle,
-  AlertTriangle,
-  MousePointerClick,
-  Search,
-  Zap,
-  Users,
-  Play,
-  X,
-} from "lucide-react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Route, Router as WouterRouter, Switch } from "wouter";
-import {
-  Card,
-  CheckList,
-  CompareTable,
-  Section,
-  StepFlow,
-  Timeline,
-} from "@/components/nextera/primitives";
-import { HeroActions, SiteFrame } from "@/components/nextera/site";
-import NotFound from "@/pages/not-found";
-
-import {
-  featureStories,
-  faqItems,
-  dayInLife,
-  partners,
-  FeatureExplorer,
-  FAQList,
-} from "./shared";
+import { useState } from "react";
+import { ArrowRight, Terminal, Globe, Building2, Play, X } from "lucide-react";
+import { StepFlow } from "@/components/nextera/primitives";
+import { SiteFrame } from "@/components/nextera/site";
+import { partners, FeatureExplorer, FAQList } from "./shared";
 
 export default function HomePage() {
   const [heroVideoOpen, setHeroVideoOpen] = useState(false);
@@ -73,8 +20,7 @@ export default function HomePage() {
             </h1>
             <p className="hero-copy reveal delay-2" style={{ maxWidth: 700 }}>
               A ruthless, peer-to-peer coding academy designed to strip away
-              traditional habits and forge elite problem solvers. No teachers.
-              No lectures. Just you, your peers, and the terminal.
+              traditional habits and forge elite problem solvers.
             </p>
             <div
               className="hero-actions reveal delay-3"
