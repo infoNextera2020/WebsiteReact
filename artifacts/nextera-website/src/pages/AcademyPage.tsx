@@ -613,7 +613,7 @@ export default function AcademyPage() {
                             border: "4px solid hsl(var(--primary))",
                           }}
                         >
-                          {(testimonial as any).image ? (
+                           {(testimonial as any).image ? (
                             <img src={(testimonial as any).image} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(3)" }} />
                           ) : (
                             <span style={{ fontSize: "2rem", color: "hsl(var(--muted-foreground))" }}>
@@ -730,7 +730,7 @@ export default function AcademyPage() {
               The curriculum is built for the elite.
             </h2>
             <p className="section-intro" style={{ marginInline: "auto" }}>
-              You cannot simply buy your way in—you have to survive the Piscine.
+              There's no shortcut through the Piscine — but if you're willing to put in the work, there's a seat for you.
             </p>
             <Link href="/admissions#register"
               className="button"

@@ -42,7 +42,7 @@ export default function AdmissionsPage() {
               Admissions <span>&</span> <span>Piscine</span>
             </h1>
             <p className="hero-copy hero-subtitle">
-              The application process is an elite challenge. It filters out the
+              The application process is a genuine test. It filters out the
               uncommitted while encouraging diverse backgrounds to rise to their
               potential.
             </p>

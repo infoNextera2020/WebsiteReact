@@ -100,7 +100,7 @@ export default function TechVersePage() {
                   color: "hsl(var(--muted-foreground))",
                   lineHeight: 1.6,
                 }}
-                dangerouslySetInnerHTML={{ __html: `Programming programs are available for children starting from 6 years old, introducing students to coding and computational thinking through structured, age-appropriate learning experiences.` }}
+                dangerouslySetInnerHTML={{ __html: `Programming Programs introduce children as young as 6 to coding and computational thinking, using structured, age-appropriate activities rather than abstract theory.` }}
               />
             </div>
             <div
@@ -137,7 +137,7 @@ export default function TechVersePage() {
                   color: "hsl(var(--muted-foreground))",
                   lineHeight: 1.6,
                 }}
-                dangerouslySetInnerHTML={{ __html: `TechVerse offers 01 Programs, providing a more advanced learning pathway in programming and technology.<br/>The programs focus on strengthening technical skills, problem-solving, programming, and practical project development.` }}
+                dangerouslySetInnerHTML={{ __html: `01 Programs take students who've outgrown the intro track further into real software development, with a stronger focus on independent projects and technical depth.` }}
               />
             </div>
           </div>
@@ -189,9 +189,7 @@ export default function TechVersePage() {
                     <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Technical Implementation</span>
                   </div>
                 </div>
-                <p style={{ marginBottom: "16px" }}>The AI Competition provides students with the opportunity to explore Artificial Intelligence and develop technology-based solutions to real-world problems.</p>
-                <p style={{ marginBottom: "12px" }}>Participants work on projects that demonstrate their understanding in key areas:</p>
-                
+                <p style={{ marginBottom: "16px" }}>Teams tackle a real-world problem using AI concepts, then build and present a working solution — judged on problem-solving, creativity, and technical execution rather than theory alone.</p>
               </div>
             </div>
             <div
@@ -230,9 +228,8 @@ export default function TechVersePage() {
                     <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.05em", color: "hsl(var(--primary))", textTransform: "uppercase" }}>Smart Systems</span>
                   </div>
                 </div>
-                <p style={{ marginBottom: "16px" }}>The IoT Innovation Challenge focuses on developing innovative solutions using Internet of Things technologies.</p>
-                <p style={{ marginBottom: "12px" }}>Students design and build IoT-based projects using sensors, connected devices, and software to address challenges in key domains:</p>
-                <p>The challenge provides students with practical experience in developing, testing, and presenting technology solutions.</p>
+                <p style={{ marginBottom: "16px" }}>Student teams pick a real-world problem in agriculture, energy, or urban systems and build a working prototype using sensors and connected devices to solve it.</p>
+                <p>Along the way, they get hands-on experience designing, testing, and presenting a functioning piece of technology — not just a concept.</p>
               </div>
             </div>
           </div>
