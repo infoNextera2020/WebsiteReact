@@ -271,12 +271,12 @@ export default function AdmissionsPage() {
                 }}
               >
                 {[
-                  "A new challenge every single day, with no lecture attached",
-                  "Peer evaluations you both receive and deliver, out loud",
-                  "Intense collaboration — the room solves faster than you do",
-                  "Very little sleep and a schedule that bleeds into the evening",
-                  "A learning curve steeper than anything you have done before",
-                  "Weekend rushes: group projects delivered against the clock",
+                  "A fresh hands-on challenge every single day — learning by building, not listening",
+                  "Collaborative peer evaluations where you give and receive constructive feedback",
+                  "High-energy team collaboration — tackling complex challenges together as an agile unit",
+                  "Full-immersion learning designed to rapidly accelerate your growth and focus",
+                  "A steep, rewarding learning curve that develops true engineering intuition",
+                  "Weekend team hackathons: dynamic sprint projects delivered against real-world deadlines",
                 ].map((item, i) => (
                   <li
                     key={i}
@@ -331,12 +331,12 @@ export default function AdmissionsPage() {
                 }}
               >
                 {[
-                  "Don't isolate yourself — silence is the fastest way to fall behind",
-                  "Don't chase the score instead of the understanding",
-                  "Don't copy code you cannot defend in a review",
-                  "Don't quit after a failed exam; the recovery is part of the signal",
-                  "Don't neglect sleep, food and movement — burnout is not grit",
-                  "Don't refuse help, and don't refuse to give it",
+                  "Don't isolate yourself — open communication and teamwork are the keys to progress",
+                  "Don't just chase points — deep conceptual understanding is the ultimate metric",
+                  "Don't rely on shortcuts — write code you understand and can confidently defend",
+                  "Don't get discouraged by initial setbacks — resilience and iteration build great engineers",
+                  "Don't overlook balance and well-being — sustained energy and health drive top performance",
+                  "Don't hesitate to ask for support, and always be eager to empower your peers",
                 ].map((item, i) => (
                   <li
                     key={i}
@@ -358,161 +358,6 @@ export default function AdmissionsPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-
-          <div
-            className="piscine-schedule-block"
-            data-testid="piscine-weekly-schedule"
-          >
-            <p className="eyebrow" style={{ marginTop: 60 }}>
-              4-Week Filtration (26 Days)
-            </p>
-            <h3
-              className="display section-heading"
-              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)", marginTop: 8 }}
-            >
-              Weekly Schedule: Quests, Checkpoints &amp; Raids
-            </h3>
-            <p
-              className="section-intro"
-              style={{ marginTop: 12, marginBottom: 32 }}
-            >
-              The Piscine follows a structured weekly rhythm balancing
-              individual concept mastery, timed skill assessments, and
-              collaborative weekend sprints.
-            </p>
-
-            <div className="piscine-rhythm-grid">
-              <div className="piscine-rhythm-card">
-                <div className="rhythm-tag quest">01 / Sunday – Wednesday</div>
-                <h4 className="rhythm-title">Individual Quests</h4>
-                <p className="rhythm-time">
-                  10:00 AM – 10:00 PM · Optional Online / Campus
-                </p>
-                <p className="rhythm-desc">
-                  Individual coding tasks designed to master core concepts
-                  through videos and hands-on exercises. Graded on a 5-star
-                  scale; each task must be completed and passed to unlock
-                  subsequent concepts.
-                </p>
-              </div>
-
-              <div className="piscine-rhythm-card">
-                <div className="rhythm-tag checkpoint">
-                  02 / Thursday &amp; Friday
-                </div>
-                <h4 className="rhythm-title">Weekly Checkpoints</h4>
-                <p className="rhythm-time">
-                  Thu: 5:00 PM – 8:00 PM | Fri: 3:00 PM – 6:00 PM · Mandatory
-                  On-Campus
-                </p>
-                <p className="rhythm-desc">
-                  Timed coding challenges testing knowledge gained during the
-                  week’s quests. Conducted under exam conditions without peer
-                  assistance to evaluate individual problem solving and
-                  retention.
-                </p>
-              </div>
-
-              <div className="piscine-rhythm-card">
-                <div className="rhythm-tag raid">03 / Saturdays</div>
-                <h4 className="rhythm-title">Weekend Raids</h4>
-                <p className="rhythm-time">
-                  Weeks 1, 2 &amp; 3 · Intensive Group Builds
-                </p>
-                <p className="rhythm-desc">
-                  Collaborative team sprints (teams of 2 to 3 students) building
-                  a complete challenge against the clock. Evaluated by mentors
-                  on functionality, code efficiency, clarity, and team synergy.
-                </p>
-              </div>
-            </div>
-
-            <div className="piscine-table-wrap">
-              <table
-                className="piscine-table"
-                aria-label="Piscine weekly schedule matrix"
-              >
-                <thead>
-                  <tr>
-                    <th>Phase</th>
-                    <th>Sunday – Wednesday</th>
-                    <th>Thursday &amp; Friday</th>
-                    <th>Saturday</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong>Week 01</strong>
-                    </td>
-                    <td>
-                      <span className="badge-quest">Quests</span> Individual
-                      Concepts &amp; Logic
-                    </td>
-                    <td>
-                      <span className="badge-checkpoint">Checkpoint 01</span>{" "}
-                      Timed Offline Exam
-                    </td>
-                    <td>
-                      <span className="badge-raid">Raid 01</span> 3-Person Team
-                      Challenge
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Week 02</strong>
-                    </td>
-                    <td>
-                      <span className="badge-quest">Quests</span> Data
-                      Structures &amp; Shell
-                    </td>
-                    <td>
-                      <span className="badge-checkpoint">Checkpoint 02</span>{" "}
-                      Timed Offline Exam
-                    </td>
-                    <td>
-                      <span className="badge-raid">Raid 02</span> 3-Person Team
-                      Challenge
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Week 03</strong>
-                    </td>
-                    <td>
-                      <span className="badge-quest">Quests</span> Algorithms
-                      &amp; Systems
-                    </td>
-                    <td>
-                      <span className="badge-checkpoint">Checkpoint 03</span>{" "}
-                      Timed Offline Exam
-                    </td>
-                    <td>
-                      <span className="badge-raid">Raid 03</span> 3-Person Team
-                      Challenge
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Week 04</strong>
-                    </td>
-                    <td>
-                      <span className="badge-quest">Quests</span> Advanced
-                      Architecture
-                    </td>
-                    <td>
-                      <span className="badge-checkpoint">Final Checkpoint</span>{" "}
-                      Filtration Exam
-                    </td>
-                    <td>
-                      <span className="badge-core">Cohort Selection</span> Seat
-                      Allocation
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </Section>

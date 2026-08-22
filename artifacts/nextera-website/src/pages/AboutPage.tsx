@@ -84,7 +84,7 @@ export default function AboutPage() {
           <div className="container campus-split">
             <div className="campus-copy">
               <p className="eyebrow">Campus vibe</p>
-              <h2 className="display section-heading">More than a campus</h2>
+              <h2 className="display section-heading">More than a <span>campus</span></h2>
               <p>
                 NextEra isn't just a place to code—it’s an innovation hub. With
                 24/7 access, you decide when you work best. Collaborate in open

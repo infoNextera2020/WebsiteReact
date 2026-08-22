@@ -1,0 +1,42 @@
+// ---------------------------------------------- Page title
+const titleContent = document.querySelector('#welcome')
+const titleString = `
+    Welcome to NextEra coding school
+`
+if (document.querySelector('.title')) {
+	titleContent.innerHTML = titleString
+}
+
+// text
+const textInstructions = document.querySelector(".text");
+textInstructions.innerHTML = `<div class="text">
+     <span id="zone-01">Welcome to NextEra coding school</span>
+     <br><br>
+     <span id="zone-01-process">Here’s how to get started:</span>
+     <br><br>
+     1)
+     <span id="instruction-1">Create an Account: Sign up and log into our platform.</span>
+     <br>
+     2) <span id="instruction-2">Play the Games: Engage in our interactive challenges that test your problem-solving skills.</span>
+     <br>
+     3) <span id="instruction-3">Start Your Coding Journey: Confirm your registration and dive into the world of coding!</span>
+     <br><br>
+     <span id="account">That's it! If you already have an account, sign in to continue your application or check for updates.</span>
+   </div>`;
+
+// Add 01Edu brand to the HomePage. Do not remove please
+const brandContent = document.querySelector('#about-us')
+const brandString = `
+Powered by 01Edu.
+`
+if (brandContent) {
+	brandContent.innerHTML = brandString + ` ` + brandContent.innerHTML
+}
+
+const logoSource = document.querySelector('.logo')
+if (document.querySelector('.logo')) {
+  logoSource.style.width = '100px';
+  logoSource.style.height = '100px';
+  logoSource.style.background = 'center url("assets/img/logo.png")';
+  logoSource.style.backgroundRepeat = 'no-repeat';
+}

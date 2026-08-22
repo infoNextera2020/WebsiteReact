@@ -58,9 +58,79 @@ import PartnershipPage from "./pages/PartnershipPage";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
+const routeMetadata: Record<string, { title: string; description: string }> = {
+  "/": {
+    title: "NextEra Education | Next-Gen Coding Academy & Innovation Hub",
+    description:
+      "NextEra Education is a next-generation coding academy delivering peer-to-peer, project-based tech education with guaranteed employment pathways.",
+  },
+  "/admissions": {
+    title: "Admissions & Piscine | NextEra Education",
+    description:
+      "Discover the 01 Coding Academy selection process. Learn about the Piscine bootcamp, eligibility criteria, and step-by-step application guidelines.",
+  },
+  "/about": {
+    title: "About Us | NextEra Education",
+    description:
+      "Learn about NextEra Education's mission, vision, leadership, and our board of trustees driving educational innovation in tech.",
+  },
+  "/academy": {
+    title: "01 Coding Academy | NextEra Education",
+    description:
+      "Explore our 01 Coding Academy curriculum: full-stack development, AI, cybersecurity, systems engineering, and peer-to-peer pedagogy.",
+  },
+  "/techverse": {
+    title: "TechVerse | NextEra Education",
+    description:
+      "Join TechVerse by NextEra Education: empowering future innovators in AI, robotics, coding, and transformative tech skills.",
+  },
+  "/faq": {
+    title: "Frequently Asked Questions | NextEra Education",
+    description:
+      "Find answers to common questions about NextEra Education, tuition, Piscine selection, campus life, and career placement.",
+  },
+  "/partnership": {
+    title: "Partner With Us | NextEra Education",
+    description:
+      "Collaborate with NextEra Education to hire world-class software engineering talent and shape the future of the global tech workforce.",
+  },
+};
+
 function ScrollToTop() {
   const [pathname] = useLocation();
   useEffect(() => {
+    const meta = routeMetadata[pathname] || {
+      title: "NextEra Education | Next-Gen Coding Academy",
+      description:
+        "NextEra Education — Next-generation peer-to-peer coding academy and innovation hub.",
+    };
+    document.title = meta.title;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", meta.description);
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", meta.title);
+    }
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute("content", meta.description);
+    }
+
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) {
+      twTitle.setAttribute("content", meta.title);
+    }
+
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) {
+      twDesc.setAttribute("content", meta.description);
+    }
+
     setTimeout(() => {
       if (window.location.hash) {
         const el = document.querySelector(window.location.hash);

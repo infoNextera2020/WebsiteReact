@@ -12,6 +12,9 @@ import {
   Smartphone,
   Layers,
   Users,
+  Blocks,
+  Coffee,
+  Server,
 } from "lucide-react";
 import {
   Carousel,
@@ -23,6 +26,7 @@ import {
 import { Timeline } from "@/components/nextera/primitives";
 import { SiteFrame } from "@/components/nextera/site";
 import { partners } from "./shared";
+import { CurriculumTree } from "@/components/nextera/curriculum-tree";
 
 export default function AcademyPage() {
   return (
@@ -414,6 +418,9 @@ export default function AcademyPage() {
             className="container"
             style={{ width: "min(1100px, calc(100% - 48px))" }}
           >
+            {/* Visual Interactive Curriculum Tree */}
+            <CurriculumTree />
+
             <div
               style={{
                 display: "grid",
@@ -424,48 +431,75 @@ export default function AcademyPage() {
               {[
                 {
                   name: "Full-Stack Web Dev",
+                  role: "Full-Stack Software Engineer",
                   icon: Layers,
-                  desc: "Build enterprise-grade web apps with Java, Spring Boot, REST APIs, and modern deployment pipelines.",
+                  desc: "Master modern web architectures: build real-time WebSockets platforms, custom reactive frontend frameworks, GraphQL APIs, and event-driven microservices.",
+                },
+                {
+                  name: "Java Enterprise Systems",
+                  role: "Enterprise Software Engineer",
+                  icon: Coffee,
+                  desc: "Engineer production-grade backends using Spring Boot, Angular, transactional high-volume e-commerce architectures, and automated CI/CD pipelines.",
                 },
                 {
                   name: "AI & Machine Learning",
+                  role: "AI / Machine Learning Engineer",
                   icon: Brain,
-                  desc: "Train models, work with neural networks, NLP, and computer vision using Python and TensorFlow.",
+                  desc: "Develop predictive ML pipelines, NLP sentiment analyzers, quantitative trading models (S&P 500), credit risk scoring engines, and neural vision networks.",
                 },
                 {
-                  name: "Cybersecurity",
+                  name: "Cybersecurity & Defense",
+                  role: "Security Engineer / Penetration Tester",
                   icon: Shield,
-                  desc: "Master ethical hacking, network defense, cryptography, and vulnerability assessment.",
+                  desc: "Perform active penetration testing, binary exploitation, live malware analysis, cryptographic protocol auditing, and offensive/defensive network forensics.",
                 },
                 {
                   name: "Cloud & DevOps",
+                  role: "DevOps & Cloud Infrastructure Engineer",
                   icon: Cloud,
-                  desc: "Deploy and scale applications with Docker, Kubernetes, CI/CD, and cloud platforms.",
+                  desc: "Architect scalable multi-cloud infrastructure, automate Kubernetes container orchestration, manage Docker environments, and build zero-downtime deployment pipelines.",
                 },
                 {
-                  name: "Algorithms",
-                  icon: Code,
-                  desc: "Sharpen problem-solving with data structures, sorting, graph theory, and competitive programming.",
+                  name: "Blockchain & Web3",
+                  role: "Blockchain & Smart Contract Developer",
+                  icon: Blocks,
+                  desc: "Build decentralized applications (dApps), write and audit Solidity smart contracts, implement layer-2 payment channels, and build Web3 financial protocols.",
                 },
                 {
-                  name: "Databases & SQL",
-                  icon: Database,
-                  desc: "Design schemas, write complex queries, and manage relational and NoSQL databases.",
-                },
-                {
-                  name: "Game Development",
-                  icon: Gamepad2,
-                  desc: "Create 2D/3D games with physics engines, rendering pipelines, and multiplayer networking.",
-                },
-                {
-                  name: "Systems Programming",
+                  name: "Systems & Architecture",
+                  role: "Low-Level Systems Engineer (Rust / Go)",
                   icon: Terminal,
-                  desc: "Write low-level code in C/Go, build shells, manage memory, and understand operating systems.",
+                  desc: "Write high-performance memory-safe code in Rust and Go: build custom UNIX shells, raw-socket HTTP servers, multi-threaded engines, and 3D raytracers.",
                 },
                 {
-                  name: "Mobile Development",
+                  name: "Mobile Applications",
+                  role: "Mobile Application Engineer (iOS & Android)",
                   icon: Smartphone,
-                  desc: "Ship native and cross-platform mobile apps for iOS and Android.",
+                  desc: "Ship production-ready Flutter and cross-platform apps featuring end-to-end encrypted messaging, real-time WebSocket market feeds, and native hardware integrations.",
+                },
+                {
+                  name: "Game Development & 3D",
+                  role: "Game Developer / Graphics Programmer",
+                  icon: Gamepad2,
+                  desc: "Develop custom 2D/3D physics engines, real-time multiplayer FPS networking with client-side prediction, and advanced 3D raytracing graphics pipelines.",
+                },
+                {
+                  name: "Algorithms & Logic",
+                  role: "Algorithmic & Optimization Specialist",
+                  icon: Code,
+                  desc: "Master graph theory pathfinding (max-flow min-cut), stack-based sorting algorithms, mathematical regression forecasting, and complex computational problems.",
+                },
+                {
+                  name: "Linux Systems Administration",
+                  role: "Systems Administrator / SRE",
+                  icon: Server,
+                  desc: "Provision production Linux environments, configure virtual machine clusters, manage SSH bastion security, and deploy automated network monitoring tools.",
+                },
+                {
+                  name: "Database Architecture",
+                  role: "Data Engineer / Database Administrator",
+                  icon: Database,
+                  desc: "Design high-throughput relational and NoSQL schemas, write optimized analytical queries, manage Neo4j graph databases, and handle distributed data scaling.",
                 },
               ].map((domain, i) => {
                 const Icon = domain.icon;
@@ -493,8 +527,8 @@ export default function AcademyPage() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          width: 40,
-                          height: 40,
+                          width: 42,
+                          height: 42,
                           borderRadius: 8,
                           background: "hsl(var(--primary) / .1)",
                           color: "hsl(var(--primary))",
@@ -503,23 +537,38 @@ export default function AcademyPage() {
                       >
                         <Icon size={20} />
                       </div>
-                      <span
-                        style={{
-                          fontWeight: 600,
-                          fontSize: "1.05rem",
-                          color: "hsl(var(--foreground))",
-                        }}
-                      >
-                        {domain.name}
-                      </span>
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <span
+                          style={{
+                            fontWeight: 700,
+                            fontSize: "1.05rem",
+                            color: "hsl(var(--foreground))",
+                          }}
+                        >
+                          {domain.name}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "hsl(var(--primary))",
+                            fontWeight: 600,
+                            fontFamily: "var(--font-mono)",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.04em",
+                            marginTop: 2,
+                          }}
+                        >
+                          {domain.role}
+                        </span>
+                      </div>
                     </div>
                     <p
                       className="master-card-desc"
                       style={{
                         margin: 0,
-                        fontSize: "0.9rem",
+                        fontSize: "0.88rem",
                         color: "hsl(var(--muted-foreground))",
-                        lineHeight: 1.5,
+                        lineHeight: 1.55,
                       }}
                     >
                       {domain.desc}

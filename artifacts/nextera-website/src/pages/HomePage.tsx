@@ -73,31 +73,48 @@ export default function HomePage() {
           aria-labelledby="pedagogy-title"
         >
           <div className="container">
-            <div className="academy-intro" style={{ display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}>
-              <div style={{ flex: "1 1 400px" }}>
-                <strong>NextEra Education</strong> is a new breed of coding
-                academy. We strip away the traditional classroom and focus
-                entirely on real-world engineering. Students learn by building not
-                by listening and developing practical skills in Full Stack
-                Development, AI, Cybersecurity, Blockchain, Mobile Development,
-                and more. Graduates leave with a professional portfolio, a
-                technology specialization and guaranteed employment for eligible
-                participants who meet the official program requirements.
+            <p className="eyebrow" style={{ marginBottom: 12 }}>A New Standard of Tech Education</p>
+            <h2 id="pedagogy-title" className="display section-heading" style={{ marginBottom: 32 }}>
+              Built for Builders. <span>Engineered for Careers.</span>
+            </h2>
+            <div className="academy-intro" style={{ display: "flex", flexWrap: "wrap", gap: "36px", alignItems: "center" }}>
+              <div style={{ flex: "1 1 400px", fontSize: "1.08rem", lineHeight: 1.7, color: "hsl(var(--muted-foreground))" }}>
+                <p>
+                  <strong style={{ color: "hsl(var(--foreground))" }}>NextEra Education</strong> is a new breed of coding
+                  academy. We strip away the traditional classroom and focus
+                  entirely on real-world engineering. Students learn by building—not
+                  by listening—and develop practical skills in Full Stack
+                  Development, AI, Cybersecurity, Blockchain, Mobile Development,
+                  and more.
+                </p>
+                <p style={{ marginTop: 16 }}>
+                  Graduates leave with a professional portfolio, a
+                  technology specialization, and guaranteed employment for eligible
+                  participants who meet the official program requirements.
+                </p>
               </div>
               <div style={{ flex: "1 1 300px" }}>
-                <img src="/academy-intro.jpg" alt="Student coding at NextEra" style={{ width: "100%", borderRadius: "8px", objectFit: "cover", maxHeight: "350px" }} />
+                <img src="/academy-intro.jpg" alt="Student coding at NextEra" style={{ width: "100%", borderRadius: "12px", objectFit: "cover", maxHeight: "350px", border: "1px solid hsl(var(--border))" }} />
               </div>
             </div>
           </div>
         </section>
 
-<section className="legacy-section band" style={{ padding: "80px 0 160px" }}>
+        <section className="legacy-section band" style={{ padding: "80px 0 160px" }}>
           <div className="container">
             <h2 className="display section-heading" style={{ textAlign: "center", margin: "0 auto 48px", maxWidth: 1000 }}>
-              See what makes us different
+              See what makes us <span>different</span>
             </h2>
             <div style={{ maxWidth: 1000, margin: "0 auto", borderRadius: 16, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)", border: "1px solid hsl(var(--border))" }}>
-              <iframe src="https://drive.google.com/file/d/1myKl30vg9A5-Eb6FZCnSidBn640xjoLG/preview" width="100%" height="100%" style={{ display: "block", aspectRatio: "16/9", border: "none" }} allow="autoplay" allowFullScreen></iframe>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/aVlAq85yG9g?autoplay=1&mute=1&loop=1&playlist=aVlAq85yG9g&rel=0&playsinline=1"
+                title="See what makes NextEra different"
+                width="100%"
+                height="100%"
+                style={{ display: "block", aspectRatio: "16/9", border: "none" }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </section>
@@ -422,33 +439,6 @@ export default function HomePage() {
           <div style={{ textAlign: "center", marginTop: 40 }}>
             <Link href="/partnership" className="button">
               Become a partner <ArrowRight size={15} />
-            </Link>
-          </div>
-        </section>
-        <section className="legacy-section band">
-          <div className="container" style={{ textAlign: "center" }}>
-            <p className="eyebrow">Industry backing</p>
-            <h2
-              className="display section-heading"
-              style={{ marginInline: "auto" }}
-            >
-              Built for the industry,
-              <br />
-              backed by the industry.
-            </h2>
-            <p className="section-intro" style={{ marginInline: "auto" }}>
-              The traditional education system is too slow for the digital
-              economy. Global tech companies don't just need people who have
-              read textbooks; they need engineers who can push code, collaborate
-              in agile teams, and solve un-googleable problems. NextEra produces
-              exactly that.
-            </p>
-            <Link href="/admissions#register"
-              className="button"
-              style={{ marginTop: 30 }}
-              data-testid="link-industry-apply"
-            >
-              Apply now <ArrowRight size={15} />
             </Link>
           </div>
         </section>

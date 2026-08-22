@@ -1488,9 +1488,8 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 15px hsl(var(--shadow-color) / 0.04);
-  cursor: pointer;
+  cursor: default;
 }
 .campus-split {
   display: grid;
@@ -1501,6 +1500,12 @@ button {
 .campus-copy {
   color: hsl(var(--muted-foreground));
   font-size: 1.05rem;
+}
+.campus-copy .section-heading {
+  color: hsl(var(--foreground));
+}
+.campus-copy .section-heading span {
+  color: hsl(var(--primary));
 }
 .campus-copy .button {
   margin-top: 18px;
@@ -2667,13 +2672,6 @@ button {
   box-shadow: 0 18px 36px hsl(var(--shadow-color) / 0.12);
 }
 
-.map-node:hover {
-  background: hsl(var(--primary));
-  border-color: transparent;
-  color: hsl(var(--primary-foreground));
-  box-shadow: 0 8px 24px hsl(var(--primary) / 0.25);
-  transform: scale(1.05);
-}
 
 /* What You'll Master - expandable cards */
 .master-card {
@@ -2692,9 +2690,9 @@ button {
   box-shadow: 0 4px 20px hsl(var(--primary) / .15);
 }
 .master-card:hover .master-card-desc {
-  max-height: 120px;
+  max-height: 240px;
   opacity: 1;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 
