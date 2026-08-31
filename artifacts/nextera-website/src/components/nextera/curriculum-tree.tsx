@@ -27,35 +27,57 @@ export function CurriculumTree() {
       icon: Terminal,
       level: "Core 01",
       desc: "CLI tools, concurrency, network sockets & file systems",
-      projects: ["go-reloaded", "groupie-tracker", "forum", "net-cat"],
+      projects: [
+        "Go Concurrency & Parsing (go-reloaded)",
+        "Interactive Band API Visualizer (groupie-tracker)",
+        "Full-Stack Web Forum with SQLite (forum)",
+        "TCP Socket Group Chat Server (net-cat)",
+      ],
     },
     {
       name: "Algorithms & Logic",
       icon: Code,
       level: "Core 02",
-      desc: "Data structures, graph pathfinding & optimization",
-      projects: ["lem-in", "push-swap", "tetris-optimizer", "linear-stats"],
+      desc: "Data structures, graph pathfinding & algorithmic optimization",
+      projects: [
+        "Graph Flow Pathfinding Optimizer (lem-in)",
+        "Two-Stack Sorting Algorithm (push-swap)",
+        "Recursive Polyomino Packing (tetris-optimizer)",
+        "Statistical Linear Regression (linear-stats)",
+      ],
     },
     {
       name: "AdminSys & Linux",
       icon: Server,
       level: "Core 03",
       desc: "Linux server administration, VM clusters & network security",
-      projects: ["linux", "add-vm", "remote-ssh", "network-scan"],
+      projects: [
+        "Linux Server Provisioning & VM Virtualization (linux / add-vm)",
+        "Remote SSH Bastion Architecture (remote-ssh)",
+        "Network Packet & Port Scanner (network-scan)",
+      ],
     },
     {
       name: "Web Full-Stack",
       icon: Layers,
       level: "Core 04",
-      desc: "Custom reactive DOM, real-time WebSockets & GraphQL",
-      projects: ["real-time-forum", "social-network", "mini-framework"],
+      desc: "Custom reactive DOM, real-time WebSockets & GraphQL APIs",
+      projects: [
+        "Real-Time WebSocket Forum (real-time-forum)",
+        "Full-Scale Social Network Platform (social-network)",
+        "Custom Reactive DOM Framework (mini-framework)",
+      ],
     },
     {
       name: "Systems & Rust",
       icon: Cpu,
       level: "Core 05",
       desc: "Memory management, raw socket servers & 3D raytracing",
-      projects: ["piscine-rust", "0-shell", "localhost", "rt-raytracer"],
+      projects: [
+        "Custom UNIX Shell in Rust (0-shell / piscine-rust)",
+        "HTTP/1.1 Socket Web Server (localhost)",
+        "Multi-Threaded 3D Raytracer (rt-raytracer)",
+      ],
     },
   ];
 
@@ -63,65 +85,100 @@ export function CurriculumTree() {
     {
       id: "ai",
       title: "Artificial Intelligence",
-      role: "AI & ML Engineer",
+      role: "AI / Machine Learning Engineer",
       icon: Brain,
       badge: "6 Projects",
-      desc: "NLP sentiment models, S&P 500 algorithmic trading & predictive scoring",
-      projects: ["piscine-ai", "sp500-strategies", "nlp-scraper", "credit-scoring"],
+      desc: "Develop predictive ML pipelines, NLP sentiment analyzers, quantitative trading models (S&P 500), credit risk scoring engines, and neural vision networks.",
+      projects: [
+        "Predictive ML & Neural Nets (piscine-ai)",
+        "S&P 500 Quantitative Trading (sp500)",
+        "NLP Scraper & Sentiment Analyzer (nlp-scraper)",
+        "Explainable Credit Scoring Risk Engine (credit-scoring)",
+      ],
     },
     {
       id: "cyber",
-      title: "Cybersecurity",
-      role: "Security & Pentest Engineer",
+      title: "Cybersecurity & Defense",
+      role: "Security Engineer / Penetration Tester",
       icon: Shield,
       badge: "11 Projects",
-      desc: "Binary exploitation, live malware tracking & cryptographic defense",
-      projects: ["web-hack", "injector", "mal-track", "obfuscator", "hole-in-bin"],
+      desc: "Perform active penetration testing, binary exploitation, live malware analysis, cryptographic protocol auditing, and offensive/defensive network forensics.",
+      projects: [
+        "Web App Penetration & SQLi/XSS (web-hack)",
+        "Binary Exploitation & Buffer Overflow Lab (hole-in-bin)",
+        "Live Malware Analysis & Eradication (mal-track)",
+        "Code Obfuscation & Evasion (obfuscator)",
+        "Process Injection & Dynamic Patching (injector)",
+      ],
     },
     {
       id: "java",
-      title: "Java Enterprise",
+      title: "Java Enterprise Systems",
       role: "Enterprise Software Engineer",
       icon: Coffee,
       badge: "11 Projects",
-      desc: "Spring Boot microservices, high-throughput e-commerce & CI/CD",
-      projects: ["piscine-java", "buy-01/02", "mr-jenk", "nexus", "neo-4-flix"],
+      desc: "Engineer production-grade backends using Spring Boot, Angular, transactional high-volume e-commerce architectures, and automated CI/CD pipelines.",
+      projects: [
+        "Spring Boot & Angular E-Commerce (buy-01/02)",
+        "Jenkins Automated CI/CD Pipeline (mr-jenk)",
+        "Neo4j Graph Recommendation Engine (neo-4-flix)",
+        "Microservices Service Registry (nexus)",
+        "Java OOP & Spring Core (piscine-java)",
+      ],
     },
     {
       id: "devops",
       title: "Cloud & DevOps",
-      role: "DevOps / SRE Specialist",
+      role: "DevOps & Cloud Infrastructure Engineer",
       icon: Cloud,
       badge: "7 Projects",
-      desc: "Kubernetes cluster orchestration, multi-cloud architecture & Docker",
-      projects: ["orchestrator", "cloud-design", "play-with-containers"],
+      desc: "Architect scalable multi-cloud infrastructure, automate Kubernetes container orchestration, manage Docker environments, and build zero-downtime deployment pipelines.",
+      projects: [
+        "Terraform AWS Microservices (cloud-design)",
+        "Multi-Service Docker Architecture (play-with-containers)",
+        "Kubernetes Cluster Orchestrator (orchestrator)",
+      ],
     },
     {
       id: "blockchain",
       title: "Blockchain & Web3",
-      role: "Smart Contract Developer",
+      role: "Blockchain & Smart Contract Developer",
       icon: Blocks,
       badge: "5 Projects",
-      desc: "Solidity smart contracts, layer-2 payment channels & NFT protocols",
-      projects: ["piscine-blockchain", "nft-marketplace", "payment-channel"],
+      desc: "Build decentralized applications (dApps), write and audit Solidity smart contracts, implement layer-2 payment channels, and build Web3 financial protocols.",
+      projects: [
+        "Decentralized NFT Marketplace (nft-marketplace)",
+        "Layer-2 Off-Chain Payment Channel (payment-channel)",
+        "Cryptographic Blockchain Core (piscine-blockchain)",
+      ],
     },
     {
       id: "mobile",
       title: "Mobile Applications",
-      role: "iOS & Android Engineer",
+      role: "Mobile Application Engineer (iOS & Android)",
       icon: Smartphone,
       badge: "7 Projects",
-      desc: "Production Flutter apps, end-to-end encrypted chat & WebSocket tickers",
-      projects: ["piscine-flutter", "secure-messenger", "stock-market", "sky-map"],
+      desc: "Ship production-ready Flutter and cross-platform apps featuring end-to-end encrypted messaging, real-time WebSocket market feeds, and native hardware integrations.",
+      projects: [
+        "Real-Time AR Celestial Sky Map (sky-map)",
+        "End-to-End Encrypted Messenger (secure-messenger)",
+        "Live Stock Market WebSocket Ticker (stock-market)",
+        "Cross-Platform Flutter Core (piscine-flutter)",
+      ],
     },
     {
       id: "games",
-      title: "Game Dev & 3D",
-      role: "Game Engine Programmer",
+      title: "Game Development & 3D",
+      role: "Game Developer / Graphics Programmer",
       icon: Gamepad2,
       badge: "6 Projects",
-      desc: "Custom 2D/3D physics engines, multiplayer networking & locomotion AI",
-      projects: ["locomotion-core", "multiplayer-fps", "vehicle-physics", "stealth-boom"],
+      desc: "Develop custom 2D/3D physics engines, real-time multiplayer FPS networking with client-side prediction, and advanced 3D raytracing graphics pipelines.",
+      projects: [
+        "Dynamic Character Locomotion Engine (locomotion-core)",
+        "Multiplayer FPS with Server Reconciliation (multiplayer-fps)",
+        "Rigid-Body Vehicle Simulation (vehicle-physics)",
+        "Stealth Combat AI Simulator (stealth-boom)",
+      ],
     },
   ];
 
@@ -130,11 +187,11 @@ export function CurriculumTree() {
       className="curriculum-tree-container"
       style={{
         width: "100%",
-        background: "linear-gradient(180deg, rgba(14, 25, 18, 0.7) 0%, rgba(9, 14, 11, 0.95) 100%)",
-        border: "1px solid/hsl(var(--primary) / 0.25)",
+        background: "hsl(var(--card))",
+        border: "1px solid hsl(var(--border))",
         borderRadius: 16,
         padding: "clamp(24px, 4vw, 48px)",
-        boxShadow: "0 20px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+        boxShadow: "0 12px 36px rgba(0,0,0,0.06)",
         marginBottom: 48,
         position: "relative",
         overflow: "hidden",
@@ -148,7 +205,7 @@ export function CurriculumTree() {
           transform: "translateX(-50%)",
           width: "600px",
           height: "300px",
-          background: "radial-gradient(circle, hsl(var(--primary) / 0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, hsl(var(--primary) / 0.08) 0%, transparent 70%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
@@ -164,7 +221,7 @@ export function CurriculumTree() {
             background: "hsl(var(--primary) / 0.1)",
             border: "1px solid hsl(var(--primary) / 0.3)",
             color: "hsl(var(--primary))",
-            family: "var(--font-mono)",
+            fontFamily: "var(--font-mono)",
             fontSize: "0.8rem",
             fontWeight: 700,
             letterSpacing: "0.1em",
@@ -186,17 +243,18 @@ export function CurriculumTree() {
         </h3>
         <p
           style={{
-            maxWidth: 680,
+            maxWidth: 720,
             margin: "0 auto",
             color: "hsl(var(--muted-foreground))",
-            fontSize: "0.95rem",
+            fontSize: "0.98rem",
             lineHeight: 1.6,
           }}
         >
-          Every student starts with 5 mandatory core software engineering pillars, mastering real systems before branching into 1 of 7 elite career specializations.
+          Every student starts with 5 mandatory core software engineering pillars, building real production systems before branching into 1 of 7 elite career specializations.
         </p>
       </div>
 
+      {/* TIER 1: FOUNDATIONAL CORE PILLARS (Months 1-18) */}
       <div style={{ position: "relative", zIndex: 1, marginBottom: 28 }}>
         <div
           style={{
@@ -210,7 +268,7 @@ export function CurriculumTree() {
         >
           <span
             style={{
-              family: "var(--font-mono)",
+              fontFamily: "var(--font-mono)",
               fontSize: "0.75rem",
               fontWeight: 700,
               color: "hsl(var(--primary))",
@@ -221,13 +279,13 @@ export function CurriculumTree() {
               gap: 6,
             }}
           >
-            <CheckCircle2 size={14} /> Tier 1: Foundational Core (Months 1 – 10)
+            <CheckCircle2 size={14} /> Tier 1: Foundational Core (Months 1 – 18)
           </span>
           <span
             style={{
               fontSize: "0.75rem",
               color: "hsl(var(--muted-foreground))",
-              family: "var(--font-mono)",
+              fontFamily: "var(--font-mono)",
             }}
           >
             5 Mandatory Pillars · 100% Hands-On
@@ -236,8 +294,8 @@ export function CurriculumTree() {
 
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: 14,
           }}
         >
@@ -247,49 +305,64 @@ export function CurriculumTree() {
               <div
                 key={idx}
                 style={{
-                  background: 'rgba(18, 30, 22, 0.6)',
-                  border: 'qpx solid hsl(var(--primary) / 0.25)',
+                  background: "hsl(var(--secondary) / 0.4)",
+                  border: "1px solid hsl(var(--border))",
                   borderRadius: 12,
-                  padding: '16px 14px',
-                  display: 'flex',
-                  flexDirection: 'column',
+                  padding: "18px 16px",
+                  display: "flex",
+                  flexDirection: "column",
                   gap: 8,
-                  backdropFilter: 'blur(8px)',
+                  transition: "all 0.25s ease",
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div
                     style={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: 6,
-                      background: 'hsl(var(--primary) / 0.15)',
-                      color: 'hsl(var(--primary))',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
+                      width: 34,
+                      height: 34,
+                      borderRadius: 8,
+                      background: "hsl(var(--primary) / 0.12)",
+                      color: "hsl(var(--primary))",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <Icon size={16} />
+                    <Icon size={17} />
                   </div>
                   <span
                     style={{
-                      fontSize: '0.68rem',
-                      color: 'hsl(var(--primary))',
-                      fontFamily: 'var(--font-mono)',
+                      fontSize: "0.7rem",
+                      color: "hsl(var(--primary))",
+                      fontFamily: "var(--font-mono)",
                       fontWeight: 700,
-                      background: 'hsl(var(--primary) / 0.1)',
-                      padding: '2px 8px',
+                      background: "hsl(var(--primary) / 0.1)",
+                      border: "1px solid hsl(var(--primary) / 0.2)",
+                      padding: "2px 8px",
                       borderRadius: 4,
                     }}
                   >
                     {pillar.level}
                   </span>
                 </div>
-                <h4 style={{ margin: '4px 0 0', fontSize: '0.92rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
+                <h4
+                  style={{
+                    margin: "4px 0 0",
+                    fontSize: "0.94rem",
+                    fontWeight: 700,
+                    color: "hsl(var(--foreground))",
+                  }}
+                >
                   {pillar.name}
                 </h4>
-                <p style={{ margin: 0, fontSize: '0.78rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.45 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.82rem",
+                    color: "hsl(var(--muted-foreground))",
+                    lineHeight: 1.45,
+                  }}
+                >
                   {pillar.desc}
                 </p>
               </div>
@@ -298,52 +371,99 @@ export function CurriculumTree() {
         </div>
       </div>
 
+      {/* CONNECTOR / GATEWAY (Month 18 Gateway) */}
       <div
         style={{
-          position: 'relative',
+          position: "relative",
           zIndex: 1,
-          margin: '28px 0',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          margin: "28px 0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           gap: 10,
         }}
       >
-        <div style={{ width: '100%', height: '2px', background: 'linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.4) 50%, transparent 100%)' }} />
         <div
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
+            width: "100%",
+            height: "1px",
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.5) 50%, transparent 100%)",
+          }}
+        />
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
             gap: 8,
-            padding: '6px 20px',
+            padding: "6px 20px",
             borderRadius: 999,
-            background: 'hsl(var(--card))',
-            border: '1px solid hsl(var(--primary) / 0.4)',
-            color: 'hsl(var(--primary))',
-            family: 'var(--font-mono)',
-            fontSize: '0.78rem',
+            background: "hsl(var(--card))",
+            border: "1px solid hsl(var(--primary) / 0.4)",
+            color: "hsl(var(--primary))",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.78rem",
             fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            boxShadow: '0 4px 15px hsl(var(--primary) / 0.15)',
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            boxShadow: "0 4px 15px hsl(var(--primary) / 0.12)",
           }}
         >
-          <ArrowDown size={14} /> Branching Gateway: Choose 1 of 7 Advanced Specializations <ArrowDown size={14} />
+          <ArrowDown size={14} /> Month 18 Gateway: Choose 1 of 7 Advanced Specializations <ArrowDown size={14} />
         </div>
-        <div style={{ width: '100%', height: '2px', background: 'linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.4) 50%, transparent 100%)' }} />
+        <div
+          style={{
+            width: "100%",
+            height: "1px",
+            background: "linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.5) 50%, transparent 100%)",
+          }}
+        />
       </div>
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap', gap: 8 }}>
-          <span style={{ family: 'var(--font-mono)', fontSize: '0.75rem', fontWeight: 700, color: 'hsl(var(--primary))', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 6 }}>
-            <Sparkles size={14} /> Tier 2: Specialized Career Tracks (Months 11 – 24)
+      {/* TIER 2: 7 ADVANCED SPECIALIZATION BRANCHES (Months 18-24) */}
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 14,
+            flexWrap: "wrap",
+            gap: 8,
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              color: "hsl(var(--primary))",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            <Sparkles size={14} /> Tier 2: Specialized Career Tracks (Months 18 – 24)
           </span>
-          <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', family: 'var(--font-mono)' }}>
+          <span
+            style={{
+              fontSize: "0.75rem",
+              color: "hsl(var(--muted-foreground))",
+              fontFamily: "var(--font-mono)",
+            }}
+          >
             Click any branch to inspect key curriculum deliverables
           </span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 14 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 16,
+          }}
+        >
           {specializationBranches.map((branch) => {
             const Icon = branch.icon;
             const isSelected = selectedBranch === branch.id;
@@ -352,46 +472,134 @@ export function CurriculumTree() {
                 key={branch.id}
                 onClick={() => setSelectedBranch(isSelected ? null : branch.id)}
                 style={{
-                  background: isSelected? 'linear-gradient(135deg, rgba(20, 45, 28, 0.9) 0%, rgba(13, 26, 17, 0.95) 100%)' : 'rgba(16, 24, 18, 0.75)',
-                  border: isSelected? '1px solid hsl(var(--primary))' : '1px solid hsl(var(--border))',
+                  background: isSelected
+                    ? "hsl(var(--primary) / 0.08)"
+                    : "hsl(var(--secondary) / 0.4)",
+                  border: isSelected
+                    ? "1px solid hsl(var(--primary))"
+                    : "1px solid hsl(var(--border))",
                   borderRadius: 12,
-                  padding: '18px',
-                  cursor: 'pointer',
-                  transition: 'all 0.25s ease',
-                  transform: isSelected ? 'translateY(-2px)' : 'none',
-                  boxShadow: isSelected ? '0 10px 30px hsl(var(--primary) / 0.2)' : '0 4px 15px rgba(0,0,0,0.2)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 10,
+                  padding: "20px",
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                  transform: isSelected ? "translateY(-2px)" : "none",
+                  boxShadow: isSelected
+                    ? "0 8px 24px hsl(var(--primary) / 0.15)"
+                    : "0 2px 8px rgba(0,0,0,0.04)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 10 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <div style={{ width: 36, height: 36, borderRadius: 8, background: 'hsl(var(--primary) / 0.15)', color: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={18} />
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    <div
+                      style={{
+                        width: 38,
+                        height: 38,
+                        borderRadius: 8,
+                        background: "hsl(var(--primary) / 0.15)",
+                        color: "hsl(var(--primary))",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon size={19} />
                     </div>
                     <div>
-                      <h4 style={{ margin: 0, fontSize: '0.98rem', fontWeight: 700, color: 'hsl(var(--foreground)' }}>{branch.title}</h4>
-                      <span style={{ fontSize: '0.72rem', color: 'hsl(var(--primary))', family: 'var(--font-mono)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', display: 'block', marginTop: 2 }}>{branch.role}</span>
+                      <h4
+                        style={{
+                          margin: 0,
+                          fontSize: "1rem",
+                          fontWeight: 700,
+                          color: "hsl(var(--foreground))",
+                        }}
+                      >
+                        {branch.title}
+                      </h4>
+                      <span
+                        style={{
+                          fontSize: "0.74rem",
+                          color: "hsl(var(--primary))",
+                          fontFamily: "var(--font-mono)",
+                          fontWeight: 600,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.04em",
+                          display: "block",
+                          marginTop: 2,
+                        }}
+                      >
+                        {branch.role}
+                      </span>
                     </div>
                   </div>
-                  <span style={{ fontSize: '0.68rem', color: 'hsl(var(--foreground)', family: 'var(--font-mono)', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: 999, whiteSpace: 'nowrap' }}>
+                  <span
+                    style={{
+                      fontSize: "0.68rem",
+                      color: "hsl(var(--foreground))",
+                      fontFamily: "var(--font-mono)",
+                      background: "hsl(var(--secondary))",
+                      border: "1px solid hsl(var(--border))",
+                      padding: "2px 8px",
+                      borderRadius: 999,
+                      whiteSpace: "nowrap",
+                      fontWeight: 600,
+                    }}
+                  >
                     {branch.badge}
                   </span>
                 </div>
 
-                <p style={{ margin: 0, fontSize: '0.84rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.45 }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.86rem",
+                    color: "hsl(var(--muted-foreground))",
+                    lineHeight: 1.5,
+                  }}
+                >
                   {branch.desc}
                 </p>
 
                 {isSelected && (
-                  <div style={{ marginTop: 4, paddingTop: 10, borderTop: '1px solid hsl(var(--primary) / 0.2)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    <span style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)', color: 'hsl(var(--primary))', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700 }}>
+                  <div
+                    style={{
+                      marginTop: 4,
+                      paddingTop: 12,
+                      borderTop: "1px solid hsl(var(--primary) / 0.2)",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 8,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        fontFamily: "var(--font-mono)",
+                        color: "hsl(var(--primary))",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        fontWeight: 700,
+                      }}
+                    >
                       Core Portfolio Deliverables:
                     </span>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                       {branch.projects.map((proj, pIdx) => (
-                        <span key={pIdx} style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', background: 'hsl(var(--primary) / 0.12)', border: '1px solid hsl(var(--primary) / 0.3)', color: 'hsl(var(--foreground))', padding: '2px 8px', borderRadius: 4 }}>
+                        <span
+                          key={pIdx}
+                          style={{
+                            fontSize: "0.74rem",
+                            fontFamily: "var(--font-mono)",
+                            background: "hsl(var(--primary) / 0.1)",
+                            border: "1px solid hsl(var(--primary) / 0.25)",
+                            color: "hsl(var(--foreground))",
+                            padding: "4px 10px",
+                            borderRadius: 6,
+                          }}
+                        >
                           {proj}
                         </span>
                       ))}

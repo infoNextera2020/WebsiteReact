@@ -2,16 +2,30 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { SiteFrame } from "@/components/nextera/site";
 
+interface Person {
+  initials: string;
+  name: string;
+  image?: string;
+  position?: string;
+  linkedin?: string;
+}
+
 export default function AboutPage() {
-  const trustees = [
+  const trustees: Person[] = [
     { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg", position: "Chairman and Board Member" },
     { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg", position: "Board Member" },
     { initials: "ML", name: "Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
-    { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member" },
-    { initials: "OS", name: "Omar Sayed", position: "Managing Director" },
-    { initials: "EG", name: "Essam Gamal", position: "Marketing Director" },
-    { initials: "PW", name: "Pavly Wagih", position: "Project Lead" },
-    { initials: "AM", name: "Anas Moner", position: "Tech Lead" },
+    { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member", linkedin: "https://www.linkedin.com/in/mokhtar-ahmed-mokhtar-421130253/" },
+    { initials: "OS", name: "Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
+    { initials: "EG", name: "Essam Gamal", image: "/Essam Gamal.jpeg", position: "Marketing Director", linkedin: "https://www.linkedin.com/in/essamgamal/" },
+    { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
+    { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jfif", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
+  ];
+
+  const techTeam: Person[] = [
+    { initials: "AK", name: "Abdelrahman Kamal", position: "Software Engineer" },
+    { initials: "SE", name: "Shahd ElGanzoury", position: "Software Engineer" },
+    { initials: "SA", name: "Sohila Ayman", position: "Software Engineer" },
   ];
   return (
     <SiteFrame>
@@ -157,32 +171,50 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(0, 4).map(({ initials, name, image, position }) => (
-                  <div
-                    className="board-member"
-                    key={name}
-                    data-testid={`board-member-${initials}`}
-                  >
-                    {image ? (
-                      <div
-                        className="profile-circle"
-                        style={{ padding: 0, overflow: 'hidden' }}
-                      >
-                        <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                      </div>
-                    ) : (
-                      <div
-                        className="profile-circle"
-                        role="img"
-                        aria-label={`${name} initials`}
-                      >
-                        {initials}
-                      </div>
-                    )}
-                    <div className="member-name">{name}</div>
-                    {position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{position}</div>}
-                  </div>
-                ))}
+                {trustees.slice(0, 4).map((person) => {
+                  const card = (
+                    <div
+                      className="board-member"
+                      key={person.name}
+                      data-testid={`board-member-${person.initials}`}
+                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
+                    >
+                      {person.image ? (
+                        <div
+                          className="profile-circle"
+                          style={{ padding: 0, overflow: 'hidden' }}
+                        >
+                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                      ) : (
+                        <div
+                          className="profile-circle"
+                          role="img"
+                          aria-label={`${person.name} initials`}
+                        >
+                          {person.initials}
+                        </div>
+                      )}
+                      <div className="member-name">{person.name}</div>
+                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
+                    </div>
+                  );
+
+                  return person.linkedin ? (
+                    <a
+                      key={person.name}
+                      href={person.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
+                      title={`View ${person.name}'s LinkedIn`}
+                    >
+                      {card}
+                    </a>
+                  ) : (
+                    card
+                  );
+                })}
               </div>
               <div
                 style={{
@@ -193,32 +225,128 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {trustees.slice(4).map(({ initials, name, image, position }) => (
-                  <div
-                    className="board-member"
-                    key={name}
-                    data-testid={`board-member-${initials}`}
-                  >
-                    {image ? (
-                      <div
-                        className="profile-circle"
-                        style={{ padding: 0, overflow: 'hidden' }}
-                      >
-                        <img src={image} alt={name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                      </div>
-                    ) : (
-                      <div
-                        className="profile-circle"
-                        role="img"
-                        aria-label={`${name} initials`}
-                      >
-                        {initials}
-                      </div>
-                    )}
-                    <div className="member-name">{name}</div>
-                    {position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{position}</div>}
-                  </div>
-                ))}
+                {trustees.slice(4).map((person) => {
+                  const card = (
+                    <div
+                      className="board-member"
+                      key={person.name}
+                      data-testid={`board-member-${person.initials}`}
+                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
+                    >
+                      {person.image ? (
+                        <div
+                          className="profile-circle"
+                          style={{ padding: 0, overflow: 'hidden' }}
+                        >
+                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                      ) : (
+                        <div
+                          className="profile-circle"
+                          role="img"
+                          aria-label={`${person.name} initials`}
+                        >
+                          {person.initials}
+                        </div>
+                      )}
+                      <div className="member-name">{person.name}</div>
+                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
+                    </div>
+                  );
+
+                  return person.linkedin ? (
+                    <a
+                      key={person.name}
+                      href={person.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
+                      title={`View ${person.name}'s LinkedIn`}
+                    >
+                      {card}
+                    </a>
+                  ) : (
+                    card
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          className="legacy-section"
+          aria-labelledby="tech-team-title"
+        >
+          <div className="container">
+            <p className="eyebrow">Engineering</p>
+            <h2 id="tech-team-title" className="display section-heading">
+              Meet Our Tech Team
+            </h2>
+            <p className="section-intro">
+              The talented engineers and developers building the platform and powering NextEra's technical innovation.
+            </p>
+            <div
+              className="board-container"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+                marginTop: 40,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "40px 52px",
+                  width: "100%",
+                }}
+              >
+                {techTeam.map((person) => {
+                  const card = (
+                    <div
+                      className="board-member"
+                      key={person.name}
+                      data-testid={`tech-member-${person.initials}`}
+                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
+                    >
+                      {person.image ? (
+                        <div
+                          className="profile-circle"
+                          style={{ padding: 0, overflow: 'hidden' }}
+                        >
+                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                      ) : (
+                        <div
+                          className="profile-circle"
+                          role="img"
+                          aria-label={`${person.name} initials`}
+                        >
+                          {person.initials}
+                        </div>
+                      )}
+                      <div className="member-name">{person.name}</div>
+                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
+                    </div>
+                  );
+
+                  return person.linkedin ? (
+                    <a
+                      key={person.name}
+                      href={person.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
+                      title={`View ${person.name}'s LinkedIn`}
+                    >
+                      {card}
+                    </a>
+                  ) : (
+                    card
+                  );
+                })}
               </div>
             </div>
           </div>
