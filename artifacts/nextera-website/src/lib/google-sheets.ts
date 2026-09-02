@@ -3,7 +3,7 @@
  */
 
 export const GOOGLE_SHEETS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxNoUnjfdqv_NoR9uEpGqeBqBJdjTnLVNhootblg_LuzNIV2IoiVgiqZo20h_4b14kDzA/exec";
+  "https://script.google.com/macros/s/AKfycbz4b7rv0byjsncTyaJIIdIOlhYmJpQ6tf_Ksupwhz2YuefgpSMF4EWw1havRQHblyzr7w/exec";
 
 export interface FormSubmissionData {
   [key: string]: string | number | boolean | null | undefined;
