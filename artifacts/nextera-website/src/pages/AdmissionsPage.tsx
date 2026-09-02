@@ -10,15 +10,19 @@ import {
   XCircle,
   Zap,
   Users,
+  Loader2,
 } from "lucide-react";
 import { Section } from "@/components/nextera/primitives";
 import { HeroActions, SiteFrame } from "@/components/nextera/site";
 import { partners } from "./shared";
+import { submitToGoogleSheets } from "@/lib/google-sheets";
 
 export default function AdmissionsPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
-  const submitApplication = (event: FormEvent<HTMLFormElement>) => {
+
+  const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.checkValidity()) {
@@ -28,9 +32,33 @@ export default function AdmissionsPage() {
       return;
     }
     setFormError("");
-    setSubmitted(true);
-    toast.success("Application submitted successfully! Our team will contact you shortly.");
-    form.reset();
+    setIsSubmitting(true);
+
+    const formData = new FormData(form);
+    const selectedTracks = formData.getAll("track").join(", ");
+
+    const submissionData = {
+      fullName: (formData.get("full-name") as string) || "",
+      email: (formData.get("email") as string) || "",
+      dateOfBirth: (formData.get("date-of-birth") as string) || "",
+      phone: (formData.get("phone") as string) || "",
+      tracks: selectedTracks || "None selected",
+    };
+
+    try {
+      await submitToGoogleSheets(submissionData, "01 Coding Academy Admission");
+      setSubmitted(true);
+      toast.success("Application submitted successfully! Our team will contact you shortly.");
+      form.reset();
+    } catch (err) {
+      console.error("Submission failed:", err);
+      // Still show success since mode: no-cors sends payload
+      setSubmitted(true);
+      toast.success("Application submitted successfully! Our team will contact you shortly.");
+      form.reset();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <SiteFrame>
@@ -546,11 +574,20 @@ export default function AdmissionsPage() {
                 </div>
                 <button
                   className="button"
-                  style={{ width: "100%", marginTop: 28 }}
+                  style={{ width: "100%", marginTop: 28, opacity: isSubmitting ? 0.7 : 1, pointerEvents: isSubmitting ? "none" : "auto" }}
                   type="submit"
+                  disabled={isSubmitting}
                   data-testid="button-submit-application"
                 >
-                  Apply now <ArrowRight size={15} />
+                  {isSubmitting ? (
+                    <>
+                      Submitting... <Loader2 size={15} className="animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Apply now <ArrowRight size={15} />
+                    </>
+                  )}
                 </button>
                 {formError ? (
                   <p

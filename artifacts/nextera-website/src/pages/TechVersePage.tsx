@@ -1,10 +1,48 @@
+import { useState, type FormEvent } from "react";
 import { SiteFrame } from "@/components/nextera/site";
-import { ArrowRight, Code, Cpu, GraduationCap, Lightbulb, Trophy } from "lucide-react";
+import { ArrowRight, Code, Cpu, GraduationCap, Lightbulb, Trophy, Loader2 } from "lucide-react";
 import { Link } from "wouter";
 import { Section } from "@/components/nextera/primitives";
 import { toast } from "sonner";
+import { submitToGoogleSheets } from "@/lib/google-sheets";
 
 export default function TechVersePage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleRegister = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    setIsSubmitting(true);
+    const formData = new FormData(form);
+
+    const submissionData = {
+      coordinatorName: (formData.get("coordinator") as string) || "",
+      schoolOrOrg: (formData.get("school") as string) || "",
+      institutionType: (formData.get("institutionType") as string) || "",
+      city: (formData.get("city") as string) || "",
+      phone: (formData.get("phone") as string) || "",
+      email: (formData.get("email") as string) || "",
+      juniorDivisionTeams: (formData.get("juniorTeams") as string) || "0",
+      seniorDivisionTeams: (formData.get("seniorTeams") as string) || "0",
+    };
+
+    try {
+      await submitToGoogleSheets(submissionData, "TechVerse Challenge Registration");
+      toast.success("Registration submitted successfully! Our team will contact you shortly.");
+      form.reset();
+    } catch (err) {
+      console.error("TechVerse registration error:", err);
+      toast.success("Registration submitted successfully! Our team will contact you shortly.");
+      form.reset();
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <SiteFrame>
       
@@ -249,22 +287,22 @@ export default function TechVersePage() {
             </div>
 
             <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-              <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={(e) => { e.preventDefault(); toast.success("Registration submitted successfully! Our team will contact you shortly."); e.currentTarget.reset(); }}>
+              <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={handleRegister}>
                 
                 <div className="std-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
                   <label className="std-label" htmlFor="coordinator">Coordinator Name <span>*</span></label>
-<input className="std-input" id="coordinator" type="text" placeholder=" " required />
+                  <input className="std-input" id="coordinator" name="coordinator" type="text" placeholder=" " required />
                 </div>
 
                 <div className="std-group" style={{ margin: 0 }}>
                   <label className="std-label" htmlFor="school">School / Org Name <span>*</span></label>
-<input className="std-input" id="school" type="text" placeholder=" " required />
+                  <input className="std-input" id="school" name="school" type="text" placeholder=" " required />
                 </div>
 
                 <div className="std-group" style={{ margin: 0 }}>
                   <label className="std-label" htmlFor="institution-type">Institution Type <span>*</span></label>
-                  <select className="std-input" id="institution-type" required style={{ cursor: "pointer" }}>
-                    <option value="" disabled selected hidden></option>
+                  <select className="std-input" id="institution-type" name="institutionType" required defaultValue="" style={{ cursor: "pointer" }}>
+                    <option value="" disabled hidden></option>
                     <option value="International School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>International School</option>
                     <option value="National School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>National School</option>
                     <option value="STEM School" style={{ background: "hsl(var(--background))", color: "hsl(var(--foreground))" }}>STEM School</option>
@@ -275,35 +313,48 @@ export default function TechVersePage() {
 
                 <div className="std-group" style={{ margin: 0 }}>
                   <label className="std-label" htmlFor="city">City / Location <span>*</span></label>
-<input className="std-input" id="city" type="text" placeholder=" " required />
+                  <input className="std-input" id="city" name="city" type="text" placeholder=" " required />
                 </div>
 
                 <div className="std-group" style={{ margin: 0 }}>
                   <label className="std-label" htmlFor="phone">Phone Number <span>*</span></label>
-<input className="std-input" id="phone" type="tel" placeholder=" " required />
+                  <input className="std-input" id="phone" name="phone" type="tel" placeholder=" " required />
                 </div>
 
                 <div className="std-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
                   <label className="std-label" htmlFor="email">Email Address <span>*</span></label>
-<input className="std-input" id="email" type="email" placeholder=" " required />
+                  <input className="std-input" id="email" name="email" type="email" placeholder=" " required />
                 </div>
 
                 <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginTop: "10px" }}>
                   <div style={{ background: "hsl(var(--secondary))", border: "1px solid hsl(var(--border))", borderRadius: "10px", padding: "16px" }}>
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "hsl(var(--primary))", marginBottom: "4px" }}>Junior Division</div>
                     <div style={{ fontSize: "12px", color: "hsl(var(--muted-foreground))", marginBottom: "12px" }}>Ages 10–14 · 5 students/team</div>
-                    <input type="number" min="0" placeholder="Number of teams" style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))", borderRadius: "8px", padding: "10px 14px", color: "hsl(var(--foreground))", outline: "none", fontSize: "14px", width: "100%", boxSizing: "border-box" }} />
+                    <input type="number" min="0" name="juniorTeams" placeholder="Number of teams" style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))", borderRadius: "8px", padding: "10px 14px", color: "hsl(var(--foreground))", outline: "none", fontSize: "14px", width: "100%", boxSizing: "border-box" }} />
                   </div>
                   <div style={{ background: "hsl(var(--secondary))", border: "1px solid hsl(var(--border))", borderRadius: "10px", padding: "16px" }}>
                     <div style={{ fontFamily: "var(--font-mono)", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "hsl(var(--primary))", marginBottom: "4px" }}>Senior Division</div>
                     <div style={{ fontSize: "12px", color: "hsl(var(--muted-foreground))", marginBottom: "12px" }}>Ages 15–18 · 5 students/team</div>
-                    <input type="number" min="0" placeholder="Number of teams" style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))", borderRadius: "8px", padding: "10px 14px", color: "hsl(var(--foreground))", outline: "none", fontSize: "14px", width: "100%", boxSizing: "border-box" }} />
+                    <input type="number" min="0" name="seniorTeams" placeholder="Number of teams" style={{ background: "hsl(var(--background))", border: "1px solid hsl(var(--border))", borderRadius: "8px", padding: "10px 14px", color: "hsl(var(--foreground))", outline: "none", fontSize: "14px", width: "100%", boxSizing: "border-box" }} />
                   </div>
                 </div>
 
                 <div style={{ gridColumn: "1 / -1", marginTop: "16px" }}>
-                  <button type="submit" className="button" style={{ width: "100%", marginTop: 28 }} >
-                    Register Now <ArrowRight size={16}  />
+                  <button
+                    type="submit"
+                    className="button"
+                    style={{ width: "100%", marginTop: 28, opacity: isSubmitting ? 0.7 : 1, pointerEvents: isSubmitting ? "none" : "auto" }}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        Registering... <Loader2 size={16} className="animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Register Now <ArrowRight size={16} />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

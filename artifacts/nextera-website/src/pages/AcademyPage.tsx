@@ -1,12 +1,5 @@
 import { Link } from "wouter";
 import { ArrowRight, Star, Users, Gamepad2, Terminal } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Timeline } from "@/components/nextera/primitives";
 import { SiteFrame } from "@/components/nextera/site";
 import { partners } from "./shared";
@@ -410,161 +403,115 @@ export default function AcademyPage() {
         {/* Student Feedback Carousel */}
         <section
           className="legacy-section"
-          style={{ background: "hsl(var(--card))" }}
+          style={{ background: "hsl(var(--card))", overflow: "hidden" }}
         >
           <div className="container">
             <p className="eyebrow">Student feedback</p>
             <h2 className="display section-heading">
               Hear from the Piscine survivors
             </h2>
+          </div>
 
-            <div style={{ marginTop: 45, position: "relative" }}>
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent className="-ml-4">
-                  {[
-                    {
-                      name: "Ahmed Gamal Farfour",
-                      role: "01 Coding Academy",
-                      text: "This past month has been an incredible experience for me. The instructors were supportive, and I learned so much from my peers. The program was intense but sparked a strong passion for coding. Special thanks to Omar, Bavly, Martin, and Ziad I've learned a lot from each of you, and I'm truly grateful. Thank you for this opportunity 🤍",
-                    },
-                    {
-                      name: "Mohamed Mekawy",
-                      role: "01 Coding Academy",
-                      text: "This past month at Nextera Era 01 Academy has been a truly enriching experience. I truly had met and knew really good people. the content was insightful. I especially appreciated the collaborative environment — it felt like a community where everyone pushed each other to do better.",
-                    },
-                    {
-                      name: "Youssef Eltuwaisy",
-                      role: "01 Coding Academy",
-                      text: "The whole experience in Nextera has been perfect the staff and mentors are highly competent and carefully selected, they are always available and ready to help, the curriculum perfectly suits both inexperienced and experts in the field, it gives everyone a fair chance to compete in an engaging friendly and cooperative environment, I met great people and made new friends while learning, the platform feels like a game more than an exam, It has been a phenomenal experience and I recommend anyone from any field to join",
-                    },
-                    {
-                      name: "Amr Yassin",
-                      role: "01 Coding Academy",
-                      text: "I've had a very enriching experience over the past month. The learning environment here is positive, supportive, and highly motivating.",
-                    },
-                    {
-                      name: "Amr Mohamed Aly",
-                      role: "01 Coding Academy",
-                      text: "Program 01 has been a rewarding experience with stimulating challenges and valuable growth. Collaborating with such a diverse team was both eye-opening and challenging, especially in the weekly quad tasks. I'm thankful for Omar's inspiring leadership, Martin and Bavly's insightful guidance, and Shehab and Mohamed's constant support. Overall, it was a fulfilling journey, and I'm grateful to the entire team for making it memorable.",
-                    }
-                  ].map((testimonial, index) => (
-                    <CarouselItem
-                      key={index}
-                      className="pl-4 md:basis-1/2 lg:basis-1/3"
-                      style={{ paddingTop: 60, paddingBottom: 20 }}
-                    >
-                      <div
-                        className="testimonial-card"
-                        style={{
-                          position: "relative",
-                          padding: "70px 32px 32px",
-                          height: "100%",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          background: "hsl(var(--background))",
-                          borderRadius: 16,
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: 100,
-                            height: 100,
-                            borderRadius: "50%",
-                            background: "hsl(var(--muted))",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            overflow: "hidden",
-                            position: "absolute",
-                            top: -50,
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            border: "4px solid hsl(var(--primary))",
-                          }}
-                        >
-                           {(testimonial as any).image ? (
-                            <img src={(testimonial as any).image} alt={testimonial.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", transform: "scale(3)" }} />
-                          ) : (
-                            <span style={{ fontSize: "2rem", color: "hsl(var(--muted-foreground))" }}>
-                              {testimonial.name.split(" ").map((n: string) => n[0]).join("")}
-                            </span>
-                          )}
-                        </div>
-                        <h4
-                          style={{
-                            fontWeight: 700,
-                            fontSize: "1.25rem",
-                            color: "hsl(var(--primary))",
-                            marginBottom: 16,
-                          }}
-                        >
-                          {testimonial.name}
-                        </h4>
-                        <p
-                          className="card-body"
-                          style={{
-                            flexGrow: 1,
-                            marginBottom: 24,
-                            textAlign: "center",
-                            lineHeight: 1.6,
-                            fontSize: "1.05rem",
-                          }}
-                        >
-                          {testimonial.text}
-                        </p>
-                        <div
-                          style={{ display: "flex", gap: 4, color: "#facc15" }}
-                        >
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <Star
-                              key={star}
-                              size={20}
-                              fill="currentColor"
-                              stroke="none"
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
+          {/* Conveyor belt — full-bleed, no container constraint */}
+          <div style={{ marginTop: 45, position: "relative" }}>
+            {/* Fade edges */}
+            <div style={{
+              position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
+              background: "linear-gradient(to right, hsl(var(--card)) 0%, transparent 8%, transparent 92%, hsl(var(--card)) 100%)",
+            }} />
 
-                {/* Custom styling for the arrows to make them pop */}
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 12,
-                    justifyContent: "flex-end",
-                    marginTop: 24,
-                  }}
-                >
-                  <CarouselPrevious
-                    style={{
-                      position: "relative",
-                      left: 0,
-                      top: 0,
-                      transform: "none",
-                      right: 0,
-                    }}
-                  />
-                  <CarouselNext
-                    style={{
-                      position: "relative",
-                      left: 0,
-                      top: 0,
-                      transform: "none",
-                      right: 0,
-                    }}
-                  />
-                </div>
-              </Carousel>
+            <div className="testimonial-belt-window">
+              <div className="testimonial-belt-track">
+                {[
+                  {
+                    name: "Ahmed Gamal Farfour",
+                    role: "01 Coding Academy",
+                    text: "This past month has been an incredible experience for me. The instructors were supportive, and I learned so much from my peers. The program was intense but sparked a strong passion for coding. Special thanks to Omar, Bavly, Martin, and Ziad — I've learned a lot from each of you, and I'm truly grateful.",
+                  },
+                  {
+                    name: "Mohamed Mekawy",
+                    role: "01 Coding Academy",
+                    text: "This past month at Nextera Era 01 Academy has been a truly enriching experience. I truly had met and knew really good people. The content was insightful. I especially appreciated the collaborative environment — it felt like a community where everyone pushed each other to do better.",
+                  },
+                  {
+                    name: "Youssef Eltuwaisy",
+                    role: "01 Coding Academy",
+                    text: "The whole experience in Nextera has been perfect. The staff and mentors are highly competent and carefully selected. The curriculum perfectly suits both inexperienced and experts in the field. It feels like a game more than an exam — a phenomenal experience.",
+                  },
+                  {
+                    name: "Amr Yassin",
+                    role: "01 Coding Academy",
+                    text: "I've had a very enriching experience over the past month. The learning environment here is positive, supportive, and highly motivating.",
+                  },
+                  {
+                    name: "Amr Mohamed Aly",
+                    role: "01 Coding Academy",
+                    text: "Program 01 has been a rewarding experience with stimulating challenges and valuable growth. Collaborating with such a diverse team was both eye-opening and challenging. I'm thankful for Omar's inspiring leadership and the entire team for making it memorable.",
+                  },
+                  /* duplicate set for seamless loop */
+                  {
+                    name: "Ahmed Gamal Farfour",
+                    role: "01 Coding Academy",
+                    text: "This past month has been an incredible experience for me. The instructors were supportive, and I learned so much from my peers. The program was intense but sparked a strong passion for coding. Special thanks to Omar, Bavly, Martin, and Ziad — I've learned a lot from each of you, and I'm truly grateful.",
+                  },
+                  {
+                    name: "Mohamed Mekawy",
+                    role: "01 Coding Academy",
+                    text: "This past month at Nextera Era 01 Academy has been a truly enriching experience. I truly had met and knew really good people. The content was insightful. I especially appreciated the collaborative environment — it felt like a community where everyone pushed each other to do better.",
+                  },
+                  {
+                    name: "Youssef Eltuwaisy",
+                    role: "01 Coding Academy",
+                    text: "The whole experience in Nextera has been perfect. The staff and mentors are highly competent and carefully selected. The curriculum perfectly suits both inexperienced and experts in the field. It feels like a game more than an exam — a phenomenal experience.",
+                  },
+                  {
+                    name: "Amr Yassin",
+                    role: "01 Coding Academy",
+                    text: "I've had a very enriching experience over the past month. The learning environment here is positive, supportive, and highly motivating.",
+                  },
+                  {
+                    name: "Amr Mohamed Aly",
+                    role: "01 Coding Academy",
+                    text: "Program 01 has been a rewarding experience with stimulating challenges and valuable growth. Collaborating with such a diverse team was both eye-opening and challenging. I'm thankful for Omar's inspiring leadership and the entire team for making it memorable.",
+                  },
+                ].map((testimonial, index) => (
+                  <div
+                    key={index}
+                    className="testimonial-belt-card"
+                  >
+                    <div style={{
+                      width: 72, height: 72, borderRadius: "50%",
+                      background: "hsl(var(--muted))", display: "flex",
+                      alignItems: "center", justifyContent: "center",
+                      overflow: "hidden", margin: "0 auto 16px",
+                      border: "3px solid hsl(var(--primary))",
+                      flexShrink: 0,
+                    }}>
+                      <span style={{ fontSize: "1.4rem", color: "hsl(var(--muted-foreground))" }}>
+                        {testimonial.name.split(" ").map((n: string) => n[0]).join("")}
+                      </span>
+                    </div>
+                    <h4 style={{
+                      fontWeight: 700, fontSize: "1.05rem",
+                      color: "hsl(var(--primary))", marginBottom: 12, textAlign: "center",
+                    }}>
+                      {testimonial.name}
+                    </h4>
+                    <p style={{
+                      flexGrow: 1, textAlign: "center", lineHeight: 1.6,
+                      fontSize: "0.95rem", color: "hsl(var(--muted-foreground))",
+                      marginBottom: 16,
+                    }}>
+                      {testimonial.text}
+                    </p>
+                    <div style={{ display: "flex", gap: 3, color: "#facc15", justifyContent: "center" }}>
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} size={16} fill="currentColor" stroke="none" />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

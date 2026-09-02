@@ -19,13 +19,13 @@ export default function AboutPage() {
     { initials: "OS", name: "Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
     { initials: "EG", name: "Essam Gamal", image: "/Essam Gamal.jpeg", position: "Marketing Director", linkedin: "https://www.linkedin.com/in/essamgamal/" },
     { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
-    { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jfif", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
+    { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
   ];
 
   const techTeam: Person[] = [
-    { initials: "AK", name: "Abdelrahman Kamal", position: "Software Engineer" },
-    { initials: "SE", name: "Shahd ElGanzoury", position: "Software Engineer" },
-    { initials: "SA", name: "Sohila Ayman", position: "Software Engineer" },
+    { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Software Engineer" },
+    { initials: "SE", name: "Shahd Bahaa", image: "/Shahd Bahaa.png", position: "Software Engineer" },
+    { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Software Engineer" },
   ];
   return (
     <SiteFrame>
