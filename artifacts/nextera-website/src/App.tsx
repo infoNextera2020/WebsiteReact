@@ -54,6 +54,7 @@ import AcademyPage from "./pages/AcademyPage";
 import TechVersePage from "./pages/TechVersePage";
 import FAQPage from "./pages/FAQPage";
 import PartnershipPage from "./pages/PartnershipPage";
+import ThankYouPage from "./pages/ThankYouPage";
 
 import { useEffect } from "react";
 import { useLocation } from "wouter";
@@ -93,6 +94,11 @@ const routeMetadata: Record<string, { title: string; description: string }> = {
     title: "Partner With Us | NextEra Education",
     description:
       "Collaborate with NextEra Education to hire world-class software engineering talent and shape the future of the global tech workforce.",
+  },
+  "/thank-you": {
+    title: "Thank You | NextEra Education",
+    description:
+      "Thank you for submitting your application to NextEra Education. Our admissions team has received your information.",
   },
 };
 
@@ -157,6 +163,7 @@ function Router() {
       <Route path="/techverse" component={TechVersePage} />
       <Route path="/faq" component={FAQPage} />
       <Route path="/partnership" component={PartnershipPage} />
+      <Route path="/thank-you" component={ThankYouPage} />
       <Route component={NotFound} />
     </Switch>
   );

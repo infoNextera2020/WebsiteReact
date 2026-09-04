@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import { toast } from "sonner";
 import { useState, type FormEvent } from "react";
 import {
@@ -18,6 +19,7 @@ import { partners } from "./shared";
 import { submitToGoogleSheets } from "@/lib/google-sheets";
 
 export default function AdmissionsPage() {
+  const [, setLocation] = useLocation();
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
@@ -48,14 +50,15 @@ export default function AdmissionsPage() {
     try {
       await submitToGoogleSheets(submissionData, "01 Coding Academy Admission");
       setSubmitted(true);
-      toast.success("Application submitted successfully! Our team will contact you shortly.");
+      toast.success("Application submitted successfully! Redirecting...");
       form.reset();
+      setLocation("/thank-you");
     } catch (err) {
       console.error("Submission failed:", err);
-      // Still show success since mode: no-cors sends payload
+      // Still redirect since mode: no-cors sends payload
       setSubmitted(true);
-      toast.success("Application submitted successfully! Our team will contact you shortly.");
       form.reset();
+      setLocation("/thank-you");
     } finally {
       setIsSubmitting(false);
     }
