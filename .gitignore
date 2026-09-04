@@ -37,4 +37,10 @@ Thumbs.db
 # Misc caches
 .cache/
 .turbo/
-*.tsbuildinfoartifacts/nextera-website/public/story.MP4
+*.tsbuildinfo
+
+# Backups and temporary reports
+*.backup.*
+*.backup.tsx
+tree.txt
+lighthouse report*.md
