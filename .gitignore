@@ -37,4 +37,6 @@ Thumbs.db
 # Misc caches
 .cache/
 .turbo/
-*.tsbuildinfoartifacts/nextera-website/public/story.MP4
+*.tsbuildinfo
+artifacts/nextera-website/public/story.MP4
+
