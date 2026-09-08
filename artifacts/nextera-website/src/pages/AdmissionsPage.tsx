@@ -44,6 +44,8 @@ export default function AdmissionsPage() {
       email: (formData.get("email") as string) || "",
       dateOfBirth: (formData.get("date-of-birth") as string) || "",
       phone: (formData.get("phone") as string) || "",
+      city: (formData.get("city") as string) || "",
+      currentStatus: (formData.get("current-status") as string) || "",
       tracks: selectedTracks || "None selected",
     };
 
@@ -545,7 +547,7 @@ export default function AdmissionsPage() {
                     <label className="std-label" htmlFor="phone">
                       Phone Number <span>*</span>
                     </label>
-<input
+                    <input
                       className="std-input"
                       id="phone"
                       name="phone"
@@ -554,6 +556,47 @@ export default function AdmissionsPage() {
                       required
                     />
                   </div>
+                </div>
+                <div className="std-group">
+                  <label className="std-label" htmlFor="city">
+                    City <span>*</span>
+                  </label>
+                  <input
+                    className="std-input"
+                    id="city"
+                    name="city"
+                    type="text"
+                    placeholder=" "
+                    required
+                  />
+                </div>
+                <div className="std-group">
+                  <label className="std-label" htmlFor="current-status">
+                    What best describes you now? <span>*</span>
+                  </label>
+                  <select
+                    className="std-input"
+                    id="current-status"
+                    name="current-status"
+                    required
+                    defaultValue=""
+                  >
+                    <option value="" disabled hidden>
+                      Select an option
+                    </option>
+                    <option value="University Student">
+                      University Student
+                    </option>
+                    <option value="Graduate ( Not Working )">
+                      Graduate ( Not Working )
+                    </option>
+                    <option value="Working (Non-Tech) & Looking for Career Shift">
+                      {"Working (Non-Tech) & Looking for Career Shift"}
+                    </option>
+                    <option value="Working in Tech">
+                      Working in Tech
+                    </option>
+                  </select>
                 </div>
                 <label className="form-label">
                   Mark the tracks that you are interested in
