@@ -42,7 +42,6 @@ export default function AdmissionsPage() {
     const submissionData = {
       fullName: (formData.get("full-name") as string) || "",
       email: (formData.get("email") as string) || "",
-      dateOfBirth: (formData.get("date-of-birth") as string) || "",
       phone: (formData.get("phone") as string) || "",
       city: (formData.get("city") as string) || "",
       currentStatus: (formData.get("current-status") as string) || "",
@@ -529,33 +528,18 @@ export default function AdmissionsPage() {
                     required
                   />
                 </div>
-                <div className="form-row">
-                  <div className="std-group">
-                    <label className="std-label" htmlFor="date-of-birth">
-                      Date of Birth <span>*</span>
-                    </label>
-<input
-                      className="std-input"
-                      id="date-of-birth"
-                      name="date-of-birth"
-                      type="date"
-                      placeholder=" "
-                      required
-                    />
-                  </div>
-                  <div className="std-group">
-                    <label className="std-label" htmlFor="phone">
-                      Phone Number <span>*</span>
-                    </label>
-                    <input
-                      className="std-input"
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder=" "
-                      required
-                    />
-                  </div>
+                <div className="std-group">
+                  <label className="std-label" htmlFor="phone">
+                    Phone Number <span>*</span>
+                  </label>
+                  <input
+                    className="std-input"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder=" "
+                    required
+                  />
                 </div>
                 <div className="std-group">
                   <label className="std-label" htmlFor="city">
