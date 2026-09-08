@@ -8,6 +8,7 @@ interface Person {
   image?: string;
   position?: string;
   linkedin?: string;
+  objectPosition?: string;
 }
 
 export default function AboutPage() {
@@ -22,11 +23,90 @@ export default function AboutPage() {
     { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
   ];
 
-  const techTeam: Person[] = [
-    { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Software Engineer" },
-    { initials: "SE", name: "Shahd Bahaa", image: "/Shahd Bahaa.png", position: "Software Engineer" },
-    { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Software Engineer" },
+  const team: Person[] = [
+    // Software Engineering
+    { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Software Engineer", objectPosition: "center 20%" },
+    { initials: "SE", name: "Shahd ElGanzoury", image: "/Shahd Bahaa.png", position: "Software Engineer", linkedin: "https://www.linkedin.com/in/shahd-elganzoury-168411379/", objectPosition: "center 20%" },
+    { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Software Engineer", linkedin: "https://www.linkedin.com/in/sohilaayman/", objectPosition: "center 20%" },
+    // Operations & Project Coordination
+    { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
+    { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
+    { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "Operations Administrator", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
+    // Sales & Finance
+    { initials: "WE", name: "Wagdy Elshafei", image: "/Wagdy Elshafei.jpeg", position: "Sales Manager", linkedin: "https://www.linkedin.com/in/wagdy-elshafei-620655189/", objectPosition: "center 20%" },
+    { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
+    { initials: "ML", name: "Mohamed Lasheen", image: "/Mohamed Lasheen.jpeg", position: "Accounting Supervisor", linkedin: "https://www.linkedin.com/in/mohamed-lasheen-820001165/", objectPosition: "center 20%" },
   ];
+  const renderMember = (person: Person) => {
+    const card = (
+      <div
+        className="board-member"
+        key={person.name}
+        data-testid={`team-member-${person.initials}`}
+        style={{ cursor: person.linkedin ? "pointer" : "default" }}
+      >
+        {person.image ? (
+          <div
+            className="profile-circle"
+            style={{ padding: 0, overflow: "hidden" }}
+          >
+            <img
+              src={person.image}
+              alt={person.name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: person.objectPosition || "center 20%",
+              }}
+            />
+          </div>
+        ) : (
+          <div
+            className="profile-circle"
+            role="img"
+            aria-label={`${person.name} initials`}
+          >
+            {person.initials}
+          </div>
+        )}
+        <div className="member-name">{person.name}</div>
+        {person.position && (
+          <div
+            className="member-position"
+            style={{
+              fontSize: "0.9rem",
+              color: "hsl(var(--muted-foreground))",
+              marginTop: 4,
+              fontWeight: 500,
+            }}
+          >
+            {person.position}
+          </div>
+        )}
+      </div>
+    );
+
+    return person.linkedin ? (
+      <a
+        key={person.name}
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          display: "inline-block",
+        }}
+        title={`View ${person.name}'s LinkedIn`}
+      >
+        {card}
+      </a>
+    ) : (
+      card
+    );
+  };
+
   return (
     <SiteFrame>
       <main>
@@ -275,21 +355,23 @@ export default function AboutPage() {
         </section>
         <section
           className="legacy-section"
-          aria-labelledby="tech-team-title"
+          aria-labelledby="team-title"
         >
           <div className="container">
-            <p className="eyebrow">Engineering</p>
-            <h2 id="tech-team-title" className="display section-heading">
-              Meet Our Tech Team
+            <p className="eyebrow">Team</p>
+            <h2 id="team-title" className="display section-heading">
+              Meet Our Team
             </h2>
             <p className="section-intro">
-              The talented engineers and developers building the platform and powering NextEra's technical innovation.
+              The dedicated team driving NextEra's operations, technology, and educational innovation.
             </p>
             <div
               className="board-container"
               style={{
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "40px",
                 width: "100%",
                 marginTop: 40,
               }}
@@ -303,50 +385,29 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {techTeam.map((person) => {
-                  const card = (
-                    <div
-                      className="board-member"
-                      key={person.name}
-                      data-testid={`tech-member-${person.initials}`}
-                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
-                    >
-                      {person.image ? (
-                        <div
-                          className="profile-circle"
-                          style={{ padding: 0, overflow: 'hidden' }}
-                        >
-                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        </div>
-                      ) : (
-                        <div
-                          className="profile-circle"
-                          role="img"
-                          aria-label={`${person.name} initials`}
-                        >
-                          {person.initials}
-                        </div>
-                      )}
-                      <div className="member-name">{person.name}</div>
-                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
-                    </div>
-                  );
-
-                  return person.linkedin ? (
-                    <a
-                      key={person.name}
-                      href={person.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
-                      title={`View ${person.name}'s LinkedIn`}
-                    >
-                      {card}
-                    </a>
-                  ) : (
-                    card
-                  );
-                })}
+                {team.slice(0, 3).map(renderMember)}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "40px 52px",
+                  width: "100%",
+                }}
+              >
+                {team.slice(3, 6).map(renderMember)}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "40px 52px",
+                  width: "100%",
+                }}
+              >
+                {team.slice(6, 9).map(renderMember)}
               </div>
             </div>
           </div>
