@@ -15,9 +15,9 @@ export default function AboutPage() {
   const trustees: Person[] = [
     { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg", position: "Chairman and Board Member" },
     { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg", position: "Board Member" },
-    { initials: "ML", name: "Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
+    { initials: "ML", name: "Eng. Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
     { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member", linkedin: "https://www.linkedin.com/in/mokhtar-ahmed-mokhtar-421130253/" },
-    { initials: "OS", name: "Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
+    { initials: "OS", name: "Eng. Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
     { initials: "EG", name: "Essam Gamal", image: "/Essam Gamal.jpeg", position: "Marketing Director", linkedin: "https://www.linkedin.com/in/essamgamal/" },
     { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
     { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
@@ -31,10 +31,10 @@ export default function AboutPage() {
     // Operations & Project Coordination
     { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
     { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
-    { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "Operations Administrator", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
+    { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "HR Generalist", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
     // Sales & Finance
-    { initials: "WE", name: "Wagdy Elshafei", image: "/Wagdy Elshafei.jpeg", position: "Sales Manager", linkedin: "https://www.linkedin.com/in/wagdy-elshafei-620655189/", objectPosition: "center 20%" },
-    { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
+    { initials: "WE", name: "Wagdy Elshafei", image: "/Wagdy Elshafei.jpeg", position: "Sales Team Leader", linkedin: "https://www.linkedin.com/in/wagdy-elshafei-620655189/", objectPosition: "center 20%" },
+    { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B/B2C Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
     { initials: "ML", name: "Mohamed Lasheen", image: "/Mohamed Lasheen.jpeg", position: "Accounting Supervisor", linkedin: "https://www.linkedin.com/in/mohamed-lasheen-820001165/", objectPosition: "center 20%" },
   ];
   const renderMember = (person: Person) => {
