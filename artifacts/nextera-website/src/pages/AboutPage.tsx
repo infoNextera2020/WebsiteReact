@@ -17,26 +17,120 @@ export default function AboutPage() {
     { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg", position: "Board Member" },
     { initials: "ML", name: "Eng. Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
     { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member", linkedin: "https://www.linkedin.com/in/mokhtar-ahmed-mokhtar-421130253/" },
-    { initials: "OS", name: "Eng. Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
-    { initials: "EG", name: "Essam Gamal", image: "/Essam Gamal.jpeg", position: "Marketing Director", linkedin: "https://www.linkedin.com/in/essamgamal/" },
-    { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
-    { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
   ];
 
-  const team: Person[] = [
-    // Software Engineering
-    { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Software Engineer", objectPosition: "center 20%" },
-    { initials: "SE", name: "Shahd ElGanzoury", image: "/Shahd Bahaa.png", position: "Software Engineer", linkedin: "https://www.linkedin.com/in/shahd-elganzoury-168411379/", objectPosition: "center 20%" },
-    { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Software Engineer", linkedin: "https://www.linkedin.com/in/sohilaayman/", objectPosition: "center 20%" },
-    // Operations & Project Coordination
-    { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
-    { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "Project Coordinator", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
-    { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "HR Generalist", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
-    // Sales & Finance
+  const teamRow1: Person[] = [
+    { initials: "OS", name: "Eng. Omar Sayed", image: "/Omar Sayed.png", position: "Managing Director", linkedin: "https://www.linkedin.com/in/omar-sayed-18926919b/" },
+    { initials: "EG", name: "Essam Gamal", image: "/Essam Gamal.jpeg", position: "Marketing Director", linkedin: "https://www.linkedin.com/in/essamgamal/" },
+  ];
+
+  const teamRow2: Person[] = [
+    { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Operation Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
+    { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
+    { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
     { initials: "WE", name: "Wagdy Elshafei", image: "/Wagdy Elshafei.jpeg", position: "Sales Team Leader", linkedin: "https://www.linkedin.com/in/wagdy-elshafei-620655189/", objectPosition: "center 20%" },
+  ];
+
+  const teamRow3: Person[] = [
+    { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Tech Mentor", objectPosition: "center 20%" },
+    { initials: "SE", name: "Shahd ElGanzoury", image: "/Shahd Bahaa.png", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/shahd-elganzoury-168411379/", objectPosition: "center 20%" },
+    { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/sohilaayman/", objectPosition: "center 20%" },
+    { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
+  ];
+
+  const teamRow4: Person[] = [
     { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B/B2C Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
     { initials: "ML", name: "Mohamed Lasheen", image: "/Mohamed Lasheen.jpeg", position: "Accounting Supervisor", linkedin: "https://www.linkedin.com/in/mohamed-lasheen-820001165/", objectPosition: "center 20%" },
+    { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "HR Generalist", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
   ];
+
+  const renderTrustee = (person: Person) => {
+    const card = (
+      <div
+        className="board-member"
+        key={person.name}
+        data-testid={`board-member-${person.initials}`}
+        style={{
+          cursor: person.linkedin ? "pointer" : "default",
+          flex: "0 1 240px",
+          width: 240,
+        }}
+      >
+        {person.image ? (
+          <div
+            className="profile-circle"
+            style={{
+              width: 190,
+              height: 190,
+              borderWidth: 5,
+              padding: 0,
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src={person.image}
+              alt={person.name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: person.objectPosition || "center 20%",
+              }}
+            />
+          </div>
+        ) : (
+          <div
+            className="profile-circle"
+            role="img"
+            aria-label={`${person.name} initials`}
+            style={{
+              width: 190,
+              height: 190,
+              borderWidth: 5,
+              fontSize: "2.6rem",
+            }}
+          >
+            {person.initials}
+          </div>
+        )}
+        <div className="member-name" style={{ fontSize: "1.18rem", marginTop: 18 }}>
+          {person.name}
+        </div>
+        {person.position && (
+          <div
+            className="member-position"
+            style={{
+              fontSize: "0.95rem",
+              color: "hsl(var(--muted-foreground))",
+              marginTop: 6,
+              fontWeight: 500,
+            }}
+          >
+            {person.position}
+          </div>
+        )}
+      </div>
+    );
+
+    return person.linkedin ? (
+      <a
+        key={person.name}
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          display: "inline-block",
+        }}
+        title={`View ${person.name}'s LinkedIn`}
+      >
+        {card}
+      </a>
+    ) : (
+      card
+    );
+  };
   const renderMember = (person: Person) => {
     const card = (
       <div
@@ -238,117 +332,35 @@ export default function AboutPage() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: "40px",
+                gap: "48px",
                 width: "100%",
+                marginTop: 44,
               }}
             >
+              {/* Row 1: Mr. Mohamed Farouk & Eng. Ahmed Tarek */}
               <div
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
                   justifyContent: "center",
-                  gap: "40px 52px",
+                  gap: "40px 64px",
                   width: "100%",
                 }}
               >
-                {trustees.slice(0, 4).map((person) => {
-                  const card = (
-                    <div
-                      className="board-member"
-                      key={person.name}
-                      data-testid={`board-member-${person.initials}`}
-                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
-                    >
-                      {person.image ? (
-                        <div
-                          className="profile-circle"
-                          style={{ padding: 0, overflow: 'hidden' }}
-                        >
-                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        </div>
-                      ) : (
-                        <div
-                          className="profile-circle"
-                          role="img"
-                          aria-label={`${person.name} initials`}
-                        >
-                          {person.initials}
-                        </div>
-                      )}
-                      <div className="member-name">{person.name}</div>
-                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
-                    </div>
-                  );
-
-                  return person.linkedin ? (
-                    <a
-                      key={person.name}
-                      href={person.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
-                      title={`View ${person.name}'s LinkedIn`}
-                    >
-                      {card}
-                    </a>
-                  ) : (
-                    card
-                  );
-                })}
+                {trustees.slice(0, 2).map(renderTrustee)}
               </div>
+
+              {/* Row 2: Eng. Mostafa Abdel Latif & Mr. Mokhtar Ahmed */}
               <div
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
                   justifyContent: "center",
-                  gap: "40px 52px",
+                  gap: "40px 64px",
                   width: "100%",
                 }}
               >
-                {trustees.slice(4).map((person) => {
-                  const card = (
-                    <div
-                      className="board-member"
-                      key={person.name}
-                      data-testid={`board-member-${person.initials}`}
-                      style={{ cursor: person.linkedin ? "pointer" : "default" }}
-                    >
-                      {person.image ? (
-                        <div
-                          className="profile-circle"
-                          style={{ padding: 0, overflow: 'hidden' }}
-                        >
-                          <img src={person.image} alt={person.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        </div>
-                      ) : (
-                        <div
-                          className="profile-circle"
-                          role="img"
-                          aria-label={`${person.name} initials`}
-                        >
-                          {person.initials}
-                        </div>
-                      )}
-                      <div className="member-name">{person.name}</div>
-                      {person.position && <div className="member-position" style={{ fontSize: "0.9rem", color: "hsl(var(--muted-foreground))", marginTop: 4, fontWeight: 500 }}>{person.position}</div>}
-                    </div>
-                  );
-
-                  return person.linkedin ? (
-                    <a
-                      key={person.name}
-                      href={person.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", color: "inherit", display: "inline-block" }}
-                      title={`View ${person.name}'s LinkedIn`}
-                    >
-                      {card}
-                    </a>
-                  ) : (
-                    card
-                  );
-                })}
+                {trustees.slice(2, 4).map(renderTrustee)}
               </div>
             </div>
           </div>
@@ -371,11 +383,12 @@ export default function AboutPage() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: "40px",
+                gap: "44px",
                 width: "100%",
                 marginTop: 40,
               }}
             >
+              {/* Row 1: Eng. Omar Sayed & Essam Gamal */}
               <div
                 style={{
                   display: "flex",
@@ -385,8 +398,10 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {team.slice(0, 3).map(renderMember)}
+                {teamRow1.map(renderMember)}
               </div>
+
+              {/* Row 2: Pavly Wagih, Anas Moner, Manar Mohamed, Wagdy Elshafei */}
               <div
                 style={{
                   display: "flex",
@@ -396,8 +411,10 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {team.slice(3, 6).map(renderMember)}
+                {teamRow2.map(renderMember)}
               </div>
+
+              {/* Row 3: Abdelrahman Kamal, Shahd ElGanzoury, Sohila Ayman, Fatma Moutaz */}
               <div
                 style={{
                   display: "flex",
@@ -407,7 +424,20 @@ export default function AboutPage() {
                   width: "100%",
                 }}
               >
-                {team.slice(6, 9).map(renderMember)}
+                {teamRow3.map(renderMember)}
+              </div>
+
+              {/* Row 4: Aya Ahmed, Mohamed Lasheen, Merna Ayman */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "40px 52px",
+                  width: "100%",
+                }}
+              >
+                {teamRow4.map(renderMember)}
               </div>
             </div>
           </div>
