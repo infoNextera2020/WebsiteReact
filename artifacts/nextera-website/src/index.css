@@ -2004,10 +2004,16 @@ button {
   padding: 0;
   list-style: none;
 }
+.footer-social-list li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .footer-social-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
   padding: 8px 12px;
   border: 1px solid hsl(var(--ink-foreground) / 0.15);
   border-radius: 4px;
