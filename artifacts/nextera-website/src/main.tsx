@@ -1,17 +1,31 @@
-import { createRoot } from "react-dom/client";
+// Some static hosts serve the root HTML for extensionless URLs. Select the
+// matching entry before loading styles so each landing page stays isolated.
+const pathname = window.location.pathname.replace(/\/$/, '');
 
-import App from "./App";
-import { ErrorBoundary } from "@/components/error-boundary";
+function setLandingMetadata(title: string) {
+  document.title = title;
+  const description = "Launch your tech career in two years with NextEra Education's project-based 01 Coding Academy in Egypt.";
+  for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) {
+    document.querySelector(selector)?.setAttribute('content', title);
+  }
+  for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) {
+    document.querySelector(selector)?.setAttribute('content', description);
+  }
+  const url = `https://nexteraeducation.net${pathname}/`;
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
+  const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]') ?? document.createElement('link');
+  canonical.rel = 'canonical';
+  canonical.href = url;
+  document.head.appendChild(canonical);
+  document.querySelector('link[rel="icon"]')?.setAttribute('href', `${pathname}/nextera-logo.png`);
+}
 
-import "./index.css";
-
-createRoot(document.getElementById("root")!, {
-  // Keeps caught errors off reportError(), which would raise the dev overlay.
-  onCaughtError: (error, errorInfo) => {
-    console.error(error, errorInfo.componentStack);
-  },
-}).render(
-  <ErrorBoundary>
-    <App />
-  </ErrorBoundary>,
-);
+if (pathname === '/academy-landing') {
+  setLandingMetadata('NextEra Education | 01 Coding Academy Egypt');
+  void import('./landing-pages/academy-landing/main');
+} else if (pathname === '/vip') {
+  setLandingMetadata('NextEra Education | VIP Coding Academy');
+  void import('./landing-pages/vip/main');
+} else {
+  void import('./main-site');
+}

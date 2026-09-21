@@ -25,6 +25,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist'),
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(import.meta.dirname, 'index.html'),
+        academyLanding: path.resolve(import.meta.dirname, 'academy-landing/index.html'),
+        vip: path.resolve(import.meta.dirname, 'vip/index.html'),
+      },
+    },
   },
   server: {
     port: 5173,
