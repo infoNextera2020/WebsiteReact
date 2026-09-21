@@ -21,8 +21,10 @@ function setLandingMetadata(title: string) {
 }
 
 if (pathname === '/academy-landing') {
+  window.location.replace(`/academy-01${window.location.search}${window.location.hash}`);
+} else if (pathname === '/academy-01') {
   setLandingMetadata('NextEra Education | 01 Coding Academy Egypt');
-  void import('./landing-pages/academy-landing/main');
+  void import('./landing-pages/academy-01/main');
 } else if (pathname === '/vip') {
   setLandingMetadata('NextEra Education | VIP Coding Academy');
   void import('./landing-pages/vip/main');

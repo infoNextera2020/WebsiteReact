@@ -7,7 +7,7 @@ import {
   ArrowDownRight, ArrowUpRight, ArrowUp, Check, Menu, ShieldCheck, X, MapPin, Instagram,
   Linkedin, Facebook, Music2, CircleCheck, Globe, Sun, Moon, Terminal, Network, Server, Cpu
 , Users , GitMerge , Code } from 'lucide-react';
-const logoPath = '/academy-landing/nextera-logo.png';
+const logoPath = '/academy-01/nextera-logo.png';
 import './index.css';
 import { translations, type Language } from './translations';
 
@@ -262,11 +262,11 @@ function App() {
   const [activePiscineWeek, setActivePiscineWeek] = useState(0);
 
   const partners = [
-    { name: "Nok", fullName: "Nok Human Capital", url: "https://nokhc.net/", logo: "/academy-landing/partners/nok.png", className: "logo-nok" },
-    { name: "Gramian", fullName: "Gramian Consultancy Group", url: "https://gramianconsulting.com/", logo: "/academy-landing/partners/gramian.png", className: "logo-gramian" },
-    { name: "HiRemoters", fullName: "HiRemoters", url: "https://hiremoters.ai/", logo: "/academy-landing/partners/hiremoters.png", className: "logo-hiremoters" },
-    { name: "Quantum", fullName: "Quantum HR", url: "https://quantumhr.co/", logo: "/academy-landing/partners/quantum.png", className: "logo-quantum" },
-    { name: "Magnet", fullName: "Magnet Empowering Organizations", url: "https://b-magnet.com/", logo: "/academy-landing/partners/magnet.png", className: "logo-magnet" },
+    { name: "Nok", fullName: "Nok Human Capital", url: "https://nokhc.net/", logo: "/academy-01/partners/nok.png", className: "logo-nok" },
+    { name: "Gramian", fullName: "Gramian Consultancy Group", url: "https://gramianconsulting.com/", logo: "/academy-01/partners/gramian.png", className: "logo-gramian" },
+    { name: "HiRemoters", fullName: "HiRemoters", url: "https://hiremoters.ai/", logo: "/academy-01/partners/hiremoters.png", className: "logo-hiremoters" },
+    { name: "Quantum", fullName: "Quantum HR", url: "https://quantumhr.co/", logo: "/academy-01/partners/quantum.png", className: "logo-quantum" },
+    { name: "Magnet", fullName: "Magnet Empowering Organizations", url: "https://b-magnet.com/", logo: "/academy-01/partners/magnet.png", className: "logo-magnet" },
   ];
 
   return (
@@ -324,7 +324,7 @@ function App() {
           </div>
         <div className="wrap nav-inner">
           <a href="#top" className="logo" data-testid="link-logo">
-            <img src={theme === 'light' ? '/academy-landing/logo-light.png' : logoPath} alt="NextEra Education" />
+            <img src={theme === 'light' ? '/academy-01/logo-light.png' : logoPath} alt="NextEra Education" />
             <span className="logo-mark">01 CODING ACADEMY</span>
           </a>
           <div className="nav-links">
@@ -707,7 +707,7 @@ function App() {
           <div className="footer-grid">
             <div>
               <a href="#top" className="logo">
-                <img src={theme === 'light' ? '/academy-landing/logo-light.png' : logoPath} alt="NextEra Education" />
+                <img src={theme === 'light' ? '/academy-01/logo-light.png' : logoPath} alt="NextEra Education" />
               </a>
               <p className="footer-desc">{t.footer.desc}</p>
               <div className="address">

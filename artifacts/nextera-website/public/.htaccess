@@ -1,8 +1,9 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  RewriteRule ^academy-landing/?$ /academy-01 [R=301,L]
   # Serve the standalone landing pages before the main site's SPA fallback.
-  RewriteRule ^(academy-landing|vip)/?$ $1/index.html [L]
+  RewriteRule ^(academy-01|vip)/?$ $1/index.html [L]
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

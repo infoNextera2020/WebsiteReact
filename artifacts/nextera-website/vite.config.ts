@@ -28,7 +28,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),
-        academyLanding: path.resolve(import.meta.dirname, 'academy-landing/index.html'),
+        academyLanding: path.resolve(import.meta.dirname, 'academy-01/index.html'),
         vip: path.resolve(import.meta.dirname, 'vip/index.html'),
       },
     },
