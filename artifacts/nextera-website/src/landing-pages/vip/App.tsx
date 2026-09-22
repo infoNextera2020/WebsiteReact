@@ -294,15 +294,15 @@ function App() {
                   {lang === 'en' ? 'STRATEGIC PARTNERSHIP' : 'شراكة استراتيجية'}
                 </div>
                 <h2 style={{ fontSize: '32px', fontFamily: 'var(--app-font-serif)', margin: '0 0 16px', color: 'hsl(var(--foreground))' }}>
-                  NextEra <span style={{ fontWeight: 300, color: 'hsl(var(--muted-foreground))' }}>×</span> Banque Misr
+                  NextEra <span style={{ fontWeight: 300, color: 'hsl(var(--muted-foreground))' }}>×</span> BM VIP
                 </h2>
                 <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '16px', lineHeight: 1.6, marginBottom: '32px' }}>
-                  {lang === 'en' ? 'Empowering the next generation of tech leaders. We have partnered with Banque Misr to make world-class education more accessible to everyone.' : 'تمكين الجيل القادم من قادة التكنولوجيا. لقد دخلنا في شراكة مع بنك مصر لجعل التعليم ذي المستوى العالمي متاحاً للجميع.'}
+                  {lang === 'en' ? 'Empowering the next generation of tech leaders. We have partnered with Banque Misr to make world-class education more accessible to everyone.' : 'تمكين الجيل القادم من قادة التكنولوجيا. لقد دخلنا في شراكة مع Banque Misr لجعل التعليم ذي المستوى العالمي متاحاً للجميع.'}
                 </p>
                 <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', padding: '2px', borderRadius: '20px' }}>
                   <div style={{ background: 'hsl(var(--background))', padding: '20px 30px', borderRadius: '18px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <span style={{ fontSize: '42px', fontWeight: 800, lineHeight: 1, background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>{lang === 'en' ? '25% OFF' : 'خصم 25%'}</span>
-                    <span style={{ fontSize: '14px', color: 'hsl(var(--foreground))', fontWeight: 600 }}>{lang === 'en' ? 'Exclusive Scholarship for Customers' : 'منحة حصرية للعملاء'}</span>
+                    <span style={{ fontSize: '42px', fontWeight: 800, lineHeight: 1, background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px', textAlign: 'center' }}>{lang === 'en' ? '1 Week' : 'أسبوع واحد'}</span>
+                    <span style={{ fontSize: '14px', color: 'hsl(var(--foreground))', fontWeight: 600 }}>{lang === 'en' ? 'Free Trial for Customers' : 'تجربة مجانية للعملاء'}</span>
                   </div>
                 </div>
                 <div style={{ marginTop: '32px' }}>
@@ -319,7 +319,7 @@ function App() {
         <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
           <div style={{ background: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))', textAlign: 'center', padding: '10px 20px', fontSize: '14px', fontWeight: 600, letterSpacing: '0.05em' }}>
             <a href="#partnership" style={{ display: 'block', textUnderlineOffset: '4px' }}>
-              {lang === 'ar' ? 'عرض حصري: منحة دراسية بنسبة 25% لعملاء بنك مصر!' : 'Exclusive Offer: 25% Scholarship for Banque Misr Customers!'}
+              {lang === 'ar' ? 'عرض حصري: فترة تجريبية مجانية لمدة أسبوع لعملاء BM VIP!' : 'Exclusive Offer: One Week Free Trial for BM VIP Customers!'}
             </a>
           </div>
         <div className="wrap nav-inner">
@@ -408,7 +408,7 @@ function App() {
                 </div>
 
                 <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontFamily: 'var(--app-font-serif)', margin: '0 auto 18px', lineHeight: 1.1, color: 'hsl(var(--foreground))', textAlign: 'center', maxWidth: 'none' }}>
-                  NextEra <span style={{ fontWeight: 300, color: 'hsl(var(--muted-foreground))' }}>×</span> Banque Misr
+                  NextEra <span style={{ fontWeight: 300, color: 'hsl(var(--muted-foreground))' }}>×</span> BM VIP
                 </h2>
                 
                 <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '18px', maxWidth: '600px', margin: '0 auto 40px', lineHeight: 1.6 }}>
@@ -417,13 +417,13 @@ function App() {
 
                 <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', padding: '2px', borderRadius: '20px', boxShadow: '0 10px 30px hsl(var(--primary) / 0.2)' }}>
                   <div style={{ background: 'hsl(var(--background))', padding: '24px 40px', borderRadius: '18px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <span style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1, background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px', letterSpacing: '-0.02em' }}>{lang === 'en' ? '25% OFF' : 'خصم 25%'}</span>
-                  <span style={{ fontSize: '15px', color: 'hsl(var(--foreground))', fontWeight: 600, letterSpacing: '0.02em' }}>{lang === 'en' ? 'Exclusive Scholarship for Customers' : 'منحة حصرية للعملاء'}</span>
+                    <span style={{ fontSize: '56px', fontWeight: 800, lineHeight: 1, background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px', letterSpacing: '-0.02em', textAlign: 'center' }}>{lang === 'en' ? '1 Week' : 'أسبوع واحد'}</span>
+                  <span style={{ fontSize: '15px', color: 'hsl(var(--foreground))', fontWeight: 600, letterSpacing: '0.02em' }}>{lang === 'en' ? 'Free Trial for Customers' : 'تجربة مجانية للعملاء'}</span>
                 </div>
               </div>
               <div style={{ marginTop: '32px' }}>
                 <a href="#apply" className="button-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                  {lang === 'en' ? 'Claim Your Scholarship' : 'احصل على المنحة الآن'}
+                  {lang === 'en' ? 'Start Your Free Trial' : 'ابدأ تجربتك المجانية'}
                   <ArrowDownRight size={16} />
                 </a>
               </div>

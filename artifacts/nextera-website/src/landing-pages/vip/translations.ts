@@ -185,7 +185,7 @@ export const translations = {
     application: {
       kicker: 'Start your application',
       title: 'Ready to enter the pool?',
-      desc: 'Fill this in and our admissions team will follow up with your Step 1 cognitive assessment and financing options, including Banque Misr installment plans.',
+      desc: 'Fill this in and our admissions team will follow up with your Step 1 cognitive assessment and financing options, including BM VIP installment plans.',
       trust: ['Merit-based admission. No CV required.', 'Client-side application flow your details stay in this session.', 'Full-time, project-based learning in Egypt.'],
       successTitle: 'You are in the pool.',
       successDesc: 'We have your interest. In the live admissions flow, the team will reach out with your Step 1 cognitive assessment details.',
@@ -405,7 +405,7 @@ export const translations = {
     application: {
       kicker: 'ابدأ طلب التقديم',
       title: 'جاهز لدخول المعسكر؟',
-      desc: 'املأ هذه البيانات وسيقوم فريق القبول بالتواصل معك لترتيب التقييم الإدراكي (الخطوة 1) وخيارات التمويل، بما في ذلك خطط تقسيط بنك مصر.',
+      desc: 'املأ هذه البيانات وسيقوم فريق القبول بالتواصل معك لترتيب التقييم الإدراكي (الخطوة 1) وخيارات التمويل، بما في ذلك خطط تقسيط BM VIP.',
       trust: ['القبول مبني على الجدارة. لا حاجة للسيرة الذاتية.', 'تظل بياناتك آمنة في هذه الجلسة على متصفحك.', 'تعلم بدوام كامل، يعتمد على المشاريع في مصر.'],
       successTitle: 'أنت الآن في المرحلة الأولى.',
       successDesc: 'لقد استلمنا طلبك. سيتواصل معك الفريق قريباً بخصوص تفاصيل التقييم الإدراكي (الخطوة 1).',
