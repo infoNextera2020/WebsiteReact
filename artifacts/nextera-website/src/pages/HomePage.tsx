@@ -182,10 +182,10 @@ export default function HomePage() {
                       style={{
                         fontSize: "0.75rem",
                         fontWeight: 600,
-                        color: "hsl(var(--ink-foreground) / 0.6)",
+                        color: "hsl(var(--foreground) / 0.6)",
                         letterSpacing: "0.05em",
                         textTransform: "uppercase",
-                        background: "hsl(var(--ink-foreground) / 0.05)",
+                        background: "hsl(var(--foreground) / 0.05)",
                         padding: "4px 10px",
                         borderRadius: "20px",
                       }}

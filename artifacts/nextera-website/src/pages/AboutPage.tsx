@@ -25,9 +25,9 @@ export default function AboutPage() {
   ];
 
   const teamRow2: Person[] = [
-    { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Operation Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
+    { initials: "PW", name: "Pavly Wagih", image: "/Pavly Wagih.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/pavly-wagih-01a677277/" },
     { initials: "AM", name: "Anas Moner", image: "/Anas Moner.jpg", position: "Tech Lead", linkedin: "https://www.linkedin.com/in/anasmoner/" },
-    { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Project Lead", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
+    { initials: "MM", name: "Manar Mohamed", image: "/Manar Mohamed.jpeg", position: "Operation Lead", linkedin: "https://www.linkedin.com/in/manar-mohamed-2134ba181/", objectPosition: "center 15%" },
     { initials: "WE", name: "Wagdy Elshafei", image: "/Wagdy Elshafei.jpeg", position: "Sales Team Leader", linkedin: "https://www.linkedin.com/in/wagdy-elshafei-620655189/", objectPosition: "center 20%" },
   ];
 

@@ -35,14 +35,11 @@ export default function AcademyPage() {
                 }}
               >
                 <img
-                  src="/1.svg"
+                  src="/powered by 01Edu 2.png"
                   alt="01Edu Logo"
                   style={{ height: "46px", width: "auto" }}
                 />
                 <div>
-                  <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "hsl(var(--primary))", fontWeight: 700 }}>
-                    Powered by 01Edu
-                  </div>
                   <div style={{ fontSize: "0.88rem", color: "hsl(var(--foreground))", fontWeight: 600 }}>
                     Platform &amp; Pedagogy
                   </div>
