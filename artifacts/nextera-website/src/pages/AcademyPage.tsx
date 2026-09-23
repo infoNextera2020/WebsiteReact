@@ -12,15 +12,46 @@ export default function AcademyPage() {
         {/* 1. Hero & Intro */}
         <section className="legacy-hero">
           <div className="container hero-content">
-            <p className="eyebrow">01 Coding Academy / Egypt</p>
-            <h1 className="display hero-title">
-              Become a software
-              <br />
-              <span>engineer in two years</span>
-            </h1>
+            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 24, marginBottom: 12 }}>
+              <div>
+                <p className="eyebrow" style={{ marginBottom: 12 }}>01 Coding Academy / Egypt</p>
+                <h1 className="display hero-title">
+                  Become a software
+                  <br />
+                  <span>engineer in two years</span>
+                </h1>
+              </div>
+
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 16,
+                  padding: "12px 20px",
+                  borderRadius: 12,
+                  background: "hsl(var(--card) / 0.7)",
+                  border: "1px solid hsl(var(--border))",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <img
+                  src="/1.svg"
+                  alt="01Edu Logo"
+                  style={{ height: "46px", width: "auto" }}
+                />
+                <div>
+                  <div style={{ fontSize: "0.72rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "hsl(var(--primary))", fontWeight: 700 }}>
+                    Powered by 01Edu
+                  </div>
+                  <div style={{ fontSize: "0.88rem", color: "hsl(var(--foreground))", fontWeight: 600 }}>
+                    Platform &amp; Pedagogy
+                  </div>
+                </div>
+              </div>
+            </div>
             <p className="hero-copy hero-subtitle">
-              01 Coding Academy is a two year project based program powered by
-              the French academy 01 Talent which operates across 30 countries
+              01 Coding Academy is a two-year project-based program powered by
+              the 01Edu educational platform and pedagogy which operates across 30 countries
               and delivered exclusively in Egypt through NextEra Education.
             </p>
           </div>

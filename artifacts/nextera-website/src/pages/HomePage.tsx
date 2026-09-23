@@ -167,22 +167,50 @@ export default function HomePage() {
               >
                 
                 <div>
-                  <h3
-                    className="card-title"
-                    style={{ display: "flex", alignItems: "center", gap: 12 }}
-                  >
-                    <Terminal
-                      size={28}
-                      style={{ color: "hsl(var(--primary))" }}
-                    />
-                    01 Coding Academy
-                  </h3>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12, marginBottom: 8 }}>
+                    <h3
+                      className="card-title"
+                      style={{ display: "flex", alignItems: "center", gap: 12, margin: 0 }}
+                    >
+                      <Terminal
+                        size={28}
+                        style={{ color: "hsl(var(--primary))" }}
+                      />
+                      01 Coding Academy
+                    </h3>
+                    <div
+                      style={{
+                        fontSize: "0.75rem",
+                        fontWeight: 600,
+                        color: "hsl(var(--ink-foreground) / 0.6)",
+                        letterSpacing: "0.05em",
+                        textTransform: "uppercase",
+                        background: "hsl(var(--ink-foreground) / 0.05)",
+                        padding: "4px 10px",
+                        borderRadius: "20px",
+                      }}
+                    >
+                      Powered by{" "}
+                      <a
+                        href="https://01edu.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: "hsl(var(--primary))",
+                          textDecoration: "none",
+                          fontWeight: 800,
+                        }}
+                      >
+                        01Edu
+                      </a>
+                    </div>
+                  </div>
                   <p className="card-subtitle">
                     An intensive coding program with guaranteed employment for
                     eligible graduates
                   </p>
                   <p className="card-body">
-                    The French 01 Talent methodology, delivered exclusively in
+                    The 01Edu platform and pedagogy, delivered exclusively in
                     Egypt through NextEra. An intensive, project-based academy
                     built to prepare learners for the real job market.
                   </p>

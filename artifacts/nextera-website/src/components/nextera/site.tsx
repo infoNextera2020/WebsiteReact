@@ -305,9 +305,33 @@ export function Footer() {
     <footer className="site-footer" data-testid="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Link href="/" className="brand" data-testid="link-footer-brand">
-            <img src="/logo-dark.png" alt="NextEra Education" style={{ height: "42px", width: "75px", minWidth: "75px", flexShrink: 0 }} />
-          </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", marginBottom: "4px" }}>
+            <Link href="/" className="brand" data-testid="link-footer-brand">
+              <img src="/logo-dark.png" alt="NextEra Education" style={{ height: "42px", width: "75px", minWidth: "75px", flexShrink: 0 }} />
+            </Link>
+            <span
+              style={{
+                width: "1px",
+                height: "36px",
+                background: "hsl(var(--ink-foreground) / 0.25)",
+              }}
+              aria-hidden="true"
+            />
+            <a
+              href="https://01-edu.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Powered by 01Edu platform and pedagogy"
+              style={{ display: "inline-flex", alignItems: "center", transition: "opacity 0.2s" }}
+              className="hover:opacity-85"
+            >
+              <img
+                src="/powered by 01Edu 2.png"
+                alt="Powered by 01Edu"
+                style={{ height: "50px", width: "auto", objectFit: "contain" }}
+              />
+            </a>
+          </div>
           <p>
             Interactive technology education that enables learners to solve
             problems, innovate, and prepare for tomorrow’s opportunities.
