@@ -3,6 +3,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { SiteFrame } from "@/components/nextera/site";
 import { submitToGoogleSheets } from "@/lib/google-sheets";
+import { UtmHiddenFields } from "@/components/UtmHiddenFields";
 
 export default function PartnershipPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,6 +26,11 @@ export default function PartnershipPage() {
       phone: (formData.get("phone") as string) || "",
       partnershipType: (formData.get("partnershipType") as string) || "",
       message: (formData.get("message") as string) || "",
+      utm_source: (formData.get("utm_source") as string) || "",
+      utm_medium: (formData.get("utm_medium") as string) || "",
+      utm_campaign: (formData.get("utm_campaign") as string) || "",
+      utm_term: (formData.get("utm_term") as string) || "",
+      utm_content: (formData.get("utm_content") as string) || "",
     };
 
     try {
@@ -69,6 +75,7 @@ export default function PartnershipPage() {
                   Partner with Nextera
                 </h2>
               </div>
+              <UtmHiddenFields />
               <div className="std-group" style={{ margin: 0 }}>
                 <label className="std-label" htmlFor="partner-name">
                   Name <span>*</span>

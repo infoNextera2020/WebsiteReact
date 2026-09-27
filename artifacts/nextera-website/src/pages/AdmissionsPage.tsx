@@ -17,6 +17,7 @@ import { Section } from "@/components/nextera/primitives";
 import { HeroActions, SiteFrame } from "@/components/nextera/site";
 import { partners } from "./shared";
 import { submitToGoogleSheets } from "@/lib/google-sheets";
+import { UtmHiddenFields } from "@/components/UtmHiddenFields";
 
 export default function AdmissionsPage() {
   const [, setLocation] = useLocation();
@@ -46,6 +47,11 @@ export default function AdmissionsPage() {
       city: (formData.get("city") as string) || "",
       currentStatus: (formData.get("current-status") as string) || "",
       tracks: selectedTracks || "None selected",
+      utm_source: (formData.get("utm_source") as string) || "",
+      utm_medium: (formData.get("utm_medium") as string) || "",
+      utm_campaign: (formData.get("utm_campaign") as string) || "",
+      utm_term: (formData.get("utm_term") as string) || "",
+      utm_content: (formData.get("utm_content") as string) || "",
     };
 
     try {
@@ -501,6 +507,7 @@ export default function AdmissionsPage() {
                   Ready to enter the pool?
                 </h2>
               </div>
+              <UtmHiddenFields />
               <div style={{ marginTop: 30 }}>
                 <div className="std-group">
                   <label className="std-label" htmlFor="full-name">

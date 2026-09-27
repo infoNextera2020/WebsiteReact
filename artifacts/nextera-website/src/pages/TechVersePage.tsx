@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { Section } from "@/components/nextera/primitives";
 import { toast } from "sonner";
 import { submitToGoogleSheets } from "@/lib/google-sheets";
+import { UtmHiddenFields } from "@/components/UtmHiddenFields";
 
 export default function TechVersePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,6 +30,11 @@ export default function TechVersePage() {
       email: (formData.get("email") as string) || "",
       juniorDivisionTeams: (formData.get("juniorTeams") as string) || "0",
       seniorDivisionTeams: (formData.get("seniorTeams") as string) || "0",
+      utm_source: (formData.get("utm_source") as string) || "",
+      utm_medium: (formData.get("utm_medium") as string) || "",
+      utm_campaign: (formData.get("utm_campaign") as string) || "",
+      utm_term: (formData.get("utm_term") as string) || "",
+      utm_content: (formData.get("utm_content") as string) || "",
     };
 
     try {
@@ -288,6 +294,7 @@ export default function TechVersePage() {
 
             <div style={{ maxWidth: "800px", margin: "0 auto" }}>
               <form className="form-container" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", padding: "40px", width: "100%" }} onSubmit={handleRegister}>
+                <UtmHiddenFields />
                 
                 <div className="std-group" style={{ gridColumn: "1 / -1", margin: 0 }}>
                   <label className="std-label" htmlFor="coordinator">Coordinator Name <span>*</span></label>
