@@ -30,11 +30,11 @@ export default function TechVersePage() {
       email: (formData.get("email") as string) || "",
       juniorDivisionTeams: (formData.get("juniorTeams") as string) || "0",
       seniorDivisionTeams: (formData.get("seniorTeams") as string) || "0",
-      utm_source: (formData.get("utm_source") as string) || "",
-      utm_medium: (formData.get("utm_medium") as string) || "",
-      utm_campaign: (formData.get("utm_campaign") as string) || "",
-      utm_term: (formData.get("utm_term") as string) || "",
-      utm_content: (formData.get("utm_content") as string) || "",
+      "utm source": (formData.get("utm_source") as string) || "",
+      "utm medium": (formData.get("utm_medium") as string) || "",
+      "utm campaign": (formData.get("utm_campaign") as string) || "",
+      "utm term": (formData.get("utm_term") as string) || "",
+      "utm content": (formData.get("utm_content") as string) || "",
     };
 
     try {
