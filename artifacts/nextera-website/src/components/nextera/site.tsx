@@ -3,6 +3,8 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUp,
+  Mail,
+  MapPin,
   Menu,
   Moon,
   Sun,
@@ -336,21 +338,31 @@ export function Footer() {
             Interactive technology education that enables learners to solve
             problems, innovate, and prepare for tomorrow’s opportunities.
           </p>
-          <a
-            href="https://maps.app.goo.gl/yhgoJV2ywdgwsJU76"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-address"
-            data-testid="link-footer-address"
-          >
-            <span className="address-pin" aria-hidden="true">
-              📍
-            </span>
-            <span>
-              Mobica Building, 3rd Floor, 3 El-Montaza, El-Nozha, Cairo
-              Governorate 11373, Egypt.
-            </span>
-          </a>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "18px" }}>
+            <a
+              href="mailto:info@nexteraeducation.net"
+              className="footer-address"
+              data-testid="link-footer-email"
+              style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
+            >
+              <Mail size={16} style={{ flexShrink: 0, color: "hsl(var(--primary))" }} />
+              <span style={{ fontWeight: 500 }}>info@nexteraeducation.net</span>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/yhgoJV2ywdgwsJU76"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-address"
+              data-testid="link-footer-address"
+              style={{ display: "inline-flex", alignItems: "flex-start", gap: "10px" }}
+            >
+              <MapPin size={16} style={{ flexShrink: 0, marginTop: "3px", color: "hsl(var(--primary))" }} />
+              <span>
+                Mobica Building, 3rd Floor, 3 El-Montaza, El-Nozha, Cairo
+                Governorate 11373, Egypt.
+              </span>
+            </a>
+          </div>
         </div>
 
         <div>

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { SiteFrame } from "@/components/nextera/site";
 
 interface Person {
@@ -15,7 +15,7 @@ export default function AboutPage() {
   const trustees: Person[] = [
     { initials: "MF", name: "Mr. Mohamed Farouk", image: "/trustee-1.jpg", position: "Chairman and Board Member" },
     { initials: "AT", name: "Eng. Ahmed Tarek", image: "/trustee-2.jpg", position: "Board Member" },
-    { initials: "ML", name: "Eng. Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member" },
+    { initials: "ML", name: "Eng. Mostafa Abdel Latif", image: "/mostafa-abdel-latif.jpg", position: "CEO and Board Member", linkedin: "https://www.linkedin.com/in/mustafaabdellatif/?isSelfProfile=false" },
     { initials: "MA", name: "Mr. Mokhtar Ahmed", image: "/trustee-3.jpg", position: "COO and Board Member", linkedin: "https://www.linkedin.com/in/mokhtar-ahmed-mokhtar-421130253/" },
   ];
 
@@ -35,11 +35,17 @@ export default function AboutPage() {
     { initials: "AK", name: "Abdelrahman Kamal", image: "/Abdelrahman Kamal.jpg", position: "Tech Mentor", objectPosition: "center 20%" },
     { initials: "SE", name: "Shahd ElGanzoury", image: "/Shahd Bahaa.png", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/shahd-elganzoury-168411379/", objectPosition: "center 20%" },
     { initials: "SA", name: "Sohila Ayman", image: "/Sohila Ayman.jpg", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/sohilaayman/", objectPosition: "center 20%" },
-    { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "Tech Mentor", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
+    { initials: "FM", name: "Fatma Moutaz", image: "/Fatma Moutaz.jpeg", position: "R&D & Technology Recruitment Partnerships", linkedin: "https://www.linkedin.com/in/fatma-moutaz-b779711b3/", objectPosition: "center 15%" },
   ];
 
   const teamRow4: Person[] = [
-    { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B/B2C Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
+    { initials: "AA", name: "Aya Ahmed", image: "/Aya Ahmed.jpeg", position: "B2B Sales", linkedin: "https://www.linkedin.com/in/aya-ahmed-95a0831b6/", objectPosition: "center 20%" },
+    { initials: "HF", name: "Hegazy Fouad", image: "/Hegazy Fouad.jpg", position: "Telesales Representative", linkedin: "https://www.linkedin.com/in/hegazy-fouad-70a80222b/?isSelfProfile=false", objectPosition: "center 20%" },
+    { initials: "CM", name: "Christina Melad", image: "/Christina Melad.jpg", position: "Content Creator", linkedin: "https://www.linkedin.com/in/christina-melad-38404b435/?isSelfProfile=false", objectPosition: "center 15%" },
+    { initials: "AM", name: "Abdelrahman Mohamed", image: "/Abdelrahman Mohamed.jpg", position: "Senior Video Editor", linkedin: "https://www.linkedin.com/in/abdelrahman-bisko-3967bb381/?isSelfProfile=false", objectPosition: "center 15%" },
+  ];
+
+  const teamRow5: Person[] = [
     { initials: "ML", name: "Mohamed Lasheen", image: "/Mohamed Lasheen.jpeg", position: "Accounting Supervisor", linkedin: "https://www.linkedin.com/in/mohamed-lasheen-820001165/", objectPosition: "center 20%" },
     { initials: "MA", name: "Merna Ayman", image: "/Merna Ayman.jpeg", position: "HR Generalist", linkedin: "https://www.linkedin.com/in/merna-ayman-2276951b5/", objectPosition: "center 20%" },
   ];
@@ -93,7 +99,7 @@ export default function AboutPage() {
             {person.initials}
           </div>
         )}
-        <div className="member-name" style={{ fontSize: "1.18rem", marginTop: 18 }}>
+        <div className="member-name" style={{ fontSize: "1.18rem", marginTop: 18, whiteSpace: "nowrap" }}>
           {person.name}
         </div>
         {person.position && (
@@ -137,7 +143,11 @@ export default function AboutPage() {
         className="board-member"
         key={person.name}
         data-testid={`team-member-${person.initials}`}
-        style={{ cursor: person.linkedin ? "pointer" : "default" }}
+        style={{
+          cursor: person.linkedin ? "pointer" : "default",
+          flex: "0 1 200px",
+          maxWidth: 210,
+        }}
       >
         {person.image ? (
           <div
@@ -164,7 +174,9 @@ export default function AboutPage() {
             {person.initials}
           </div>
         )}
-        <div className="member-name">{person.name}</div>
+        <div className="member-name" style={{ whiteSpace: "nowrap" }}>
+          {person.name}
+        </div>
         {person.position && (
           <div
             className="member-position"
@@ -173,6 +185,8 @@ export default function AboutPage() {
               color: "hsl(var(--muted-foreground))",
               marginTop: 4,
               fontWeight: 500,
+              lineHeight: 1.35,
+              maxWidth: 200,
             }}
           >
             {person.position}
@@ -427,7 +441,7 @@ export default function AboutPage() {
                 {teamRow3.map(renderMember)}
               </div>
 
-              {/* Row 4: Aya Ahmed, Mohamed Lasheen, Merna Ayman */}
+              {/* Row 4: Aya Ahmed, Hegazy Fouad, Christina Melad, Abdelrahman Mohamed */}
               <div
                 style={{
                   display: "flex",
@@ -438,6 +452,111 @@ export default function AboutPage() {
                 }}
               >
                 {teamRow4.map(renderMember)}
+              </div>
+
+              {/* Row 5: Mohamed Lasheen, Merna Ayman */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  gap: "40px 52px",
+                  width: "100%",
+                }}
+              >
+                {teamRow5.map(renderMember)}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="primitive-section about-contact"
+          aria-labelledby="contact-section-title"
+          style={{ paddingTop: 20, paddingBottom: 80 }}
+        >
+          <div className="primitive-inner">
+            <div
+              style={{
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
+                borderRadius: "var(--radius, 16px)",
+                padding: "48px 32px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                maxWidth: 760,
+                margin: "0 auto",
+              }}
+            >
+              <p className="eyebrow" style={{ marginBottom: 12 }}>Contact Us</p>
+              <h2
+                id="contact-section-title"
+                className="display"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.25rem)",
+                  fontWeight: 700,
+                  margin: "0 0 16px",
+                  color: "hsl(var(--foreground))",
+                }}
+              >
+                Let’s Connect &amp; Collaborate
+              </h2>
+              <p
+                style={{
+                  maxWidth: 540,
+                  color: "hsl(var(--muted-foreground))",
+                  fontSize: "1rem",
+                  lineHeight: 1.6,
+                  margin: "0 0 28px",
+                }}
+              >
+                Have questions regarding our programs, partnerships, or technology education? Reach out to our team directly.
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 16,
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <a
+                  href="mailto:info@nexteraeducation.net"
+                  className="button"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "12px 24px",
+                    borderRadius: 6,
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    textDecoration: "none",
+                  }}
+                  data-testid="link-about-email"
+                >
+                  <Mail size={18} />
+                  <span>info@nexteraeducation.net</span>
+                </a>
+                <Link
+                  href="/partnership"
+                  className="button secondary"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    padding: "12px 24px",
+                    borderRadius: 6,
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                  }}
+                  data-testid="link-about-partnership"
+                >
+                  Partner With Us <ArrowRight size={15} />
+                </Link>
               </div>
             </div>
           </div>
