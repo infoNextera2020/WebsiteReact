@@ -12,35 +12,72 @@ export default function HomePage() {
       <main>
         <section className="hero">
           <div className="container hero-content">
-            <p className="eyebrow reveal">01 Coding Academy</p>
-            <h1 className="display hero-title reveal delay-1">
-              Master the craft of
-              <br />
-              <span>software engineering</span>
-            </h1>
-            <p className="hero-copy reveal delay-2" style={{ maxWidth: 700 }}>
-              A ruthless, peer-to-peer coding academy designed to strip away
-              traditional habits and forge elite problem solvers.
-            </p>
-            <div
-              className="hero-actions reveal delay-3"
-              style={{ marginTop: 32, display: "flex", gap: "16px", flexWrap: "wrap" }}
-            >
-              <a
-                href="#programs"
-                className="button"
-                data-testid="link-explore-programs"
-              >
-                Explore our programs <ArrowRight size={15} />
-              </a>
-              <button 
-                className="button" 
-                style={{ background: "transparent", border: "1px solid hsl(var(--border))", color: "hsl(var(--foreground))" }}
-                onClick={() => setHeroVideoOpen(true)}
-              >
-                <Play size={15} style={{ marginRight: 8 }} /> Watch intro
-              </button>
+            <div className="hero-split-container">
+              <div className="hero-main-col">
+                <p className="eyebrow reveal">01 Coding Academy</p>
+                <h1 className="display hero-title reveal delay-1">
+                  Master the craft of
+                  <br />
+                  <span>software engineering</span>
+                </h1>
+                <p className="hero-copy reveal delay-2">
+                  A ruthless, peer-to-peer coding academy designed to strip away
+                  traditional habits and forge elite problem solvers.
+                </p>
+                <div
+                  className="hero-actions reveal delay-3"
+                  style={{ marginTop: 32, display: "flex", gap: "16px", flexWrap: "wrap" }}
+                >
+                  <a
+                    href="#programs"
+                    className="button"
+                    data-testid="link-explore-programs"
+                  >
+                    Explore our programs <ArrowRight size={15} />
+                  </a>
+                  <button 
+                    className="button" 
+                    style={{ background: "transparent", border: "1px solid hsl(var(--border))", color: "hsl(var(--foreground))" }}
+                    onClick={() => setHeroVideoOpen(true)}
+                  >
+                    <Play size={15} style={{ marginRight: 8 }} /> Watch intro
+                  </button>
+                </div>
+              </div>
+
+              <div className="hero-card-col reveal delay-2">
+                <div className="piscine-hero-card" data-testid="piscine-hero-card">
+                  <div className="piscine-card-label">Next Piscine Starts</div>
+                  <div className="piscine-card-date">22 NOV</div>
+                  <div className="piscine-card-sub">Piscine 10 · 4 Weeks</div>
+
+                  <div className="piscine-card-students">71 students already in</div>
+
+                  <div className="piscine-progress-track">
+                    <div className="piscine-progress-fill" style={{ width: "71%" }} />
+                  </div>
+
+                  <div className="piscine-card-footer">
+                    <span className="piscine-card-spots">Limited spots left</span>
+                    <span className="piscine-card-dot" aria-hidden="true">·</span>
+                    <Link
+                      href="/admissions#register"
+                      className="piscine-card-apply"
+                      data-testid="link-piscine-card-apply"
+                      onClick={() => {
+                        if (window.location.pathname === "/admissions") {
+                          const el = document.getElementById("register");
+                          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                      }}
+                    >
+                      Apply now <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div
               className="terminal-lockup reveal delay-3"
               data-testid="terminal-home-preview"

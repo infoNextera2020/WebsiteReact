@@ -444,6 +444,92 @@ export function Footer() {
   );
 }
 
+export function TopPiscineBanner() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
+
+  useEffect(() => {
+    // Next Piscine: 22/11/2026 09:00:00 (Cairo time UTC+2)
+    const targetDate = new Date("2026-11-22T09:00:00+02:00").getTime();
+
+    const updateTimer = () => {
+      const now = Date.now();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        setTimeLeft({ days: "00", hours: "00", minutes: "00", seconds: "00" });
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      setTimeLeft({
+        days: String(days).padStart(2, "0"),
+        hours: String(hours).padStart(2, "0"),
+        minutes: String(minutes).padStart(2, "0"),
+        seconds: String(seconds).padStart(2, "0"),
+      });
+    };
+
+    updateTimer();
+    const interval = setInterval(updateTimer, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <aside className="top-piscine-banner" aria-label="Next Piscine Announcement">
+      <div className="container top-piscine-inner">
+        <div className="top-piscine-countdown">
+          <span className="top-piscine-title">Piscine 10 Starts In</span>
+          <div className="countdown-digits">
+            <span className="countdown-box">
+              <span className="countdown-num">{timeLeft.days}</span>
+              <span className="countdown-unit">d</span>
+            </span>
+            <span className="countdown-box">
+              <span className="countdown-num">{timeLeft.hours}</span>
+              <span className="countdown-unit">h</span>
+            </span>
+            <span className="countdown-box">
+              <span className="countdown-num">{timeLeft.minutes}</span>
+              <span className="countdown-unit">m</span>
+            </span>
+            <span className="countdown-box">
+              <span className="countdown-num">{timeLeft.seconds}</span>
+              <span className="countdown-unit">s</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="top-piscine-status">
+          <span className="top-piscine-students">71 students already in</span>
+          <Link
+            href="/admissions#register"
+            className="top-piscine-pill"
+            data-testid="link-banner-apply"
+            onClick={() => {
+              if (window.location.pathname === "/admissions") {
+                const el = document.getElementById("register");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+          >
+            <span className="top-piscine-dot" aria-hidden="true" />
+            <span>Limited spots left</span>
+          </Link>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 export function SiteFrame({
   children,
   loader = false,
@@ -453,6 +539,7 @@ export function SiteFrame({
 }) {
   return (
     <div className="site-shell">
+      <TopPiscineBanner />
       <Header />
       <Cursor />
       {loader ? <TerminalLoader /> : null}

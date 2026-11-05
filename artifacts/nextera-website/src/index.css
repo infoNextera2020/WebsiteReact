@@ -149,6 +149,112 @@ button {
   color: hsl(var(--muted-foreground));
 }
 
+/* Top Piscine Announcement Banner */
+.top-piscine-banner {
+  background: hsl(var(--primary));
+  color: #0b1510;
+  padding: 8px 0;
+  position: relative;
+  z-index: 60;
+  font-family: var(--font-body);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.top-piscine-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.top-piscine-countdown {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.top-piscine-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0b1510;
+}
+.countdown-digits {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.countdown-box {
+  background: #0b1510;
+  color: hsl(var(--primary));
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  font-family: var(--font-mono);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.countdown-num {
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.countdown-unit {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+.top-piscine-status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.top-piscine-students {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0b1510;
+}
+.top-piscine-pill {
+  background: #0b1510;
+  color: #ffffff;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+.top-piscine-pill:hover {
+  background: #16241c;
+  transform: translateY(-1px);
+}
+.top-piscine-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  display: inline-block;
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
 /* Shared header */
 .site-header {
   position: sticky;
@@ -456,6 +562,108 @@ button {
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 35px;
+}
+.hero-split-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.hero-main-col {
+  flex: 1 1 540px;
+  max-width: 680px;
+}
+.hero-card-col {
+  flex: 0 1 380px;
+  width: 100%;
+  max-width: 400px;
+}
+.piscine-hero-card {
+  background: hsl(var(--card) / 0.88);
+  border: 1px solid hsl(var(--border) / 0.9);
+  border-radius: 16px;
+  padding: 30px 30px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 48px hsl(var(--shadow-color) / 0.28);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.piscine-hero-card:hover {
+  border-color: hsl(var(--primary) / 0.5);
+  transform: translateY(-3px);
+}
+.piscine-card-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+.piscine-card-date {
+  font-size: clamp(3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: hsl(var(--primary));
+  font-family: var(--font-display);
+  line-height: 1.05;
+  margin: 12px 0 6px;
+  letter-spacing: -0.02em;
+}
+.piscine-card-sub {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 26px;
+}
+.piscine-card-students {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 12px;
+}
+.piscine-progress-track {
+  width: 100%;
+  height: 8px;
+  background: hsl(var(--border) / 0.8);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.piscine-progress-fill {
+  height: 100%;
+  background: hsl(var(--primary));
+  border-radius: 999px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.piscine-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.piscine-card-spots {
+  color: hsl(var(--muted-foreground));
+}
+.piscine-card-dot {
+  color: hsl(var(--muted-foreground) / 0.6);
+}
+.piscine-card-apply {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+.piscine-card-apply:hover {
+  text-decoration: underline;
+  gap: 7px;
 }
 .terminal-lockup {
   max-width: 600px;
@@ -2320,6 +2528,26 @@ button {
   }
   .hero {
     padding: 96px 0 105px;
+  }
+  .hero-split-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+  }
+  .hero-card-col {
+    max-width: 440px;
+    width: 100%;
+  }
+  .top-piscine-inner {
+    justify-content: center;
+    text-align: center;
+    gap: 10px 16px;
+  }
+  .top-piscine-countdown {
+    justify-content: center;
+  }
+  .top-piscine-status {
+    justify-content: center;
   }
   .hero-title {
     font-size: clamp(2.2rem, 10vw, 3.8rem);
