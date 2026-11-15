@@ -3,10 +3,12 @@ import { useState } from "react";
 import { ArrowRight, Terminal, Globe, Building2, Play, X } from "lucide-react";
 import { StepFlow } from "@/components/nextera/primitives";
 import { SiteFrame } from "@/components/nextera/site";
+import { usePiscineStudentCount } from "@/lib/piscine-tracker";
 import { partners, FeatureExplorer, FAQList } from "./shared";
 
 export default function HomePage() {
   const [heroVideoOpen, setHeroVideoOpen] = useState(false);
+  const { count, progressPercent } = usePiscineStudentCount();
   return (
     <SiteFrame>
       <main>
@@ -51,10 +53,10 @@ export default function HomePage() {
                   <div className="piscine-card-date">22 NOV</div>
                   <div className="piscine-card-sub">Piscine 10 · 4 Weeks</div>
 
-                  <div className="piscine-card-students">71 students already in</div>
+                  <div className="piscine-card-students">{count} students already in</div>
 
                   <div className="piscine-progress-track">
-                    <div className="piscine-progress-fill" style={{ width: "71%" }} />
+                    <div className="piscine-progress-fill" style={{ width: `${progressPercent}%` }} />
                   </div>
 
                   <div className="piscine-card-footer">

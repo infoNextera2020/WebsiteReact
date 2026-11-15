@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { usePiscineStudentCount } from "@/lib/piscine-tracker";
 
 export function Header() {
   const [location] = useLocation();
@@ -445,6 +446,7 @@ export function Footer() {
 }
 
 export function TopPiscineBanner() {
+  const { count } = usePiscineStudentCount();
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
     hours: "00",
@@ -509,7 +511,7 @@ export function TopPiscineBanner() {
         </div>
 
         <div className="top-piscine-status">
-          <span className="top-piscine-students">71 students already in</span>
+          <span className="top-piscine-students">{count} students already in</span>
           <Link
             href="/admissions#register"
             className="top-piscine-pill"
