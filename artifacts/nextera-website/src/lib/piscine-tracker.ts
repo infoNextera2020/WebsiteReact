@@ -4,7 +4,7 @@ export const PISCINE_TRACKER_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyOsY2-873hPxZSrP5nykQlgLJWYBQhB3czLy5bPnGdZbF-7fCuLpFh3XS_1SaOSENYUw/exec";
 
 // Default/fallback count while fetching or offline
-export const DEFAULT_PISCINE_COUNT = 28;
+export const DEFAULT_PISCINE_COUNT = 86;
 // Total capacity for calculating visual progress percentage
 export const PISCINE_CAPACITY = 100;
 
