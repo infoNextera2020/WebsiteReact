@@ -12,6 +12,9 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { usePiscineStudentCount } from "@/lib/piscine-tracker";
+import { PiscinePromoModal } from "./PiscinePromoModal";
+
+export { PiscinePromoModal };
 
 export function Header() {
   const [location] = useLocation();
@@ -548,6 +551,7 @@ export function SiteFrame({
       {children}
       <BackToTop />
       <Footer />
+      <PiscinePromoModal />
     </div>
   );
 }
