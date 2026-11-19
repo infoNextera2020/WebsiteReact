@@ -50,7 +50,7 @@ export default function HomePage() {
               <div className="hero-card-col reveal delay-2">
                 <div className="piscine-hero-card" data-testid="piscine-hero-card">
                   <div className="piscine-card-label">Next Piscine Starts</div>
-                  <div className="piscine-card-date">22 NOV</div>
+                  <div className="piscine-card-date">29 NOV</div>
                   <div className="piscine-card-sub">Piscine 10 · 4 Weeks</div>
 
                   <div className="piscine-card-students">{count} students already in</div>

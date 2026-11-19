@@ -458,8 +458,8 @@ export function TopPiscineBanner() {
   });
 
   useEffect(() => {
-    // Next Piscine: 22/11/2026 09:00:00 (Cairo time UTC+2)
-    const targetDate = new Date("2026-11-22T09:00:00+02:00").getTime();
+    // Next Piscine: 29/11/2026 09:00:00 (Cairo time UTC+2)
+    const targetDate = new Date("2026-11-29T09:00:00+02:00").getTime();
 
     const updateTimer = () => {
       const now = Date.now();

@@ -20,9 +20,9 @@ export function PiscinePromoModal() {
     seconds: "00",
   });
 
-  // Countdown timer to Piscine 10: 22/11/2026 09:00:00 (Cairo UTC+2)
+  // Countdown timer to Piscine 10: 29/11/2026 09:00:00 (Cairo UTC+2)
   useEffect(() => {
-    const targetDate = new Date("2026-11-22T09:00:00+02:00").getTime();
+    const targetDate = new Date("2026-11-29T09:00:00+02:00").getTime();
 
     const updateTimer = () => {
       const now = Date.now();
@@ -137,7 +137,7 @@ export function PiscinePromoModal() {
         <h2 id="piscine-modal-title" className="piscine-modal-title">
           Next Piscine Starts
         </h2>
-        <div className="piscine-modal-date">22 NOV 2026</div>
+        <div className="piscine-modal-date">29 NOV 2026</div>
         <p className="piscine-modal-sub">
           4-Week Intensive Selection Pool · Cairo Campus
         </p>
